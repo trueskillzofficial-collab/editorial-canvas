@@ -1,16 +1,111 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Layout from "@/components/layout/Layout";
+import HeroSection from "@/components/sections/HeroSection";
+import SectionBlock from "@/components/sections/SectionBlock";
+import WorkCard from "@/components/cards/WorkCard";
+import { getSiteSettings, getWorks, getReviews, getPoems } from "@/lib/data";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const settings = getSiteSettings();
+  const works = getWorks().slice(0, 4);
+  const reviews = getReviews();
+  const featuredPoem = getPoems()[0];
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <Layout>
+      <HeroSection
+        quote={settings.heroQuote}
+        quoteSource={settings.heroQuoteAuthor}
+        authorName={settings.authorName}
+        tagline={settings.tagline}
+      />
+
+      {/* Bio Preview */}
+      <SectionBlock title="L'Autore" subtitle="Una vita tra lettere, culture e paesi">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="prose-editorial mb-8">{settings.authorBio}</p>
+          <Link to="/biografia" className="btn-editorial inline-flex items-center gap-2">
+            Leggi la biografia completa <ArrowRight size={16} />
+          </Link>
+        </div>
+      </SectionBlock>
+
+      {/* Featured Poem */}
+      {featuredPoem && (
+        <SectionBlock variant="alternate">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-gold block mb-6">
+              Poesia in Evidenza
+            </span>
+            <h2 className="text-display text-3xl md:text-4xl font-light italic text-foreground mb-6">
+              {featuredPoem.title}
+            </h2>
+            <div className="divider-gold mb-8" />
+            <pre className="text-display text-base md:text-lg leading-relaxed text-foreground/80 whitespace-pre-wrap font-light italic mb-8">
+              {featuredPoem.text}
+            </pre>
+            <Link to="/poesie" className="btn-editorial">
+              Tutte le Poesie
+            </Link>
+          </div>
+        </SectionBlock>
+      )}
+
+      {/* Works Highlights */}
+      <SectionBlock title="Opere" subtitle="Una selezione delle pubblicazioni">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {works.map((work, i) => (
+            <WorkCard key={work.id} work={work} index={i} />
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link to="/opere" className="btn-editorial inline-flex items-center gap-2">
+            Tutte le Opere <ArrowRight size={16} />
+          </Link>
+        </div>
+      </SectionBlock>
+
+      {/* Reviews */}
+      <SectionBlock variant="alternate" title="Dalla Critica" subtitle="Cosa dicono i critici">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map((review, i) => (
+            <motion.blockquote
+              key={review.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              className="card-editorial text-center"
+            >
+              <p className="text-display text-sm md:text-base italic leading-relaxed text-foreground/80 mb-4">
+                "{review.text}"
+              </p>
+              <footer>
+                <cite className="text-sm font-medium text-foreground not-italic">{review.author}</cite>
+                <p className="text-xs text-muted-foreground mt-1">su <em>{review.work}</em></p>
+              </footer>
+            </motion.blockquote>
+          ))}
+        </div>
+      </SectionBlock>
+
+      {/* CTA */}
+      <SectionBlock>
+        <div className="text-center">
+          <h2 className="heading-editorial mb-4">Resta in contatto</h2>
+          <div className="divider-gold mb-6" />
+          <p className="prose-editorial max-w-xl mx-auto mb-8">
+            Per informazioni, collaborazioni o semplicemente per scambiare idee sulla letteratura e la poesia.
+          </p>
+          <Link to="/contatti" className="btn-editorial-filled">
+            Contattami
+          </Link>
+        </div>
+      </SectionBlock>
+    </Layout>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
