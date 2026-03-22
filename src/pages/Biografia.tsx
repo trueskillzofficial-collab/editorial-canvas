@@ -1,8 +1,28 @@
+import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import SectionBlock from "@/components/sections/SectionBlock";
 import TimelineSection from "@/components/sections/TimelineSection";
 import { getBiographySections } from "@/lib/data";
 import authorImg from "@/assets/nicola_prebenna.jpg";
+import imgNaxos from "@/assets/bio/naxos.jpg";
+import imgPoetessa from "@/assets/bio/poetessa_greca.jpg";
+import imgVarsavia from "@/assets/bio/varsavia.jpg";
+import imgDickinson from "@/assets/bio/premio_dickinson.jpg";
+import imgStudio from "@/assets/bio/nello_studio.jpg";
+import imgPresentazione from "@/assets/bio/presentazione.jpg";
+import imgCasentino from "@/assets/bio/premio_casentino.jpg";
+import imgFortuna from "@/assets/bio/premio_fortuna.jpg";
+
+const bioImages = [
+  { src: imgStudio, alt: "Nicola Prebenna nel suo studio", caption: "Nel suo studio, tra i libri" },
+  { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
+  { src: imgPresentazione, alt: "Nicola Prebenna durante una presentazione", caption: "Presentazione letteraria" },
+  { src: imgPoetessa, alt: "Con la poetessa greca M. Dalmati e Vocou", caption: "Con la poetessa greca M. Dalmati e Vocou" },
+  { src: imgVarsavia, alt: "All'Istituto Italiano di Cultura di Varsavia", caption: "All'Istituto Italiano di Cultura di Varsavia" },
+  { src: imgDickinson, alt: "Premio Emily Dickinson", caption: "Premio Internazionale Emily Dickinson – 1° Classificato" },
+  { src: imgCasentino, alt: "Premio Casentino a Poppi", caption: "Premio Letterario del Casentino, Poppi" },
+  { src: imgFortuna, alt: "Premio Fortuna d'Autore a Bari", caption: "Premio Fortuna d'Autore, Bari" },
+];
 
 const Biografia = () => {
   const sections = getBiographySections();
@@ -40,13 +60,142 @@ const Biografia = () => {
         </div>
       </SectionBlock>
 
+      {/* Editorial photo spread - first pair */}
+      <SectionBlock variant="alternate">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img
+              src={bioImages[0].src}
+              alt={bioImages[0].alt}
+              className="w-full rounded-sm shadow-lg object-cover"
+              loading="lazy"
+            />
+            <p className="text-xs text-muted-foreground italic mt-3">{bioImages[0].caption}</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <img
+              src={bioImages[1].src}
+              alt={bioImages[1].alt}
+              className="w-full rounded-sm shadow-lg object-cover"
+              loading="lazy"
+            />
+            <p className="text-xs text-muted-foreground italic mt-3">{bioImages[1].caption}</p>
+          </motion.div>
+        </div>
+      </SectionBlock>
+
       {/* Timeline */}
-      <SectionBlock variant="alternate" title="Percorso di Vita" subtitle="Una storia di cultura e passione">
+      <SectionBlock title="Percorso di Vita" subtitle="Una storia di cultura e passione">
         <TimelineSection sections={sections} />
       </SectionBlock>
 
-      {/* Roles */}
+      {/* Full-width editorial image */}
+      <SectionBlock variant="alternate">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto"
+        >
+          <img
+            src={bioImages[2].src}
+            alt={bioImages[2].alt}
+            className="w-full rounded-sm shadow-lg object-cover"
+            loading="lazy"
+          />
+          <p className="text-xs text-muted-foreground italic mt-3 text-center">{bioImages[2].caption}</p>
+        </motion.div>
+      </SectionBlock>
+
+      {/* International experiences - image + text */}
       <SectionBlock>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+          <div className="md:col-span-3">
+            <h2 className="heading-editorial mb-4">Esperienze Internazionali</h2>
+            <div className="divider-gold !mx-0 mb-6" />
+            <p className="prose-editorial mb-4">
+              L'esperienza all'estero ha profondamente arricchito la visione culturale di Nicola Prebenna. 
+              Dall'Istituto Italiano di Cultura di Varsavia ai salotti letterari di Atene, 
+              ogni incontro ha contribuito a tessere un dialogo tra le culture del Mediterraneo e dell'Europa.
+            </p>
+            <p className="prose-editorial">
+              La Grecia, in particolare, è diventata una seconda patria spirituale, 
+              ispirandone l'opera poetica e le relazioni con poeti e intellettuali ellenici.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-2"
+          >
+            <img
+              src={bioImages[3].src}
+              alt={bioImages[3].alt}
+              className="w-full rounded-sm shadow-lg object-cover"
+              loading="lazy"
+            />
+            <p className="text-xs text-muted-foreground italic mt-3">{bioImages[3].caption}</p>
+          </motion.div>
+        </div>
+      </SectionBlock>
+
+      {/* Varsavia full-width */}
+      <SectionBlock variant="alternate">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          <img
+            src={bioImages[4].src}
+            alt={bioImages[4].alt}
+            className="w-full rounded-sm shadow-lg object-cover"
+            loading="lazy"
+          />
+          <p className="text-xs text-muted-foreground italic mt-3 text-center">{bioImages[4].caption}</p>
+        </motion.div>
+      </SectionBlock>
+
+      {/* Awards gallery */}
+      <SectionBlock title="Premi e Riconoscimenti" subtitle="Un percorso costellato di successi">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {bioImages.slice(5).map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+      </SectionBlock>
+
+      {/* Roles */}
+      <SectionBlock variant="alternate">
         <div className="max-w-3xl mx-auto">
           <h2 className="heading-editorial text-center mb-8">Ruoli e Riconoscimenti</h2>
           <div className="divider-gold mb-10" />
