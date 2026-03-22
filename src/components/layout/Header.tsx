@@ -8,6 +8,7 @@ const navItems = [
   { label: "Biografia", path: "/biografia" },
   { label: "Opere", path: "/opere" },
   { label: "Poesie", path: "/poesie" },
+  { label: "Recensioni", path: "/recensioni" },
   { label: "Eventi", path: "/eventi" },
   { label: "Media", path: "/media" },
   { label: "Contatti", path: "/contatti" },
