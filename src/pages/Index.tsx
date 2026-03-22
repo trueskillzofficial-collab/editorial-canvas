@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import SectionBlock from "@/components/sections/SectionBlock";
 import WorkCard from "@/components/cards/WorkCard";
-import { getSiteSettings, getWorks, getReviews, getPoems } from "@/lib/data";
+import { getSiteSettings, getWorks, getReviews, getPoems, getLatestPublications } from "@/lib/data";
 
 const Index = () => {
   const settings = getSiteSettings();
-  const works = getWorks().slice(0, 4);
-  const reviews = getReviews();
+  const works = getWorks().filter(w => ["2024", "2025"].includes(w.year)).slice(0, 4);
+  const reviews = getReviews().slice(0, 3);
   const featuredPoem = getPoems()[0];
+  const latestPubs = getLatestPublications();
 
   return (
     <Layout>
@@ -53,22 +54,43 @@ const Index = () => {
         </SectionBlock>
       )}
 
-      {/* Works Highlights */}
-      <SectionBlock title="Opere" subtitle="Una selezione delle pubblicazioni">
+      {/* Ultime Pubblicazioni */}
+      <SectionBlock title="Ultime Pubblicazioni" subtitle="Le opere più recenti">
+        <div className="max-w-3xl mx-auto">
+          <ul className="space-y-3 mb-10">
+            {latestPubs.map((pub, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="flex items-start gap-3"
+              >
+                <BookOpen size={16} className="text-gold shrink-0 mt-1" />
+                <span className="text-sm text-foreground/80">{pub}</span>
+              </motion.li>
+            ))}
+          </ul>
+          <div className="text-center">
+            <Link to="/opere" className="btn-editorial inline-flex items-center gap-2">
+              Tutte le Opere <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </SectionBlock>
+
+      {/* Opere recenti - Cards */}
+      <SectionBlock variant="alternate" title="Opere Recenti" subtitle="Le ultime pubblicazioni in evidenza">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {works.map((work, i) => (
             <WorkCard key={work.id} work={work} index={i} />
           ))}
         </div>
-        <div className="text-center mt-10">
-          <Link to="/opere" className="btn-editorial inline-flex items-center gap-2">
-            Tutte le Opere <ArrowRight size={16} />
-          </Link>
-        </div>
       </SectionBlock>
 
       {/* Reviews */}
-      <SectionBlock variant="alternate" title="Dalla Critica" subtitle="Cosa dicono i critici">
+      <SectionBlock title="Dalla Critica" subtitle="Cosa dicono i critici">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, i) => (
             <motion.blockquote
@@ -89,10 +111,15 @@ const Index = () => {
             </motion.blockquote>
           ))}
         </div>
+        <div className="text-center mt-10">
+          <Link to="/recensioni" className="btn-editorial inline-flex items-center gap-2">
+            Tutte le Recensioni <ArrowRight size={16} />
+          </Link>
+        </div>
       </SectionBlock>
 
       {/* CTA */}
-      <SectionBlock>
+      <SectionBlock variant="alternate">
         <div className="text-center">
           <h2 className="heading-editorial mb-4">Resta in contatto</h2>
           <div className="divider-gold mb-6" />

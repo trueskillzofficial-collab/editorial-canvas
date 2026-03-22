@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SectionBlock from "@/components/sections/SectionBlock";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Facebook } from "lucide-react";
+import { getSiteSettings } from "@/lib/data";
 
 const Contatti = () => {
+  const settings = getSiteSettings();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // WordPress integration: POST to /wp-json/contact-form-7/v1/contact-forms/{id}/feedback
     console.log("Form submitted:", formData);
     alert("Grazie per il tuo messaggio! Ti risponderemo al più presto.");
     setFormData({ name: "", email: "", message: "" });
@@ -24,19 +25,41 @@ const Contatti = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-gold" />
-                <span className="text-sm text-muted-foreground">info@nicolaprebenna.it</span>
+                <a href={`mailto:${settings.contactEmail}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  {settings.contactEmail}
+                </a>
               </div>
+              {settings.contactEmail2 && (
+                <div className="flex items-center gap-3">
+                  <Mail size={18} className="text-gold" />
+                  <a href={`mailto:${settings.contactEmail2}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {settings.contactEmail2}
+                  </a>
+                </div>
+              )}
+              {settings.contactPhone && (
+                <div className="flex items-center gap-3">
+                  <Phone size={18} className="text-gold" />
+                  <a href={`tel:${settings.contactPhone}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {settings.contactPhone}
+                  </a>
+                </div>
+              )}
               <div className="flex items-center gap-3">
                 <MapPin size={18} className="text-gold" />
                 <span className="text-sm text-muted-foreground">Ariano Irpino (AV), Italia</span>
               </div>
+              <div className="flex items-center gap-3">
+                <Facebook size={18} className="text-gold" />
+                <span className="text-sm text-muted-foreground">Facebook</span>
+              </div>
             </div>
             <div className="mt-8 p-6 bg-secondary/50 rounded-sm">
               <p className="text-display text-sm italic text-foreground/80 leading-relaxed">
-                "La poesia non è che messaggio, comunicazione, capacità di intessere sentimenti relazionati,
-                interagenti all'interno ed all'esterno del mondo dell'io."
+                "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio
+                e su fogli di carta bianca."
               </p>
-              <p className="text-xs text-muted-foreground mt-3">— Nicola Prebenna</p>
+              <p className="text-xs text-muted-foreground mt-3">— Nicola Prebenna, "Il Dono del Poeta"</p>
             </div>
           </div>
 
