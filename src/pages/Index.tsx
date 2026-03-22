@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import SectionBlock from "@/components/sections/SectionBlock";
 import BooksCarousel from "@/components/sections/BooksCarousel";
-import { getSiteSettings, getWorks, getReviews, getPoems } from "@/lib/data";
+import VideoModal from "@/components/sections/VideoModal";
+import EventCard from "@/components/cards/EventCard";
+import { getSiteSettings, getWorks, getReviews, getPoems, getEvents, getMediaItems } from "@/lib/data";
+import type { MediaItem } from "@/lib/types";
 
 const Index = () => {
   const settings = getSiteSettings();
@@ -13,6 +17,9 @@ const Index = () => {
   const recentWorks = works.filter(w => parseInt(w.year) >= 2020).slice(0, 12);
   const reviews = getReviews().slice(0, 3);
   const featuredPoem = getPoems()[0];
+  const events = getEvents().slice(0, 3);
+  const mediaItems = getMediaItems().slice(0, 3);
+  const [activeVideo, setActiveVideo] = useState<MediaItem | null>(null);
 
   return (
     <Layout>
@@ -64,6 +71,62 @@ const Index = () => {
         </div>
       </SectionBlock>
 
+      {/* Events Preview */}
+      <SectionBlock variant="alternate" title="Eventi e Presentazioni" subtitle="Incontri, premi e momenti culturali">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {events.map((event, i) => (
+            <EventCard key={event.id} event={event} index={i} />
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link to="/eventi" className="btn-editorial inline-flex items-center gap-2">
+            Scopri tutti gli eventi <ArrowRight size={16} />
+          </Link>
+        </div>
+      </SectionBlock>
+
+      {/* Media Preview */}
+      <SectionBlock title="Media" subtitle="Interviste, presentazioni e contenuti video">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {mediaItems.map((item, i) => {
+            const videoId = item.url.includes("youtu")
+              ? item.url.split(/[/=]/).pop()
+              : null;
+            const thumb = videoId
+              ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+              : undefined;
+
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="card-editorial cursor-pointer group"
+                onClick={() => setActiveVideo(item)}
+              >
+                <div className="relative aspect-video bg-muted rounded-sm overflow-hidden mb-4">
+                  {thumb && (
+                    <img src={thumb} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
+                  )}
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Play size={40} className="text-white" />
+                  </div>
+                </div>
+                <h3 className="text-display text-sm font-semibold text-foreground mb-1">{item.title}</h3>
+                <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+        <div className="text-center mt-10">
+          <Link to="/media" className="btn-editorial inline-flex items-center gap-2">
+            Scopri tutti i media <ArrowRight size={16} />
+          </Link>
+        </div>
+      </SectionBlock>
+
       {/* Reviews */}
       <SectionBlock variant="alternate" title="Dalla Critica" subtitle="Cosa dicono i critici">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -106,6 +169,8 @@ const Index = () => {
           </Link>
         </div>
       </SectionBlock>
+
+      <VideoModal item={activeVideo} onClose={() => setActiveVideo(null)} />
     </Layout>
   );
 };

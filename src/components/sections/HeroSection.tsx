@@ -16,13 +16,13 @@ const HeroSection = ({
   tagline = "Poeta · Scrittore · Critico Letterario",
 }: HeroSectionProps) => (
   <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0F172A]">
-    {/* Subtle author image overlay */}
+    {/* Author image as subtle background - visible on all devices */}
     <div
-      className="absolute inset-0 bg-cover bg-center opacity-[0.08]"
+      className="absolute inset-0 bg-cover bg-center opacity-[0.12] blur-[2px]"
       style={{ backgroundImage: `url(${authorImg})` }}
     />
-    {/* Gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#0F172A]/95 to-[#0a1120]" />
+    {/* Gradient overlay for text readability */}
+    <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/95 via-[#0F172A]/90 to-[#0F172A]/95" />
 
     <div className="container-editorial relative z-10 py-20 md:py-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -67,7 +67,7 @@ const HeroSection = ({
           <img
             src={authorImg}
             alt={authorName}
-            className="w-full max-w-md mx-auto rounded-sm shadow-2xl object-cover aspect-[3/4]"
+            className="w-full max-w-md mx-auto shadow-2xl object-cover aspect-[3/4]"
             loading="eager"
           />
         </motion.div>

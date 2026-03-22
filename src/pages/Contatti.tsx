@@ -24,14 +24,14 @@ const Contatti = () => {
             <h3 className="text-display text-xl font-semibold text-foreground mb-6">Informazioni</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Mail size={18} className="text-gold" />
+                <Mail size={18} className="text-gold shrink-0" />
                 <a href={`mailto:${settings.contactEmail}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
                   {settings.contactEmail}
                 </a>
               </div>
               {settings.contactEmail2 && (
                 <div className="flex items-center gap-3">
-                  <Mail size={18} className="text-gold" />
+                  <Mail size={18} className="text-gold shrink-0" />
                   <a href={`mailto:${settings.contactEmail2}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
                     {settings.contactEmail2}
                   </a>
@@ -39,19 +39,33 @@ const Contatti = () => {
               )}
               {settings.contactPhone && (
                 <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-gold" />
-                  <a href={`tel:${settings.contactPhone}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  <Phone size={18} className="text-gold shrink-0" />
+                  <a href={`tel:+39${settings.contactPhone.replace(/-/g, '')}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
                     {settings.contactPhone}
                   </a>
                 </div>
               )}
               <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-gold" />
-                <span className="text-sm text-muted-foreground">Ariano Irpino (AV), Italia</span>
+                <MapPin size={18} className="text-gold shrink-0" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ariano+Irpino+AV+Italia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-gold transition-colors"
+                >
+                  Ariano Irpino (AV), Italia
+                </a>
               </div>
               <div className="flex items-center gap-3">
-                <Facebook size={18} className="text-gold" />
-                <span className="text-sm text-muted-foreground">Facebook</span>
+                <Facebook size={18} className="text-gold shrink-0" />
+                <a
+                  href="https://www.facebook.com/nicola.prebenna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-gold transition-colors"
+                >
+                  Facebook
+                </a>
               </div>
             </div>
             <div className="mt-8 p-6 bg-secondary/50 rounded-sm">
