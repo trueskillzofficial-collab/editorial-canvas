@@ -15,14 +15,14 @@ const HeroSection = ({
   authorName = "Nicola Prebenna",
   tagline = "Poeta · Scrittore · Critico Letterario",
 }: HeroSectionProps) => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#1F3A2E]">
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0F172A]">
     {/* Subtle author image overlay */}
     <div
-      className="absolute inset-0 bg-cover bg-center opacity-[0.12] blur-[2px]"
+      className="absolute inset-0 bg-cover bg-center opacity-[0.08]"
       style={{ backgroundImage: `url(${authorImg})` }}
     />
-    {/* Gradient overlay for depth */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[#1F3A2E] via-[#1F3A2E]/95 to-[#162b21]" />
+    {/* Gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#0F172A]/95 to-[#0a1120]" />
 
     <div className="container-editorial relative z-10 py-20 md:py-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -31,27 +31,27 @@ const HeroSection = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-xs font-medium tracking-[0.3em] uppercase text-white/50 mb-6">
+          <p className="text-xs font-medium tracking-[0.3em] uppercase text-white/40 mb-6">
             {tagline}
           </p>
           <h1 className="text-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-8">
             {authorName}
           </h1>
           <div className="w-16 h-px bg-gold mb-8" />
-          <blockquote className="text-display text-lg md:text-xl lg:text-2xl font-light italic leading-relaxed text-white/75 mb-4">
+          <blockquote className="text-display text-lg md:text-xl lg:text-2xl font-light italic leading-relaxed text-white/70 mb-4">
             "{quote}"
           </blockquote>
-          <p className="text-sm text-white/40 mb-10">{quoteSource}</p>
+          <p className="text-sm text-white/35 mb-10">{quoteSource}</p>
           <div className="flex flex-wrap gap-4">
             <Link
               to="/opere"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#1F3A2E] text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-gold/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#0F172A] text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-gold/90 transition-colors"
             >
               Scopri le Opere
             </Link>
             <Link
               to="/biografia"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-white/25 text-white text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-white/10 transition-colors"
             >
               Biografia
             </Link>
@@ -59,20 +59,17 @@ const HeroSection = ({
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="hidden lg:block"
         >
-          <div className="relative">
-            <div className="absolute -inset-4 border border-white/10 rounded-sm" />
-            <img
-              src={authorImg}
-              alt={authorName}
-              className="w-full max-w-md mx-auto rounded-sm shadow-2xl object-cover aspect-[3/4]"
-              loading="eager"
-            />
-          </div>
+          <img
+            src={authorImg}
+            alt={authorName}
+            className="w-full max-w-md mx-auto rounded-sm shadow-2xl object-cover aspect-[3/4]"
+            loading="eager"
+          />
         </motion.div>
       </div>
     </div>
