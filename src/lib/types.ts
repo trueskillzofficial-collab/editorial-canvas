@@ -1,6 +1,5 @@
 // WordPress-ready data types
 // These interfaces match WordPress REST API response shapes
-// for easy future integration
 
 export interface WPPost {
   id: number;
@@ -21,6 +20,7 @@ export interface Work {
   genre: string;
   publisher: string;
   image?: string;
+  price?: string;
 }
 
 export interface Event {
@@ -58,6 +58,22 @@ export interface BiographySection {
   image?: string;
 }
 
+export interface Poem {
+  id: number;
+  title: string;
+  theme: string;
+  text: string;
+  collection?: string;
+}
+
+export interface Review {
+  id: number;
+  author: string;
+  role?: string;
+  work: string;
+  text: string;
+}
+
 export interface SiteSettings {
   siteName: string;
   tagline: string;
@@ -66,4 +82,6 @@ export interface SiteSettings {
   authorName: string;
   authorBio: string;
   contactEmail: string;
+  contactEmail2?: string;
+  contactPhone?: string;
 }
