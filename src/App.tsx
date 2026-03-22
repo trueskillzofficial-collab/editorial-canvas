@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/eventi" element={<Eventi />} />
           <Route path="/media" element={<Media />} />
           <Route path="/contatti" element={<Contatti />} />
+          <Route path="/recensioni" element={<Recensioni />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
