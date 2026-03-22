@@ -18,10 +18,15 @@ const Biografia = () => {
             </span>
             <h1 className="heading-editorial mb-6">Nicola Prebenna</h1>
             <div className="divider-gold !mx-0 mb-6" />
-            <p className="prose-editorial">
+            <p className="prose-editorial mb-4">
               Nato nel 1947 ad Ariano Irpino, Nicola Prebenna ha dedicato la sua vita alla letteratura,
               all'insegnamento e alla cultura. Poeta, scrittore, critico letterario, saggista e giornalista pubblicista,
               ha percorso un cammino che lo ha portato dall'Irpinia alle grandi capitali della cultura europea.
+            </p>
+            <p className="prose-editorial">
+              È stato docente e dirigente scolastico, in Italia ed all'estero: presso il Liceo Italiano di Istanbul,
+              il Liceo Internazionale di Ferney-Voltaire nella zona franco-ginevrina, e la Scuola Italiana di Atene,
+              dove ha svolto anche la funzione di dirigente scolastico.
             </p>
           </div>
           <div className="hidden md:block">
@@ -55,6 +60,9 @@ const Biografia = () => {
               "Docente di Lettere Classiche",
               "Presidente IRASE Avellino",
               "Docente all'Estero (Istanbul, Ferney-Voltaire, Atene)",
+              "Editorialista TGNewsTv",
+              "Premio Internazionale ACSI – Firenze",
+              "Premio Poeti residenti all'estero – Quarrata",
             ].map((role, i) => (
               <div key={i} className="card-editorial flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold shrink-0" />

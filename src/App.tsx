@@ -10,6 +10,7 @@ import Poesie from "./pages/Poesie";
 import Eventi from "./pages/Eventi";
 import Media from "./pages/Media";
 import Contatti from "./pages/Contatti";
+import Recensioni from "./pages/Recensioni";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/eventi" element={<Eventi />} />
           <Route path="/media" element={<Media />} />
           <Route path="/contatti" element={<Contatti />} />
+          <Route path="/recensioni" element={<Recensioni />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
