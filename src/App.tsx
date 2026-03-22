@@ -10,6 +10,7 @@ import Poesie from "./pages/Poesie";
 import Eventi from "./pages/Eventi";
 import Media from "./pages/Media";
 import Contatti from "./pages/Contatti";
+import Recensioni from "./pages/Recensioni";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
