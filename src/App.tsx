@@ -11,6 +11,8 @@ import Eventi from "./pages/Eventi";
 import Media from "./pages/Media";
 import Contatti from "./pages/Contatti";
 import Recensioni from "./pages/Recensioni";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
