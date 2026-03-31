@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/frontend/", // <--- Aggiunto per gestire il deploy nella sottocartella
+  // Cambiato da "/frontend/" a "/" per il dominio principale
+  base: "/", 
   server: {
     host: "::",
     port: 8080,
