@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # 1. ESCLUDI LA CARTELLA CMS (WordPress)
+  # Questo permette a nicolaprebenna.it/cms di funzionare senza interferenze
+  RewriteRule ^cms($|/) - [L]
+
+  # 2. GESTIONE REFRESH REACT
+  # Se il file o la cartella non esistono fisicamente, manda tutto a index.html
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
