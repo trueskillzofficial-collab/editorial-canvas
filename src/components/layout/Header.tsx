@@ -11,6 +11,7 @@ const navItems = [
   { label: "Recensioni", path: "/recensioni" },
   { label: "Eventi", path: "/eventi" },
   { label: "Media", path: "/media" },
+  { label: "Blog", path: "/blog" },
   { label: "Contatti", path: "/contatti" },
 ];
 

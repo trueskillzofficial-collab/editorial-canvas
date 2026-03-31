@@ -32,6 +32,8 @@ const App = () => (
           <Route path="/media" element={<Media />} />
           <Route path="/contatti" element={<Contatti />} />
           <Route path="/recensioni" element={<Recensioni />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
