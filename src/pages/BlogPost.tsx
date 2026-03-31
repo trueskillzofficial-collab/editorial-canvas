@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Skeleton } from "@/components/ui/skeleton";
-import { fetchPostBySlug } from "@/lib/wordpress";
+import { fetchPostBySlug, fetchPosts } from "@/lib/wordpress";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +13,15 @@ const BlogPost = () => {
     queryFn: () => fetchPostBySlug(slug!),
     enabled: !!slug,
   });
+
+  const { data: allPosts } = useQuery({
+    queryKey: ["wp-posts"],
+    queryFn: fetchPosts,
+  });
+
+  const currentIndex = allPosts?.findIndex((p) => p.slug === slug) ?? -1;
+  const prevPost = currentIndex > 0 ? allPosts![currentIndex - 1] : null;
+  const nextPost = currentIndex >= 0 && currentIndex < (allPosts?.length ?? 0) - 1 ? allPosts![currentIndex + 1] : null;
 
   return (
     <Layout>
@@ -84,6 +93,35 @@ const BlogPost = () => {
                 prose-a:text-primary prose-img:rounded-lg"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {/* Navigazione articoli */}
+            <nav className="mt-16 pt-8 border-t border-border flex items-stretch justify-between gap-4">
+              {prevPost ? (
+                <Link
+                  to={`/blog/${prevPost.slug}`}
+                  className="group flex items-center gap-3 text-left max-w-[45%] py-3 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <ArrowLeft size={20} className="shrink-0 group-hover:-translate-x-1 transition-transform" />
+                  <div className="min-w-0">
+                    <span className="text-xs uppercase tracking-widest block mb-1">Precedente</span>
+                    <span className="text-sm font-medium line-clamp-2">{prevPost.title}</span>
+                  </div>
+                </Link>
+              ) : <div />}
+
+              {nextPost ? (
+                <Link
+                  to={`/blog/${nextPost.slug}`}
+                  className="group flex items-center gap-3 text-right max-w-[45%] py-3 ml-auto text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <div className="min-w-0">
+                    <span className="text-xs uppercase tracking-widest block mb-1">Successivo</span>
+                    <span className="text-sm font-medium line-clamp-2">{nextPost.title}</span>
+                  </div>
+                  <ArrowRight size={20} className="shrink-0 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ) : <div />}
+            </nav>
           </article>
         )}
       </div>

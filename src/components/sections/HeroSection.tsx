@@ -18,7 +18,7 @@ const HeroSection = ({
   <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0F172A]">
     {/* Author image as subtle background - visible on all devices */}
     <div
-      className="absolute inset-0 bg-cover bg-center opacity-50 md:opacity-[0.12] blur-[2px]"
+      className="absolute inset-0 bg-cover bg-center opacity-60 md:opacity-[0.12] blur-[2px]"
       style={{ backgroundImage: `url(${authorImg})` }}
     />
     {/* Gradient overlay for text readability */}
