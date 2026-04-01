@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SectionBlock from "@/components/sections/SectionBlock";
 import { Mail, MapPin, Phone, Send, Facebook } from "lucide-react";
@@ -6,13 +7,17 @@ import { getSiteSettings } from "@/lib/data";
 
 const Contatti = () => {
   const settings = getSiteSettings();
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [gdprChecked, setGdprChecked] = useState(false);
+  const [gdprError, setGdprError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Grazie per il tuo messaggio! Ti risponderemo al più presto.");
-    setFormData({ name: "", email: "", message: "" });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    if (!gdprChecked) {
+      e.preventDefault();
+      setGdprError(true);
+      return;
+    }
+    setGdprError(false);
+    // Allow native form POST to /sendmail.php
   };
 
   return (
@@ -77,44 +82,69 @@ const Contatti = () => {
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Form - POST standard per sendmail.php */}
+          <form method="POST" action="/sendmail.php" onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
+              <label htmlFor="name" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
                 Nome
               </label>
               <input
+                id="name"
+                name="name"
                 type="text"
                 required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 bg-background border border-border rounded-sm text-sm text-foreground focus:outline-none focus:border-gold transition-colors"
               />
             </div>
             <div>
-              <label className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
+              <label htmlFor="email" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
                 Email
               </label>
               <input
+                id="email"
+                name="email"
                 type="email"
                 required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 bg-background border border-border rounded-sm text-sm text-foreground focus:outline-none focus:border-gold transition-colors"
               />
             </div>
             <div>
-              <label className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
+              <label htmlFor="message" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
                 Messaggio
               </label>
               <textarea
+                id="message"
+                name="message"
                 required
                 rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-3 bg-background border border-border rounded-sm text-sm text-foreground focus:outline-none focus:border-gold transition-colors resize-none"
               />
             </div>
+
+            {/* GDPR Checkbox */}
+            <div className="space-y-2">
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="gdpr_consent"
+                  checked={gdprChecked}
+                  onChange={(e) => {
+                    setGdprChecked(e.target.checked);
+                    if (e.target.checked) setGdprError(false);
+                  }}
+                  className="mt-1 h-4 w-4 shrink-0 rounded-sm border border-border accent-gold"
+                />
+                <span className="text-xs text-foreground/70 leading-relaxed">
+                  Ho letto l'<Link to="/privacy-policy" className="text-gold hover:underline">informativa sulla privacy</Link> e acconsento al trattamento dei miei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
+                </span>
+              </label>
+              {gdprError && (
+                <p className="text-xs text-red-500">
+                  Devi accettare l'informativa sulla privacy per inviare il messaggio.
+                </p>
+              )}
+            </div>
+
             <button type="submit" className="btn-editorial-filled w-full justify-center">
               <Send size={16} /> Invia Messaggio
             </button>

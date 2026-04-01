@@ -78,9 +78,12 @@ const Footer = () => (
         </div>
       </div>
       <div className="w-16 h-px bg-gold mx-auto mt-12 mb-6" />
-      <p className="text-center text-xs text-white/30">
-        © {new Date().getFullYear()} Nicola Prebenna. Tutti i diritti riservati.
-      </p>
+      <div className="text-center text-xs text-white/30 space-y-2">
+        <p>© {new Date().getFullYear()} Nicola Prebenna. Tutti i diritti riservati.</p>
+        <Link to="/privacy-policy" className="text-white/30 hover:text-gold transition-colors">
+          Privacy Policy
+        </Link>
+      </div>
     </div>
   </footer>
 );

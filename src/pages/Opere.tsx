@@ -50,9 +50,6 @@ const Opere = () => {
                       <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{work.publisher}</p>
                     )}
                     <p className="text-xs text-foreground/70 mt-2 line-clamp-3">{work.description}</p>
-                    {work.price && (
-                      <p className="text-xs font-medium text-foreground mt-2">{work.price}</p>
-                    )}
                   </div>
                 </motion.div>
               ))}
