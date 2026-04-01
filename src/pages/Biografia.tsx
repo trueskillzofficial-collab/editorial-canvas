@@ -64,10 +64,10 @@ const Biografia = () => {
       <SectionBlock variant="alternate">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.4 }}
           >
             <img
               src={bioImages[0].src}
@@ -78,10 +78,10 @@ const Biografia = () => {
             <p className="text-xs text-muted-foreground italic mt-3">{bioImages[0].caption}</p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             <img
               src={bioImages[1].src}
@@ -102,10 +102,10 @@ const Biografia = () => {
       {/* Full-width editorial image */}
       <SectionBlock variant="alternate">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto"
         >
           <img
@@ -135,10 +135,10 @@ const Biografia = () => {
             </p>
           </div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.4 }}
             className="md:col-span-2"
           >
             <img
@@ -155,10 +155,10 @@ const Biografia = () => {
       {/* Varsavia full-width */}
       <SectionBlock variant="alternate">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.4 }}
           className="max-w-4xl mx-auto"
         >
           <img
@@ -177,10 +177,10 @@ const Biografia = () => {
           {bioImages.slice(5).map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
             >
               <img
                 src={img.src}
