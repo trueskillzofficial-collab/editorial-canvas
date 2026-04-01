@@ -69,7 +69,12 @@ const PrivacyPolicy = () => (
           <li>Cookie tecnici necessari al funzionamento</li>
           <li>Cookie analitici anonimizzati</li>
         </ul>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-8">Non vengono utilizzati cookie di profilazione o pubblicitari.</p>
+        <p className="text-sm text-foreground/80 leading-relaxed mb-6">Non vengono utilizzati cookie di profilazione o pubblicitari.</p>
+
+        <h4 className="text-display text-lg font-semibold text-foreground mb-3">Contenuti incorporati da piattaforme esterne</h4>
+        <p className="text-sm text-foreground/80 leading-relaxed mb-8">
+          Il sito può incorporare video da YouTube. Tali contenuti sono caricati utilizzando la modalità di privacy avanzata, che limita l'uso di cookie e il tracciamento fino all'interazione dell'utente con il video.
+        </p>
 
         <h3 className="text-display text-xl font-semibold text-foreground mb-4">10. Modifiche alla Presente Informativa</h3>
         <p className="text-sm text-foreground/80 leading-relaxed">

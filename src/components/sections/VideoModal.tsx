@@ -38,11 +38,12 @@ const VideoModal = ({ item, onClose }: VideoModalProps) => (
           </button>
           {item.type === "youtube" && getYouTubeId(item.url) && (
             <iframe
-              src={`https://www.youtube.com/embed/${getYouTubeId(item.url)}?autoplay=1`}
+              src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(item.url)}?autoplay=1`}
               title={item.title}
               className="w-full h-full"
               allow="autoplay; encrypted-media"
               allowFullScreen
+              loading="lazy"
             />
           )}
         </motion.div>
