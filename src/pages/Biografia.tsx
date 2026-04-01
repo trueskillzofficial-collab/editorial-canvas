@@ -78,10 +78,10 @@ const Biografia = () => {
             <p className="text-xs text-muted-foreground italic mt-3">{bioImages[0].caption}</p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             <img
               src={bioImages[1].src}
