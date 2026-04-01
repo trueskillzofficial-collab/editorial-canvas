@@ -99,10 +99,10 @@ const Index = () => {
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="card-editorial cursor-pointer group"
                 onClick={() => setActiveVideo(item)}
               >
