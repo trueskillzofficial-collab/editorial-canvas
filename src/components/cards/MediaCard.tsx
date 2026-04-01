@@ -18,10 +18,10 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.35, delay: index * 0.08 }}
       className="card-editorial group cursor-pointer"
       onClick={() => onPlay?.(item)}
     >
@@ -30,7 +30,7 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
           <img
             src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
             alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 group-hover:bg-foreground/20 transition-colors">
