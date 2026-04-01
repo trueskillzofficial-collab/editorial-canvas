@@ -34,10 +34,10 @@ const Opere = () => {
               {grouped[genre].map((work, i) => (
                 <motion.div
                   key={work.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                  transition={{ duration: 0.35, delay: i * 0.04 }}
                   className="flex flex-col items-center text-center gap-3"
                 >
                   <BookCover work={work} index={work.id} size="md" />
