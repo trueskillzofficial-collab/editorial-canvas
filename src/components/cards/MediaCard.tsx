@@ -30,7 +30,7 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
           <img
             src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
             alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 group-hover:bg-foreground/20 transition-colors">
