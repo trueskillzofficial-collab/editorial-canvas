@@ -18,10 +18,10 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.35, delay: index * 0.08 }}
       className="card-editorial group cursor-pointer"
       onClick={() => onPlay?.(item)}
     >
