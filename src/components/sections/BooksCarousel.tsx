@@ -47,10 +47,10 @@ const BooksCarousel = ({ works }: BooksCarouselProps) => {
         {works.map((work, i) => (
           <motion.div
             key={work.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.35, delay: i * 0.05 }}
             className="snap-start shrink-0 flex flex-col items-center gap-3 w-44"
           >
             <BookCover work={work} index={i} size="md" />
