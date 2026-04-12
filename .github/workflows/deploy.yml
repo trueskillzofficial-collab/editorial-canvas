@@ -34,3 +34,4 @@ jobs:
           local-dir: ./dist/
           # Li carica direttamente nella cartella principale del dominio
           server-dir: /public_html/
+          passive: true
