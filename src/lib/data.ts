@@ -4,7 +4,7 @@ import type { Work, Event, MediaItem, BiographySection, SiteSettings, Poem, Revi
 export const getSiteSettings = (): SiteSettings => ({
   siteName: "Nicola Prebenna",
   tagline: "Poeta · Scrittore · Critico Letterario",
-  heroQuote: "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio e su fogli di carta bianca.",
+  heroQuote: "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio e su fogli di carta bianca, disseminando barlumi di speranza e propositi di nuova umanità.",
   heroQuoteAuthor: 'Da "Il Dono del Poeta"',
   authorName: "Nicola Prebenna",
   authorBio: "Nicola Prebenna nasce nel 1947 ad Ariano Irpino (AV), dove frequenta le scuole elementari e la prima media. Parte per raggiungere Alatri (FR), dove completa la scuola media presso il locale seminario, quale speranzino delle Scuole Pie. Diviene novizio a Roma, presso lo studentato degli Scolopi a Monte Mario. Ritornato ad Ariano, consegue la maturità classica e si laurea all'Università Federico II di Napoli in Lettere Classiche con 110/110. È stato docente e dirigente scolastico in Italia e all'estero. Poeta, scrittore, critico letterario, saggista, giornalista pubblicista.",

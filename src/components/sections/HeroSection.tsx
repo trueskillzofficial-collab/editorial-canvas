@@ -10,7 +10,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  quote = "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio e su fogli di carta bianca.",
+  quote = "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio e su fogli di carta bianca, disseminando barlumi di speranza e propositi di nuova umanità.",
   quoteSource = 'Da "Il Dono del Poeta"',
   authorName = "Nicola Prebenna",
   tagline = "Poeta · Scrittore · Critico Letterario",
