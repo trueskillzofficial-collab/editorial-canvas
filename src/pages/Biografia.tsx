@@ -17,8 +17,8 @@ const bioImages = [
   { src: imgStudio, alt: "Nicola Prebenna nel suo studio", caption: "Nel suo studio, tra i libri" },
   { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
   { src: imgPresentazione, alt: "Nicola Prebenna durante una presentazione", caption: "Presentazione letteraria" },
-  { src: imgPoetessa, alt: "Con la poetessa greca M. Dalmati e Vocou", caption: "Con la poetessa greca M. Dalmati e Vocou" },
-  { src: imgVarsavia, alt: "All'Istituto Italiano di Cultura di Varsavia", caption: "All'Istituto Italiano di Cultura di Varsavia" },
+  { src: imgPoetessa, alt: "Con la poetessa greca M. Dalmati e Vocou", caption: "da destra in senso antiorario: Nicola Prebenna, Margherita Dalmati, la Sig.a Prebenna, Elena Vocou della Scuola Italiana di Atene." },
+  { src: imgVarsavia, alt: "All'Istituto Italiano di Cultura di Varsavia", caption: "All'Istituto Italiano di Cultura di Varsavia, dietro da sx il prof. Paveu Krupka, traduttore, e il Direttore dell’IIC di Varsavia, Prof. Giulio Molisani, avanti da sx: Ugo Piscopo, poeta e critico letterario, Nicola Prebenna, il poeta Sangiuliano e il Prof. Piotr Salwa dell’Università di Varsavia." },
   { src: imgDickinson, alt: "Premio Emily Dickinson", caption: "Premio Internazionale Emily Dickinson – 1° Classificato" },
   { src: imgCasentino, alt: "Premio Casentino a Poppi", caption: "Premio Letterario del Casentino, Poppi" },
   { src: imgFortuna, alt: "Premio Fortuna d'Autore a Bari", caption: "Premio Fortuna d'Autore, Bari" },
@@ -131,7 +131,9 @@ const Biografia = () => {
             </p>
             <p className="prose-editorial">
               La Grecia, in particolare, è diventata una seconda patria spirituale, 
-              ispirandone l'opera poetica e le relazioni con poeti e intellettuali ellenici.
+              ispirandone l'opera poetica “E la fiaccola … vive!” e le relazioni con poeti e intellettuali ellenici, 
+              in particolare con la poetessa greca Margherita Dalmati, amica di Mario Luzi, Nelo Risi, Ungaretti, Montale. 
+              Alla Dalmati ha dedicato un saggio pubblicato sulla rivista filologica greca Parnassos.
             </p>
           </div>
           <motion.div
