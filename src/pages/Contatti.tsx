@@ -72,6 +72,17 @@ const Contatti = () => {
                   Facebook
                 </a>
               </div>
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-gold shrink-0" />
+                <a
+                  href="https://www.genesi.org/project/prebenna-nicola/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-gold transition-colors"
+                >
+                  Profilo su Genesi Editrice
+                </a>
+              </div>
             </div>
             <div className="mt-8 p-6 bg-secondary/50 rounded-sm">
               <p className="text-display text-sm italic text-foreground/80 leading-relaxed">

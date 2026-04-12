@@ -5,7 +5,7 @@ import { getPoems } from "@/lib/data";
 
 const Poesie = () => {
   const poems = getPoems();
-  const themeOrder = ["La Poesia", "Amore", "La Terra", "Amore per la Madre", "Attualità", "Spiritualità"];
+  const themeOrder = ["La Poesia", "Amore", "Amore per la Madre", "Attualità", "Spiritualità", "Storia e Religiosità", "La Terra"];
   const themes = themeOrder.filter(t => poems.some(p => p.theme === t));
 
   return (
