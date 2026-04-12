@@ -18,7 +18,7 @@ export const getBiographySections = (): BiographySection[] => [
     id: 1,
     title: "Infanzia e Formazione",
     period: "1947 – 1964",
-    content: "Da famiglia di modeste condizioni, trascorre l'infanzia nel quartiere in cui è nato e cresciuto ad Ariano Irpino. Frequenta la scuola elementare del Calvario con buoni voti. Il maestro di quinta elementare ebbe l'intuizione che in lui ci fossero delle qualità e si offrì di prepararlo gratis per gli esami di ammissione alla scuola media. Il desiderio di farsi prete lo porta a studiare presso la casa per speranzini ad Alatri (FR), dove compie quasi cinque anni di progressi negli studi e nella pietà. Nella primavera del 1964 la vocazione si affievolisce e fa ritorno al mondo, in famiglia.",
+    content: "Da famiglia di modeste condizioni, trascorre l'infanzia nel quartiere in cui è nato e cresciuto ad Ariano Irpino, la Via Guardia. Frequenta la scuola elementare del Calvario con buoni voti. Il maestro di quinta elementare ebbe l'intuizione che in lui ci fossero delle qualità e si offrì di prepararlo gratis per gli esami di ammissione alla scuola media. Il desiderio di farsi prete lo porta a studiare presso la casa per speranzini ad Alatri (FR), dove compie tre anni di progressi negli studi e nella pietà, per poi passare allo Studentato degli Scolopi, a Roma. Nella primavera del 1964 la vocazione si affievolisce e fa ritorno al mondo, in famiglia.",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const getBiographySections = (): BiographySection[] => [
     id: 3,
     title: "Insegnamento in Italia",
     period: "1970 – 1981",
-    content: "Inizia la carriera di docente di materie letterarie nella scuola media della sua città, Ariano Irpino, presso la scuola media \"A. Covotta\" (1970/71) e \"P.S. Mancini\" (1971/72). Insegna poi presso l'Istituto Magistrale \"Guido Dorso\" (1972-1976) e successivamente al Liceo Scientifico annesso al Liceo Classico \"P.P. Parzanese\" fino al 1981. Consegue l'immissione in ruolo per l'insegnamento di materie letterarie e latino nei licei e istituto magistrale. Partecipa a corsi di aggiornamento sulla Letteratura del Novecento a Messina, con relatori di primissimo ordine.",
+    content: "Inizia la carriera di docente di materie letterarie nella sua città, Ariano Irpino, presso la scuola media \"A. Covotta\" (1970/71) e presso la scuola media \"P.S. Mancini\" (1971/72). Insegna poi presso l'Istituto Magistrale \"Guido Dorso\" (1972-1976) e successivamente al Liceo Scientifico annesso al Liceo Classico \"P.P. Parzanese\" fino al 1981. Consegue l'immissione in ruolo per l'insegnamento di materie letterarie e latino nei licei e istituto magistrale. Partecipa a corsi di aggiornamento sulla Letteratura del Novecento a Messina, con relatori di primissimo ordine.",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const getBiographySections = (): BiographySection[] => [
     id: 6,
     title: "Rientro e Attività Attuale",
     period: "2003 – Presente",
-    content: "Rientrato in Italia, dopo pochi anni da dirigente scolastico va in pensione, ma rimane nel mondo della scuola come preside della scuola paritaria \"Carlo Cattaneo\" di Avellino e come presidente dell'IRASE provinciale di Avellino, ente di formazione della UIL Scuola. Consolida rapporti umani e culturali con personalità di valore: Paolo Saggese, Giuseppe Iuliano, Ugo Piscopo, Pasquale Maffeo, Aniello Montano, Carlo Di Lieto, Giuseppe d'Errico, Virgilio Iandiorio, Armando Saveriano, Paveu Krupka, Giuseppe Manitta, Domenico Defelice. Giornalista pubblicista, editorialista e responsabile della Redazione culturale della testata giornalistica Web Tgnewstv.",
+    content: "Rientrato in Italia, dopo pochi anni da dirigente scolastico va in pensione, ma rimane nel mondo della scuola come preside della scuola paritaria \"Carlo Cattaneo\" di Avellino e come presidente dell'IRASE provinciale di Avellino, ente di formazione della UIL Scuola. Consolida rapporti umani e culturali con personalità di valore: Giorgio Barberi Squarotti, Sandro Gros-Pietro, Paolo Saggese, Giuseppe Iuliano, Ugo Piscopo, Pasquale Maffeo, Emerico Giachery, Giovanni Chiellino, Davide Puccini, Aniello Montano, Carlo Di Lieto, Giuseppe d'Errico, Virgilio Iandiorio, Armando Saveriano, Paveu Krupka, Giuseppe Manitta, Antonio Filippetti, Domenico Defelice e altri. Giornalista pubblicista, editorialista e responsabile della Redazione culturale della testata giornalistica Web Tgnewstv.",
   },
 ];
 
