@@ -18,7 +18,7 @@ const PoemCard = ({ title, theme, text, index = 0 }: PoemCardProps) => (
     <span className="text-xs font-medium tracking-[0.2em] uppercase text-gold mb-2 block">{theme}</span>
     <h3 className="text-display text-2xl font-semibold text-foreground mb-4 italic">{title}</h3>
     <div className="divider-gold !mx-0 mb-4" />
-    <pre className="text-display text-sm md:text-base leading-relaxed text-foreground/80 whitespace-pre-wrap font-light italic">
+    <pre className="text-display text-base md:text-lg leading-[1.9] text-foreground/80 whitespace-pre-wrap font-light italic">
       {text}
     </pre>
   </motion.article>
