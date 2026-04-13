@@ -1,6 +1,17 @@
 // Static data layer - will be replaced by WordPress REST API calls
 import type { Work, Event, MediaItem, BiographySection, SiteSettings, Poem, Review } from './types';
 
+// Book cover images
+import coverColpoDala from '@/assets/covers/colpo_d_ala.png';
+import coverDacruma from '@/assets/covers/dacruma.png';
+import coverFiaccolaVive from '@/assets/covers/e_la_fiaccola_vive.png';
+import coverComePerAcquaCupa from '@/assets/covers/come_per_acqua_cupa.png';
+import coverEraIlMaggio from '@/assets/covers/era_il_maggio_odoroso.png';
+import coverBarbeVirgulti from '@/assets/covers/barbe_e_virgulti.png';
+import coverDitticoArcobaleno from '@/assets/covers/dittico_arcobaleno.png';
+import coverFioriDiCampo from '@/assets/covers/fiori_di_campo.png';
+import coverGrisagliaSpiragli from '@/assets/covers/grisaglia_e_spiragli.png';
+
 export const getSiteSettings = (): SiteSettings => ({
   siteName: "Nicola Prebenna",
   tagline: "Poeta · Scrittore · Critico Letterario",
