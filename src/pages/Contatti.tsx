@@ -2,22 +2,48 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SectionBlock from "@/components/sections/SectionBlock";
-import { Mail, MapPin, Phone, Send, Facebook } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Facebook, Loader2 } from "lucide-react";
 import { getSiteSettings } from "@/lib/data";
 
 const Contatti = () => {
   const settings = getSiteSettings();
   const [gdprChecked, setGdprChecked] = useState(false);
   const [gdprError, setGdprError] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [result, setResult] = useState<{ ok: boolean; message: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!gdprChecked) {
-      e.preventDefault();
       setGdprError(true);
       return;
     }
     setGdprError(false);
-    // Allow native form POST to /sendmail.php
+    setResult(null);
+    setSending(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("privacy", gdprChecked ? "1" : "0");
+
+    try {
+      const res = await fetch("https://nicolaprebenna.it/contact.php", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setResult({ ok: true, message: data.message || "Messaggio inviato con successo!" });
+        form.reset();
+        setGdprChecked(false);
+      } else {
+        setResult({ ok: false, message: data.message || "Errore durante l'invio." });
+      }
+    } catch {
+      setResult({ ok: false, message: "Errore di connessione. Riprova più tardi." });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -87,14 +113,14 @@ const Contatti = () => {
             <div className="mt-8 p-6 bg-secondary/50 rounded-sm">
               <p className="text-display text-sm italic text-foreground/80 leading-relaxed">
                 "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio
-                e su fogli di carta bianca."
+                e su fogli di carta bianca, disseminando barlumi di speranza e propositi di nuova umanità."
               </p>
               <p className="text-xs text-muted-foreground mt-3">— Nicola Prebenna, "Il Dono del Poeta"</p>
             </div>
           </div>
 
-          {/* Form - POST standard per sendmail.php */}
-          <form method="POST" action="/sendmail.php" onSubmit={handleSubmit} className="space-y-5">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label htmlFor="name" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
                 Nome
@@ -120,6 +146,17 @@ const Contatti = () => {
               />
             </div>
             <div>
+              <label htmlFor="subject" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
+                Oggetto
+              </label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                className="w-full px-4 py-3 bg-background border border-border rounded-sm text-sm text-foreground focus:outline-none focus:border-gold transition-colors"
+              />
+            </div>
+            <div>
               <label htmlFor="message" className="text-xs font-medium tracking-wider uppercase text-foreground block mb-2">
                 Messaggio
               </label>
@@ -137,7 +174,6 @@ const Contatti = () => {
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"
-                  name="gdpr_consent"
                   checked={gdprChecked}
                   onChange={(e) => {
                     setGdprChecked(e.target.checked);
@@ -156,8 +192,15 @@ const Contatti = () => {
               )}
             </div>
 
-            <button type="submit" className="btn-editorial-filled w-full justify-center">
-              <Send size={16} /> Invia Messaggio
+            {result && (
+              <div className={`p-3 rounded-sm text-sm ${result.ok ? "bg-green-50 text-green-800 border border-green-200" : "bg-red-50 text-red-800 border border-red-200"}`}>
+                {result.message}
+              </div>
+            )}
+
+            <button type="submit" disabled={sending} className="btn-editorial-filled w-full justify-center">
+              {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+              {sending ? "Invio in corso…" : "Invia Messaggio"}
             </button>
           </form>
         </div>
