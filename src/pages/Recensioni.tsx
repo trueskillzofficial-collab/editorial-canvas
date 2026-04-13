@@ -27,7 +27,7 @@ const Recensioni = () => {
                     transition={{ duration: 0.35, delay: i * 0.08 }}
                     className="card-editorial"
                   >
-                    <p className="text-display text-sm md:text-base italic leading-relaxed text-foreground/80 mb-4">
+                    <p className="text-body text-sm md:text-base italic leading-relaxed text-foreground/80 mb-4">
                       "{review.text}"
                     </p>
                     <footer className="flex items-center gap-2">

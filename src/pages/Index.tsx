@@ -51,7 +51,7 @@ const Index = () => {
               {featuredPoem.title}
             </h2>
             <div className="divider-gold mb-8" />
-            <pre className="text-display text-base md:text-lg leading-relaxed text-foreground/80 whitespace-pre-wrap font-light italic mb-8">
+            <pre className="text-body text-base md:text-lg leading-relaxed text-foreground/80 whitespace-pre-wrap font-light italic mb-8">
               {featuredPoem.text}
             </pre>
             <Link to="/poesie" className="btn-editorial">
@@ -139,7 +139,7 @@ const Index = () => {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="card-editorial text-center"
             >
-              <p className="text-display text-sm md:text-base italic leading-relaxed text-foreground/80 mb-4">
+              <p className="text-body text-sm md:text-base italic leading-relaxed text-foreground/80 mb-4">
                 "{review.text}"
               </p>
               <footer>

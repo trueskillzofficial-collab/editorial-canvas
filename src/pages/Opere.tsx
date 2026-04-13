@@ -28,7 +28,7 @@ const Opere = () => {
     <Layout>
       <SectionBlock title="Opere e Pubblicazioni" subtitle="Il percorso letterario attraverso le pubblicazioni">
         <div className="mb-12 p-6 bg-secondary/50 rounded-sm border border-border">
-          <p className="text-display text-sm md:text-base text-foreground/80 leading-relaxed italic">
+          <p className="text-body text-sm md:text-base text-foreground/80 leading-relaxed italic">
             Per acquistare i libri di Nicola Prebenna, contattare direttamente l'autore o consultare i riferimenti nella sezione{" "}
             <a href="/contatti" className="text-gold hover:underline">Contatti</a>.
           </p>
