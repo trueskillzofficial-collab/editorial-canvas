@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import SectionBlock from "@/components/sections/SectionBlock";
 import BookCover from "@/components/cards/BookCover";
+import WorkDetailModal from "@/components/cards/WorkDetailModal";
 import { getWorks } from "@/lib/data";
 import type { Work } from "@/lib/types";
 
@@ -9,8 +11,8 @@ const GENRE_ORDER = ["Poesia", "Narrativa", "Narrativa (Romanzo)", "Critica Lett
 
 const Opere = () => {
   const works = getWorks();
+  const [selectedWork, setSelectedWork] = useState<Work | null>(null);
 
-  // Group by genre
   const grouped = works.reduce<Record<string, Work[]>>((acc, work) => {
     const genre = work.genre;
     if (!acc[genre]) acc[genre] = [];
@@ -44,18 +46,11 @@ const Opere = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "0px 0px -10% 0px" }}
                   transition={{ duration: 0.35, delay: i * 0.04 }}
-                  className="flex flex-col items-center text-center gap-3"
+                  className="flex flex-col items-center text-center gap-3 cursor-pointer group"
+                  onClick={() => setSelectedWork(work)}
                 >
-                  <BookCover work={work} index={work.id} size="md" />
-                  <div className="max-w-[180px]">
-                    <h4 className="text-display text-sm font-semibold text-foreground leading-tight">
-                      {work.title}
-                    </h4>
-                    <p className="text-xs text-gold mt-1">{work.year}</p>
-                    {work.publisher && (
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{work.publisher}</p>
-                    )}
-                    <p className="text-xs text-foreground/70 mt-2 line-clamp-3">{work.description}</p>
+                  <div className="transition-transform duration-200 group-hover:scale-105">
+                    <BookCover work={work} index={work.id} size="md" />
                   </div>
                 </motion.div>
               ))}
@@ -63,6 +58,8 @@ const Opere = () => {
           </div>
         ))}
       </SectionBlock>
+
+      <WorkDetailModal work={selectedWork} onClose={() => setSelectedWork(null)} />
     </Layout>
   );
 };
