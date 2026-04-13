@@ -173,9 +173,9 @@ const Biografia = () => {
         </motion.div>
       </SectionBlock>
 
-      {/* Awards gallery */}
+      {/* Awards gallery + list */}
       <SectionBlock title="Premi e Riconoscimenti" subtitle="Un percorso costellato di successi">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {bioImages.slice(5).map((img, i) => (
             <motion.div
               key={i}
@@ -194,33 +194,33 @@ const Biografia = () => {
             </motion.div>
           ))}
         </div>
-      </SectionBlock>
 
-      {/* Roles */}
-      <SectionBlock variant="alternate">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="heading-editorial text-center mb-8">Ruoli e Riconoscimenti</h2>
-          <div className="divider-gold mb-10" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "Poeta e Scrittore",
-              "Critico Letterario",
-              "Saggista",
-              "Giornalista Pubblicista",
-              "Dirigente Scolastico",
-              "Docente di Lettere Classiche",
-              "Presidente IRASE Avellino",
-              "Docente all'Estero (Istanbul, Ferney-Voltaire, Atene)",
-              "Editorialista TGNewsTv",
-              "Premio Internazionale ACSI – Firenze",
-              "Premio Poeti residenti all'estero – Quarrata",
-            ].map((role, i) => (
-              <div key={i} className="card-editorial flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
-                <span className="text-sm text-foreground">{role}</span>
-              </div>
-            ))}
-          </div>
+        <div className="space-y-3 max-w-3xl mx-auto">
+          {[
+            "XXXI Premio Città di Pinerolo 2020: 1° PREMIO per Vulnera Temporis.",
+            "Premio Vitruvio 2024: Premio Speciale della Giuria per Vive l'amore e canto.",
+            "Premio \"Città di Pinerolo\" 2024: I Premio per la poesia edita con Vive l'amore e canto.",
+            "Premio \"Vino, Amore e Poesia\" 2024 (Castelfranci): Premio Speciale alla carriera per l'Opera Poetica.",
+            "XXIII Premio Internazionale di Cultura \"Re Manfredi\": Opera segnalata per la silloge Fragmina.",
+            "20° Concorso Nazionale di Poesia \"Città di Manfredonia\" 2011: Opera segnalata per Era il maggio odoroso.",
+            "Premio Internazionale ACSI \"Firenze Capitale d'Europa\" XXIII edizione (2020): III Premio Poesia Edita per Per correr migliori acque.",
+            "Premio Poeti residenti all'estero – Quarrata (2003).",
+            "Premio Internazionale Emily Dickinson – 1° Classificato.",
+            "Premio Letterario del Casentino, Poppi.",
+            "Premio Fortuna d'Autore, Bari.",
+          ].map((award, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.3, delay: i * 0.04 }}
+              className="flex items-start gap-3 py-2 border-b border-border/50 last:border-0"
+            >
+              <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-1.5" />
+              <span className="text-sm text-foreground/80 leading-relaxed">{award}</span>
+            </motion.div>
+          ))}
         </div>
       </SectionBlock>
     </Layout>
