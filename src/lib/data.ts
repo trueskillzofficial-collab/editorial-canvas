@@ -1124,6 +1124,12 @@ export const getReviews = (): Review[] => [
     work: "Come per acqua cupa",
     text: "La poesia di Prebenna è, proprio per questa sua oscillazione tematica, tutta intrecciata e simile a un tappeto prezioso orientale, di motivi legati alla dimensione del presente del \"mondo offeso\" e di risarcimenti personali e lirici connessi con la verità del ricordo.",
   },
+  {
+    id: 52,
+    author: "Ugo Piscopo",
+    work: "Come per acqua cupa",
+    text: "Lo stile di Prebenna non ha compiacimenti e concessioni alle mode, all'effimero, si costruisce piuttosto come un ordito di procedimenti assoggettati alla sobrietà e alle misure di rigore e di prudenza, con cui devono fare i conti sia le occasioni e gli episodi soggettivi, sia le vicende che vanno oltre la cronaca.",
+  },
   // Era il maggio odoroso
   {
     id: 23,
