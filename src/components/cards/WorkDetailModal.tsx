@@ -42,9 +42,11 @@ const WorkDetailModal = ({ work, onClose }: WorkDetailModalProps) => {
               )}
             </div>
             <div className="divider-gold !mx-0" />
-            <p className="text-sm text-foreground/80 leading-relaxed italic">
-              {work.description}
-            </p>
+            {work.description.split('\n\n').map((paragraph, idx) => (
+              <p key={idx} className="text-sm text-foreground/80 leading-relaxed italic">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </DialogContent>
