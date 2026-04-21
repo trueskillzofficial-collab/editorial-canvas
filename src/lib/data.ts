@@ -156,6 +156,13 @@ export const getMediaItems = (): MediaItem[] => [
     type: "facebook",
     thumbnail: thumbFacebookVideo
   },
+  { 
+    id: 13, 
+    title: "Mi prendo per la gola e .... dimagrisco. -  Canale 58", 
+    description: "Presentazione e approfondimento dell'opera ai microfoni di Canale 58.", 
+    url: "https://www.youtube.com/watch?v=ToZmIXx-_oc", 
+    type: "youtube" 
+  },
 ];
 
 export const getPoems = (): Poem[] => [
