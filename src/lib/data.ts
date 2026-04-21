@@ -94,7 +94,7 @@ export const getWorks = (): Work[] => [
   { id: 6, title: "Come per acqua cupa", year: "2008", genre: "Poesia", publisher: "Delta3 Edizioni, Grottaminarda", description: "Le parole che Prebenna adopera per la poesia sono deliberatamente assunte da un ambito di solidità e di efficacia storicamente collaudate, per la sua missione morale e per le sue battaglie di verità. (Ugo Piscopo).\n\nLo stile di Prebenna non ha compiacimenti e concessioni alle mode, all'effimero, si costruisce piuttosto come un ordito di procedimenti assoggettati alla sobrietà e alle misure di rigore e di prudenza, con cui devono fare i conti sia le occasioni e gli episodi soggettivi, sia le vicende che vanno oltre la cronaca. (Ugo Piscopo)", price: "€ 10,00", image: coverComePerAcquaCupa },
   { id: 7, title: "Era il maggio odoroso", year: "2010", genre: "Poesia", publisher: "Genesi Editrice, Torino", description: "La forma e il contenuto della poesia di Nicola Prebenna sono un grande omaggio di ripresa e di rinnovamento della tradizione classica della letteratura occidentale, che pone al centro del discorso poetico la visione lirica che il poeta ricostruisce dentro di sé del mondo. (Sandro Gros-Pietro)", price: "€ 12,00", image: coverEraIlMaggio },
   { id: 8, title: "Fragmina", year: "2013", genre: "Poesia", publisher: "Delta3 Edizioni, Grottaminarda", description: "Quarantatré componimenti poetici organizzati in sezioni ispirate all'arte dei vasai: Terracotta, Maiolica, Limoges, Boemia, Murano. Una metafora della vita in tutte le sue manifestazioni.", price: "€ 10,00", image: coverFragmina },
-  { id: 9, title: "Vulnera Temporis", year: "2018", genre: "Poesia", publisher: "Delta3 Edizioni, Grottaminarda", description: "La sua è poesia intrisa di spiriti etico-civili e religiosi, che mette sotto accusa lo stato iniquo delle cose attuali e si serve di un dire essenziale, ma dalle punte aguzze, che dice quello che dice, chiamando pane il pane. (Ugo Piscopo)\n\n[...] la straordinaria energia della parola, pur nella inevitabile diversità di situazioni storiche, conferma la sua caratteristica essenziale: quella tendenza alla universalità, che attinge al particolare per liberarsi verso dimensioni umanamente valide per ogni tempo. (Francesco D'Episcopo)", price: "€ 15,00 x vol.", image: coverVulneraTemporis },
+  { id: 9, title: "Vulnera Temporis", year: "2018", genre: "Poesia", publisher: "Delta3 Edizioni, Grottaminarda", description: "La sua è poesia intrisa di spiriti etico-civili e religiosi, che mette sotto accusa lo stato iniquo delle cose attuali e si serve di un dire essenziale, ma dalle punte aguzze, che dice quello che dice, chiamando pane il pane. (Ugo Piscopo)\n\n[...] la straordinaria energia della parola, pur nella inevitabile diversità di situazioni storiche, conferma la sua caratteristica essenziale: quella tendenza alla universalità, che attinge al particolare per librarsi verso dimensioni umanamente valide per ogni tempo. (Francesco D'Episcopo)", price: "€ 15,00 x vol.", image: coverVulneraTemporis },
   { id: 10, title: "In una parte più e meno altrove", year: "2017", genre: "Poesia", publisher: "Genesi Editrice, Torino", description: "Nicola Prebenna è un uomo di lettere che mette insieme letteratura e storia e non va dimentico che l'unica ricchezza che sopravvive alla storia effimera degli esseri umani è la parola che essi hanno pronunciata e scolpito nella pietra. (Sandro Gros-Pietro)", price: "€ 11,00", image: coverInUnaParte },
   { id: 11, title: "In rime sparse", year: "2020", genre: "Poesia", publisher: "Il Convivio Edizioni, Castiglione di Sicilia", description: "Le poesie sparse di Nicola Prebenna, in verità, sono relativamente tali, perché se da un lato confermano la \"plurivocità\" di occasioni dell'ispirazione, dall'altro però hanno una loro organizzazione interna che mira a sondare la totalità dell'esistenza, sin dal nominare le quattro sezioni del libro come i quattro elementi: terra, acqua, aria, fuoco. (Giuseppe Manitta)", price: "€ 10,00", image: coverInRimeSparse },
   { id: 12, title: "Per correr migliori acque", year: "2020", genre: "Poesia", publisher: "Delta3 Edizioni, Grottaminarda", description: "Opera analitica originale dall'andamento poematico sul Coronavirus, un'autentica ode civile ed etica di stampo classico. III Premio Poesia Edita al Premio Internazionale ACSI \"Firenze Capitale d'Europa\" XXIII edizione.", price: "€ 8,00", image: coverPerCorrerMigliori },
@@ -168,6 +168,88 @@ Ascolto il volo del vento
 o forse il seme s'incunea tra crepe di muro
 disseminando barlumi di speranza
 e propositi di nuova umanità.`,
+  },
+  {
+    id: 101,
+    title: "Somiglia alla tua",
+    theme: "La Poesia",
+    text: `Somiglia alla tua la vita del poeta,
+ape che voli di fiore in fiore
+carpendo nettare e delizia che poi
+trasformi, sorretta dalla solidale
+frenesia delle compagne, in prezioso
+alimento per chi si prende di te cura
+e ti protegge. E il frutto del tuo volare,
+dell’andare e venire, della tua lieta
+fatica è la gioia del palato e la bellezza
+della salute. Somiglia alla tua la vita
+del poeta; sfoglia di qua e di là,
+ora la mente s’immerge profonda,
+ora brilla per un attimo la luce
+che s’accende senza fissa dimora
+e tante sono le voci che ascolta
+e custodisce; alcune le ripete,
+altre le sogna, altre ancora riaffiorano
+libere senza costrizione ed ancora
+altre giungono improvvise a fornire
+materia per nuova creazione;
+ed il prodotto sgorga dalla mano
+che fedele ancella si fa della mente
+che intuisce, dell’affetto che nutre,
+della forza che scuote e vitale nutrimento
+fornisce alle sue forze, ai suoi compagni
+d’avventura vicini e lontani, a quanti,
+nel lungo si spera, faticoso cammino,
+bisogno avvertono di viatico che soddisfi
+ 
+la fame e predisponga al piacere
+della conquista della pace beata
+e della serena tranquillità d’animo;
+ed insieme ape e poeta
+perpetuano l’amore per l’utile fatica,
+il piacere della generosità senza confini.`,
+  },
+  {
+    id: 102,
+    title: "Balsamo",
+    theme: "La Poesia",
+    text: `Parole imbevute di balsamo consolatore
+accarezzano il cuore dell'animo in pena
+e schiudono le porte alla pace che timida
+bussa; parole che cadono ai piedi di quanti
+s'abbandonano al canto di grazie
+per il bene che la vita dispensa;
+parole in cerca di risposte alle domande
+che da millenni si ripetono e che sfuggono
+ad ogni presa appena la mano sicura
+pretende avere compiuto l'impresa.
+E scorre senza pause il gorgogliare
+dell'incontro con l'intimo proprio,
+con le gioie e le pene degli altri, e le gocce
+della vita che si rincorre si tingono
+d'inchiostro e, fatte poesia, sprone si fanno
+a tessere trame di pace duratura
+e seme fruttifero di rinata umanità.`,
+  },
+  {
+    id: 103,
+    title: "La tela del rifugio",
+    theme: "La Poesia",
+    text: `Rivolgo lo sguardo intorno a me,
+sulla natura, sulle persone che osservo
+da vicino e da lontano, nelle profondità
+del mio animo, e me le ritrovo tutte rifatte.
+Merito è della parola
+che, non contenta dello spazio abituale,
+nuovi anfratti esplora e altri mondi,
+vita altra spalanca e costruisce.
+Non ha recinto la parola,
+vola sul tempo passato, su fatti e idee antichi,
+su sentimenti e pensieri dell'oggi,
+e tesse la tela del rifugio, del conforto,
+impasta la pietra angolare alla quale ancorare
+attese e propositi di vita nuova e rinnovata,
+nel segno dell'amore e della fraternità.`,
   },
   // Amore
   {
@@ -269,7 +351,7 @@ Altri remoti momenti
 rapprendono,
 intrisi di vigili attese,
 di rombi di aerei sognati;
-riecheggiano stimati
+riecheggiano srimati
 palpiti assenti,
 un rantolo strozzato,
 una stella che cade.
@@ -973,6 +1055,254 @@ silenzio e assenza spettrali s'ergono
 a intonare smarriti il De Profundis
 per una vita che non c'è più.`,
   },
+  {
+    id: 104,
+    title: "Amara terra amata",
+    theme: "La Terra",
+    text: `Son cent’anni e più!
+ 
+Terra amata, hanno agitato
+i tuoi figli disperati
+tremanti fazzoletti inumiditi
+sul loggione assiepato del bastimento
+avvezzo a solcare le onde
+dell’addio e della fortuna,
+ 
+ed hai pianto la loro partenza.
+ 
+Braccia bruciate dal sole e dal gelo
+sciamano sulle banchine della sognata New York
+e sulle distese sterminate della pampa;
+va continuo il pensiero alla famiglia lontana
+e molti lamentano, lividi di rabbia,
+l’inganno patito dal millantatore di turno
+che carpendo sostanze e buonafede
+intere famiglie ha appiedato,
+lontano dal porto, nella città immensa,
+ 
+ed il tuo cuore, terra amata,
+s’è fatto a pezzi.
+ 
+Tanti città e città han percorso
+nel nuovo mondo e da un cantiere all’altro,
+da un giaciglio di fortuna
+ad un letto più acconcio rimediato in extremis
+hanno conquistato l’obolo
+generoso per i cari lasciati nella casa avita;
+ 
+e meno triste apparivi, terra amata.
+ 
+Tra lacrime lontane e lettere rare,
+tra un viaggio e l’altro, si dipanava
+la tela della famiglia che cresceva
+e sempre più s’affidava al sogno
+di volare unita al di là dell’oceano,
+ 
+ma non era destino di tutti,
+ché spesso il figlio ferito indietro
+tornava e sul campo ormai proprio
+si abbandonava all’abbraccio
+di te, terra avita e amata.
+ 
+Son passati cinquant’anni e più!
+ 
+Fiumane umane lasciando la foce
+e procedendo a ritroso si sono riversate
+in terre nuove e strane, ed ancora una volta, 
+ 
+terra amara, hai pianto.
+ 
+Sulle tue lacrime in libera caduta
+scorreva il treno coi tuoi figli,
+in pena per quanti restavano,
+ed erano tutti armati di viatico arrangiato,
+cartoni, cordicelle e valigie sgangherate.
+ 
+Si lacerava ancora, terra amara,
+il tuo cuore di madre.
+ 
+Nella babele delle fabbriche sterminate
+e nelle desolate baracche del nord
+negate al sole s’è spento spesso
+il quotidiano lamento per i cari lontani,
+reso speranza che le durezze del presente
+vita più degna dischiudessero
+e che si potesse ricomporre la tela
+degli affetti ritrovati e riuniti;
+ 
+e tu, terra amata, continuavi
+a nutrire lacrime d’attesa.
+ 
+Si sono ricomposte altrove le famiglie
+d’un tempo e la vita nuova si colorava
+di ricordi vivi e decise speranze
+e più lenta s’è fatta la tua pena,
+ 
+amata terra,
+ 
+pur se in tanti è attecchito
+e cresciuto il seme acre
+dell’addio lento e della distanza.
+ 
+Saresti oggi diversa se potessi
+con larghe braccia stringere al petto
+i tuoi figli, tutti,
+e rimani invece, a dispetto del tempo
+e del progresso, terra ingrata,
+prodiga di premure per i soli figli
+di primo letto, mentre muta ti fai
+e madre arcigna persisti con i poveri dell’altro ieri,
+con i contadini di ieri,
+con le moderne e vive intelligenze,
+orfane di padrini e potere;
+ 
+ed ancora una volta,  oggi come ieri,
+se esalti e premi i figli devoti,
+punisci ed espelli,
+ 
+amara terra,
+ 
+i figli indesiderati, pur se belli e forti;
+ 
+e nuovi stuoli di esuli, ammantati
+dei fasci della vivida luce della mente
+e sospinti dal bisogno che urge,
+partono a far ricche genti diverse.
+ 
+Tu, amata amara terra nostra,
+impoverisci e non muti aspetto:
+si stampano ombre dai contorni umani
+ed infine ti riveli non solo indistinto
+ordito dell’avara natura,
+ 
+ma fattezze di uomini ti fai che,
+sferza alla mano, dominano il campo.
+ 
+E su queste ombre lunghe s’assopisce
+l’addio al tuo cuore di madre,
+ 
+amata terra amara, e triste:
+ 
+s’è raggelato il pianto sugli occhi e sul cuore.`,
+  },
+  {
+    id: 105,
+    title: "Rivedendoti, casa, un tempo mia",
+    theme: "La Terra",
+    text: `Rivedendoti cadente e senza speranza
+una fitta al cuore mi preme e indietro
+torno alla mente mia fanciulla
+che il piccolo trasformava in gigante,
+e però più audaci erano le attese
+perché nelle tue stanze modeste
+si coltivava l’attesa di cucire panni
+e pani per il futuro di famiglia, e corpo
+si pretendeva dare allo sforzo comune
+per fare più lieta l’attesa del domani
+e solidale la fatica a riuscirci.
+Brillò per breve tempo la cometa
+e poi senza rimorsi scivolò verso il tempo
+buio dei propositi dissolti e il futuro
+intravisto si dileguò, si perpetuò
+la povertà e la fatica, ed anche tu,
+casa allora dignitosa, precipitasti
+lungo la china dell’abbandono
+e della dissoluzione.
+Rimani in piedi, testimone delle incaute
+previsioni del futuro e della legge
+eterna delle cose del mondo che fioriscono,
+frutti veri e belli danno, e poi declinano;
+per ora ancora sei in piedi
+e, chissà!, per quanto tempo ancora.`,
+  },
+  {
+    id: 106,
+    title: "Via Guardia, le mie case",
+    theme: "La Terra",
+    text: `La sfioro ad ogni tornata
+per la strada antica
+e so che è la mia casa, e resiste,
+quella in cui venni al mondo
+e che lasciai presto con i miei
+per scendere in breve volger
+di tempo al fondo
+quasi della via.
+ 
+Nitido a tratti si slaccia
+e si stampa guizzo
+della mente e del cuore
+- ed è sogno o audacia? –
+e piccolissimo sono pronto
+per il bagno in un mattino di sole
+nella secchia grande
+d’alluminio al centro
+della strada sicura e illuminata.
+ 
+Fui portato nella casa nuova
+in cui sono cresciuto
+e che ho visto divenire
+dalle mani paterne
+sempre più acconcia, da buco
+pur grande che era, così mi sembrava;
+ 
+e prima il pavimento in cemento,
+poi l’acqua in casa, il vaso
+per i bisogni correnti ed una cucina
+riattata degna prova diedero di sé.
+ 
+L’ho amata e l’ho lasciata
+all’eco della voce che mi voleva altrove
+sulle ali della santa passione
+e della curiosità del mondo,
+e sulle rotaie cigolanti svanivano
+gli squittii notturni e i miagolii
+decisi nel cuore del sonno;
+ 
+ad ogni tardo ritorno,
+grande con sorpresa mi rivelavo
+ed essa s’incartapecoriva;
+ 
+ma l’anima sua dilatava
+sulle fughe in avanti
+del tempo all’orizzonte.
+ 
+Ne ritrovai un’altra,
+poi che la natura ribelle
+la scosse e poi che s’affievolì
+la voce che mi voleva a Roma,
+più vicina al nido
+dove bozzolo mi dischiusi
+ 
+e dove più maturo e deciso
+si fece l’affondo nel futuro.
+ 
+Mia non era; era, però, allora
+di famiglia, come più mai
+poi sarebbe stata.
+ 
+Poco da essa discosta
+ci ospitò, divenuto famiglia,
+un’altra piccola nostra casa,
+stamberga un tempo
+stalla e giaciglio:
+ 
+ci adagiammo in attesa di meglio
+che infine venne e ci sbalzò
+in periferia, alla luce, allo spazio,
+all’oggi.
+ 
+Ed altre case ho abitato per il mondo
+e sono poi tornato alla casa
+disposta all’abbraccio
+del figlio errante.
+ 
+Di rado ritorno alla via
+delle mie antiche case,
+ed oggi solo mi appartiene
+l’eco di un sogno che fu
+ 
+e lento si discioglie.`,
+  },
 ];
 
 export const getReviews = (): Review[] => [
@@ -1311,6 +1641,168 @@ export const getReviews = (): Review[] => [
     author: "Antonio Pizzo",
     work: "Non di solo pane",
     text: "Un romanzo che ci consegna un ritratto amorevole della tua famiglia d'origine e un servizio ancora amorevole per chi viene dopo e prosegue in continuità. Ho apprezzato molto il capitolo Del Lavoro, agile, puntuale, partecipato, coinvolgente.",
+  },
+  {
+    id: 201,
+    author: "G. Lucini",
+    work: "In gurgite vasto",
+    text: "E Prebenna è reattivo, la sua denuncia parte da un sentire, da una esigenza di ristabilire un equilibrio interiore spezzato dall'esperienza delle contraddizioni che si incontra nella storia, attraverso la parola, la comunicazione. A tutto campo, \"in gurgite vasto\", senza timore di perdersi se si ha al centro di sé una, pur aperta, convinzione morale.",
+  },
+  {
+    id: 202,
+    author: "Ugo Piscopo",
+    work: "Vulnera Temporis",
+    text: "Prebenna non concede né a sé né a chi legge di procedere per sottili distinguo o intrattenimenti ludico-cerebrali, e procede rigorosamente per tale via, non d’impulso dell’emotività e dell’impazienza, ma su insegnamento avuto dal biblismo e dall’eloquenza sacra (Savonarola, San Bernardino, Sant’Alfonso) e, insieme, dagli studi classici, che lo hanno messo a contatto col pessimismo della Weltanschauung del mondo greco e con la poesia gnomica e sentenziosa greco-latina, oltre che con i nostri grandi autori da Dante e Petrarca a Manzoni e Leopardi. Di qua, il suo scansire sillabe e idee, la sua pronunzia distillata, il suo uso di parole come munizioni in trincea o vibrazioni elettriche.",
+  },
+  {
+    id: 203,
+    author: "Paweł Krupka",
+    work: "Vulnera Temporis",
+    text: "… In questo contesto bisogna considerare i meriti di Nicola Prebenna che nel suo libro Vulnera temporis si riferisce a questo, appunto, mondo di oggi che non ispira ottimismo. Eppure, essendo onesto e realista nelle sue visioni letterarie, non si limita, come la maggior parte dei suoi contemporanei, a rispecchiare la realtà che nel complesso bella non è. Reagisce al mondo che descrive con l’interna armonia scaturita dalla sua formazione spirituale. Una formazione classica fondata sui valori tradizionali della fede religiosa e la coscienza civile ereditata dalla storia della civiltà mediterranea.",
+  },
+  {
+    id: 204,
+    author: "Francesco D’Episcopo",
+    work: "Vulnera Temporis",
+    text: "Attenzione: i vulnera, le ferite personali (come quella per la morte del proprio padre) e universali (legate a vicende sempre più violente e incontrollabili) restano, ma resta anche la fiducia in un ricongiungimento finale, in una resurrezione dell’umanità, che la poesia di Prebenna invoca con costanza ed energia, confermate anche dalle sue precedenti e numerose esperienze poetiche",
+  },
+  {
+    id: 205,
+    author: "Sandro Gros-Pietro",
+    work: "L'altra faccia della luna",
+    text: "Per collocazione stilistica egli rientra negli autori che hanno seguito solo per curiosità le vicende della avanguardie, ma che si sono formati e radicati nello studio e nella valorizzazione della ricchissima tradizione di Poesia sviluppata dalla letteratura italiana, al punto che, nel caso di Prebenna, si può accostare la sua esperienza poetica all’alto esempio lasciato da Vincenzo Cardarelli, Guido Gozzano, Umberto Saba, Dino Campana, fino ad arrivare ad autori più recenti come Giovanni Giudici e Mario Luzi: …",
+  },
+  {
+    id: 206,
+    author: "Carlo Di Lieto",
+    work: "L'altra faccia della luna",
+    text: "Questa nuova e intensa silloge di poesie di Nicola Prebenna, L’altra faccia della luna, è un altro importante tassello, che si aggiunge alla sua straordinaria opera poetica. È un tracciato emozionale che radialmente attraversa le lunazioni, nel loro periodico avvicendarsi, quale puntuale riflesso delle vicende umane. Il Poeta, con un’immedesimazione proiettiva, rende visibili gli sconfinamenti dell’io, visti nella prospettiva psicoanalitica dell’attività onirica come “via regia della conoscenza dell’inconscio del Poeta […] Il “pensiero poetante” di Nicola Prebenna va inteso come capacità di sapersi distanziare dal “principio di realtà” e di sapere elaborare, in modo egregio, una forma espressiva che gli consenta di dare un senso all’Essere e alla sua ragione profonda.",
+  },
+  {
+    id: 207,
+    author: "Antonio Pizzo",
+    work: "Per correr migliori acque...",
+    text: "Caro Nicola, ho letto la tua \"ode civile\". È davvero coinvolgente. Bravo. Condivido in larga parte la presentazione di Carlo Di Lieto, soprattutto nella scelta dei tuoi versi. Ma non trovo adeguata la sua sintesi nel titolo \"dallo sgomento al disincanto\"; al contrario la mia lettura ha trovato nella tua ode tanta tensione/speranza di un impegno da parte di tutti ormai improrogabile nel \"correr migliori acque\", originata proprio da quel nuovo sgomento. Ma, si sa, ognuno a suo modo",
+  },
+  {
+    id: 208,
+    author: "Carlo Di Lieto",
+    work: "Per correr migliori acque...",
+    text: "Nella religiosità “dialettica” di Prebenna c’è un Dio che, nella sua azione provvidenziale, attiva un’identità nobile nell’uomo, correlata al sentimento di responsabilità e di austerità interiore. La componente religiosa riveste un ruolo significativo nei versi alati di Nicola Prebenna, i quali non prescindono mai dalla sua solida formazione letteraria: Dante, Leopardi, Manzoni, Foscolo, i calchi e i rinvii sono evidenti e sono riassorbiti felicemente dall’empito fascinoso dell’ispirazione di quest’ode.\nLa speranza, in quest’ode, rinasce dalle ceneri della disperazione; c’è un’estenuante attesa, con pochi barlumi di speranza; la coazione a ripetere è in funzione del dispiacere e della pulsione di morte: la liberazione dal morbo, che uccide, è in un tempo sospeso e in uno spazio metastorico, in quell’aura misteriosa dell’atomo opaco del male",
+  },
+  {
+    id: 209,
+    author: "Virgilio Iandiorio",
+    work: "Per cieli nuovi e terra nuova",
+    text: "La silloge di Nicola Prebenna si apre con la poesia “CIELI NUOVI E TERRA NUOVA”, che ripropone quasi per intero il titolo del libro. L’aggettivo “nuovo” è riferito sia al Cielo sia alla Terra. Il nostro poeta ha volto evidenziare il suo coinvolgimento totale, nella prospettiva della vita futura, quella che ci attende dopo la morte, ma anche nell’immediato, nei momenti che viviamo istante per istante. Nell’una e nell’altra dimensione, vuole dirci, la vita va rispettata e vissuta insieme a coloro che abbiamo intorno a noi o incontriamo fugacemente: pronti tutti ad intonare il canto di grazie / per la vita che ovunque respira.",
+  },
+  {
+    id: 210,
+    author: "Emanuele Occhipinti",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Caro Nicola, circa dieci giorni fa ho ricevuto il tuo CIELI NUOVI E TERRA NUOVA, ma non ti ho risposto subito perché volevo prima leggere tutte le composizioni. Certamente dall'insieme emerge un profondo e continuo afflato di fede, che corre e si articola attraverso il confronto tra il vivere terreno pieno di tentazioni devianti e la speranza o certezza della condizione salvifica e felice dell'esistenza che ci attende dopo la morte",
+  },
+  {
+    id: 211,
+    author: "Angelo Michele Imbriani",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Il linguaggio che mette insieme poesia e pensiero, il \"pensiero poetante\": \"ogni meditante pensare è poetare, ogni poetare è pensare\", scrive il filosofo (Heidegger). Naturalmente come non ogni pensiero è poesia, così non ogni poesia è gravida di pensiero. Ma lo è la poesia di Nicola Prebenna, perché sobriamente e discretamente intessuta di una trama di riferimenti letterari, biblici, filosofici",
+  },
+  {
+    id: 212,
+    author: "Ortensio Zecchino",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Caro Nicola,\nnel viaggio Roma-Ariano sono in compagnia delle tue poesie: tutte molto belle alcuni versi sublimi. Sono immersioni delicatissime in abissi spirituali senza fondo per una incessante ricerca che offre come premio una melanconica serenità. Complimenti e affettuosi auguri natalizi. Ortensio",
+  },
+  {
+    id: 213,
+    author: "Carlo Di Lieto",
+    work: "Per cieli nuovi e terra nuova",
+    text: "La pulsione di vita prevale comunque su quella di morte nella poesia di Prebenna; l’aura archetipica dello stato di grazia dell’ispirazione si con-fonde con l’empito dell’astrazione. Il varco è proprio qui: il dettato lirico diventa un viaggio liberatorio per proiettarsi in una rapita visione dell’oltre, dando la dovuta trasfigurazione al “Tempo ritrovato” della memoria proustiana …",
+  },
+  {
+    id: 214,
+    author: "Giuseppe Iuliano",
+    work: "Per cieli nuovi e terra nuova",
+    text: "La sua poesia/cantico esalta il dono della vita e pone nuovi comandamenti per \"la natura che abbiamo avvelenato, / il mare che continuiamo ad inquinare, / i fratelli che eliminiamo, / che derubiamo / in mille modi, che asserviamo ai nostri capricci, ai nostri voleri\". Insomma ci consegna un pregnante manifesto di natura/umanità/umanesimo",
+  },
+  {
+    id: 215,
+    author: "Gianluca Amatucci",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Con Per cieli nuovi e terra nuova, Nicola Prebenna offre un’opera di grande rilevanza nell’ambito della poesia contemporanea, capace di coniugare tensione speculativa e lirismo, visione escatologica e indagine interiore. Il poeta conferma la sua capacità di esplorare con profondità le dinamiche dell’essere, restituendo al lettore una poesia che si fa strumento di conoscenza e di trasformazione dell’esperienza umana",
+  },
+  {
+    id: 216,
+    author: "M. T. Liuzzo",
+    work: "Fragmina",
+    text: "Notevoli sono i versi dedicati al potere, soverchiante ed oppressivo, cui sono e sono stati soggetti popoli e generazioni, nel corso dei secoli. Il poeta evidenzia come nulla sia mutato dall’antichità ai nostri giorni: il potere non è cessato, ha semplicemente mutato l’abito, in una sorta di subdolo e arrogante trasformismo.",
+  },
+  {
+    id: 217,
+    author: "Armando Saveriano",
+    work: "Fragmina",
+    text: "Arricchita dalla dotta e autorevole prefazione del critico/poeta Ugo Piscopo, che citando Husserl, ipostatizza l’intenzionalità di Brentano, la filosofia della mente, scienze cognitive e neuroscienze, la silloge attesta che la poesia non è ‘evaporitica’ quando a simboleggiarla tra tono lirico discorsivo e tono epico-narrativo è l’aedo rapsodo dei giorni nostri della levatura di Nicola Prebenna, con il tratto originale di arte e ‘artigianato’ della parola creatrice/attrice, l’ethos che non pecca di hybris su un versante che lascia filtrare l’essenza fenomenica, resiste al tempo e vale a riassumerne il valore …",
+  },
+  {
+    id: 218,
+    author: "Giuseppe Manitta",
+    work: "In rime sparse",
+    text: "La poesia che costituisce l’apriporta del libro è certamente indicativa del valore simbolico e intertestuale, sin dal titolo Al canto del gallo. Ciò perché il riferimento non è tanto al gallo silvestre di memoria leopardiana, ma a quello evangelico del rinnegamento da parte di Pietro. A quella negazione, però, il poeta idealmente contrappone l’alba e il nuovo giorno",
+  },
+  {
+    id: 219,
+    author: "Antonio D’Antuono",
+    work: "In rime sparse",
+    text: "La poesia di Prebenna, attraverso una versificazione agile e corposa al tempo stesso, si fa voce che grida con tutta la forza che ha in gola, nell’invitarci a riflettere non soltanto su quanto avviene intorno a noi (vedi Lamento del circo), ma anche e soprattutto su quanto accade e v’è dentro di noi. Essa si presenta come scandaglio che sonda i fondali della nostra esistenza e del nostro rapporto col mondo",
+  },
+  {
+    id: 220,
+    author: "Antonio Pizzo",
+    work: "Non di solo pane",
+    text: "Ho molto gradito, da ogni punto di vista, il capitolo Del Lavoro, agile, puntuale, partecipato, coinvolgente. E non credere perché c'è anche Tonino (grazie dell'amichevole tuo ricordo, anch'io ho ricordi vivi, dolci e, come dire, quasi dei grimaldelli per giovanili riflessioni, della tua amicizia), no, non è per Tonino, è perché ti lasci prendere per mano dalla scrittura e scivoli via piano, nostalgico, gioioso, prudente, pungente contro le ingiustizie e finalmente vittorioso nei tuoi traguardi. Ma il tuo ricordare Augusto, la storia del fratello, forse la sua stessa storia, ha aperto anche in me una profonda tristezza e dai reconditi meandri della memoria sono uscite immagini completamente sepolte, che, a leggerti, sono tornate a fluire",
+  },
+  {
+    id: 221,
+    author: "Giovanni Ciano",
+    work: "Non di solo pane",
+    text: "Carissimo Nicola, non mi è facile descrivere in breve il tumultuoso intreccio di sensazioni di sensazioni, ricordi, riflessioni e orgoglio che ho provato durante la lettura di “Non di solo pane”. Molte corde del mio animo hanno vibrato, lungo lo scorrere delle pagine. Anche di orgoglio, sì, perché quando uno di noi, del popolo come dici tu, sa scrivere in maniera intelligente e, allo stesso tempo, semplice quanto di più difficile si nasconde dentro il proprio “io” significa che è arrivato. E molto più perché lasci a noi tutti non soltanto ai tuoi figlioli – quanto e quale garbo usi verso di loro questo bellissimo vezzeggiativo – un patrimonio di cultura e di saggezza schietta e onesta, per capirci “contadina” che va oltre e supera di gran lunga i moderni trattati di sociologia e di psicologia… Grazie veramente, Nicola, per questo bel libro, per questa testimonianza di amore e di affetto non solo per i tuoi cari ma anche per noi che leggiamo e, soprattutto, per l’amore per la vita.",
+  },
+  {
+    id: 222,
+    author: "Francesco Caloia",
+    work: "Non di solo pane",
+    text: "Caro Nicola, ho comprato e letto il tuo libro: “Non di solo pane”. In questi giorni bui e angoscianti, tra un virus feroce e una società ipocrita e sempre di più contraddittoria, in un mondo diviso da lotte e tensioni è stato un balsamo, una piacevolissima lettura, è stato come staccare la spina e trascorrere momenti sereni insieme a te, padre saggio ...che con competenza e coraggio, racconti i fatti salienti del tuo percorso di vita e ti metti a nudo. Il tuo essere e le tue riflessioni sono quelle che hanno caratterizzato anche la mia esistenza, ed avere conferma da una persona equilibrata come te che abbiamo un vissuto e pensieri comuni, mi ha dato conforto (ci accomunano, la mamma sarta, le scuole in seminario, la formazione umanistica, l’amore per la cultura mediterranea, per l’arte ed il bello, l’infanzia e l’adolescenza vissute in Irpinia - anche se con un poco di anni di differenza - usanze, abitudini, valori sociali e politici, l’esperienza di lavoro fuori dalla propria terra di origine, la dirigenza scolastica).",
+  },
+  {
+    id: 223,
+    author: "Virgilio Iandiorio",
+    work: "Non di solo pane",
+    text: "Con questo suo romanzo Nicola Prebenna ha voluto come scrivere un testamento ai suoi familiari, non indicando i beni materiali in lascito, ma i beni che né la tignola né la ruggine possono corrompere, perché sono le cose belle che un uomo ha potuto realizzare nella sua vita",
+  },
+  {
+    id: 224,
+    author: "Domenico Defelice",
+    work: "Vive l'amore e canto",
+    text: "Nella poesia di Nicola Prebenna si trovano moltissimi echi dei nostri classici, a volte interi lor versi (Dante, Petrarca, Leopardi, Foscolo, Pascoli), ma anche moderni (Saba) e attuali, non volutamente segnati, appositamente cercati, ma spontaneamente da mente e cuore richiamati e inseriti in contesti diversi e quotidiani, perché divenuti in lui, col tempo, parte della sua energia, sangue del suo sangue, retaggio di intenso studio e di amore per tutti loro. Questi poeti sono ormai la sua stessa vita e lui non lo nega, s’è vero che, spesso, ricorre a loro per intitolare le proprie opere: “Era il maggio odoroso” (Leopardi), “In una parte più e meno altrove” (Dante); e ciò avviene anche per la fede, col richiamo a testi sacri (“Non di solo pane” romanzo) e la più volte citata Stella cometa o Stella promessa, col riferimento a quella che ha guidato i Magi alla grotta di Betlemme.",
+  },
+  {
+    id: 225,
+    author: "Pasquale Maffeo",
+    work: "Vive l'amore e canto",
+    text: "Carissimo Nicola, sono Pasquale Maffeo. Voglio ringraziarti per il dono prezioso che mi hai mandato Vive l’amore e canto e soprattutto per la dedica che hai scritto. Io ho già letto tutto il volume; rispecchia la vita intera, la natura, la casa, gli amori. Sei un poeta idoneo, vero, non devi niente a nessuno, hai la facoltà di suscitare problemi, parli dei tuoi cari, morti, vivi, della natura. Ti ringrazio molto e ti abbraccio. Seguirà breve nota critica per posta.",
+  },
+  {
+    id: 226,
+    author: "Virgilio Iandiorio",
+    work: "Vive l'amore e canto",
+    text: "Come tutte le cose del mondo nascono e muoiono anche la nostra vita è destinata a finire. Eppure la metafora della vita che nasce e che finisce, non si può adattare al nostro essere. Perché in noi c’è qualcosa che non muore con l’ultimo nostro respiro. Nicola Prebenna indica nell’aspirazione alla santità qualcosa di divino che è in noi e che ci consente di vivere anche oltre la morte corporale. E questa scoperta diventa tanto più importante se viene fatta in comunione con qualcuno, con il coniuge, con cui si sono condivisi i giorni, i mesi e gli anni: “Se un sole per tutti muore, / un altro per me più vivo si appresta / alla vita e luce si fa a diradare / le tenebre dell’età che avanza / e al sole al tramonto assomiglia.”.",
+  },
+  {
+    id: 227,
+    author: "Carlo Di Lieto",
+    work: "Vive l'amore e canto",
+    text: "L’io poetante domina dal primo all’ultimo verso, partendo da una trama assai tenue e delicata, a fronte di un afflato di nitida ispirazione. L’autoanalisi diventa un muto colloquio con se stesso, in un intreccio incalzante di vicende tra nostalgie e rimpianti. La costellazione policroma dell’io non cambia mai registro nell’ebbrezza della vita e della felicità di esistere. Le pulsioni, intraviste lungo il discrimine di una muta risonanza crepuscolare, si trasformano in impulso vitale, dal forte vigore mnestico",
   },
 ];
 

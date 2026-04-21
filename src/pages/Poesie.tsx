@@ -26,7 +26,7 @@ const Poesie = () => {
 
   return (
     <Layout>
-      <SectionBlock title="Poesie" subtitle="Versi che nascono dalla parte più genuina dell'io">
+      <SectionBlock title="Poesie" subtitle="Versi che nascono dal profondo del cuore, testimonianza di un animo offeso dalle brutture del mondo, ma sorretto dal vivo desiderio di nuova umanità.">
         {/* Filter bar */}
         <div className="flex flex-wrap gap-2 mb-10">
           {THEME_FILTERS.filter(f => !f.value || themes.includes(f.value)).map((filter) => (
