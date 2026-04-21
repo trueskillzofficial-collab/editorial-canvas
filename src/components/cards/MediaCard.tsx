@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { MediaItem } from "@/lib/types";
-import { Play } from "lucide-react";
+import { Play, Film } from "lucide-react";
 
 const getYouTubeId = (url: string): string | null => {
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([^&#]+)/);
@@ -25,7 +25,7 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
       className="card-editorial group cursor-pointer"
       onClick={() => onPlay?.(item)}
     >
-      {ytId && (
+      {ytId ? (
         <div className="relative aspect-video mb-4 rounded-sm overflow-hidden bg-secondary">
           <img
             src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
@@ -39,7 +39,25 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
             </div>
           </div>
         </div>
-      )}
+      ) : item.type === "facebook" ? (
+        <div className="relative aspect-video mb-4 rounded-sm overflow-hidden bg-secondary flex items-center justify-center">
+          {item.thumbnail ? (
+            <img
+              src={item.thumbnail}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          ) : (
+            <Film size={48} className="text-foreground/20" />
+          )}
+          <div className="absolute inset-0 flex items-center justify-center transition-colors bg-foreground/10 group-hover:bg-foreground/20 z-10">
+            <div className="w-14 h-14 rounded-full bg-background/90 flex items-center justify-center shadow-lg">
+              <Play size={20} className="text-foreground ml-1" />
+            </div>
+          </div>
+        </div>
+      ) : null}
       <h3 className="text-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
       <p className="prose-editorial text-sm">{item.description}</p>
     </motion.article>

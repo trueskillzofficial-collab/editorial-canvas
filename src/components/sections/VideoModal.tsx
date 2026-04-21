@@ -46,6 +46,17 @@ const VideoModal = ({ item, onClose }: VideoModalProps) => (
               loading="lazy"
             />
           )}
+          {item.type === "facebook" && (
+            <iframe
+              src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(item.url)}&show_text=false&width=734`}
+              title={item.title}
+              className="w-full h-full border-none overflow-hidden"
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            />
+          )}
         </motion.div>
       </motion.div>
     )}

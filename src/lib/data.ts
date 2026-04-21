@@ -33,6 +33,8 @@ import coverSistemiEducativi from '@/assets/covers/sistemi_educativi_a_confronto
 import coverTempoCheVa from '@/assets/covers/tempo_che_va.png';
 import coverViveAmore from '@/assets/covers/vive_l_amore.png';
 
+import thumbFacebookVideo from '@/assets/bio/nello_studio.jpg';
+
 export const getSiteSettings = (): SiteSettings => ({
   siteName: "Nicola Prebenna",
   tagline: "Poeta · Scrittore · Critico Letterario",
@@ -144,6 +146,16 @@ export const getMediaItems = (): MediaItem[] => [
   { id: 7, title: "Ritorna la Rondine – Musica di Daniela Salvo", description: "Composizione musicale ispirata alla poesia di Prebenna.", url: "https://www.youtube.com/watch?v=WKkfO0Y4sHY", type: "youtube" },
   { id: 8, title: "Presentazione \"Era il maggio odoroso\"", description: "Presentazione della raccolta poetica.", url: "https://youtu.be/4SXEmg9OkPk", type: "youtube" },
   { id: 9, title: "Vulnera Temporis – Grottaminarda", description: "Presentazione di Vulnera Temporis.", url: "https://youtu.be/D0F0bHlCFXU", type: "youtube" },
+  { id: 10, title: "Da Manzoni al nostro tempo", description: "Una riflessione letteraria dalla prospettiva di Manzoni all'epoca contemporanea.", url: "https://www.youtube.com/watch?v=E1nsk5XvZy8", type: "youtube" },
+  { id: 11, title: "Nicola Prebenna - Per correr migliori acque", description: "Il video è una rappresentazione in versi e immagini della diffusione dell'epidemia da Corona virus: una rappresentazione a 360 gradi della fase più critica fino all'auspicio di interventi risolutivi, anche se solo accennati.", url: "https://www.youtube.com/watch?v=YIq_F4i_q80", type: "youtube" },
+  { 
+    id: 12, 
+    title: "Uniti si vive!", 
+    description: "DEDICATO AL COMPONIMENTO \"UNITI SI VIVE\", CON CUI SI CHIUDE LA SILLOGE \"IN RIME SPARSE\"", 
+    url: "https://www.facebook.com/watch/?v=462938188019452", 
+    type: "facebook",
+    thumbnail: thumbFacebookVideo
+  },
 ];
 
 export const getPoems = (): Poem[] => [
