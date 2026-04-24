@@ -41,7 +41,7 @@ export const getSiteSettings = (): SiteSettings => ({
   heroQuote: "Ho dispensato parole al vento, semi lanciati per aria, ho radicato parole nel cuore mio e su fogli di carta bianca, disseminando barlumi di speranza e propositi di nuova umanità.",
   heroQuoteAuthor: 'Da "Il Dono del Poeta"',
   authorName: "Nicola Prebenna",
-  authorBio: "Nicola Prebenna nasce nel 1947 ad Ariano Irpino (AV), dove frequenta le scuole elementari e la prima media. Parte per raggiungere Alatri (FR), dove completa la scuola media presso il locale seminario, quale speranzino delle Scuole Pie. Diviene novizio a Roma, presso lo studentato degli Scolopi a Monte Mario. Ritornato ad Ariano, consegue la maturità classica e si laurea all'Università Federico II di Napoli in Lettere Classiche con 110/110. È stato docente e dirigente scolastico in Italia e all'estero. Poeta, scrittore, critico letterario, saggista, giornalista pubblicista.",
+  authorBio: "Nicola Prebenna nasce nel 1947 ad Ariano Irpino (AV), dove frequenta le scuole elementari e la prima media. Parte per raggiungere Alatri (FR), dove completa la scuola media presso il locale seminario, quale speranzino delle Scuole Pie. Diviene novizio a Roma, presso lo studentato degli Scolopi a Monte Mario. Ritornato ad Ariano, consegue la maturità classica e si laurea all'Università Federico II di Napoli in Lettere Classiche con 110/110. È stato docente e dirigente scolastico in Italia e all'estero. Poeta, scrittore, critico letterario, saggista, giornalista pubblicista. Oggi cura ed è responsabile della pagina culturale di Radio Ariano New (RAN).",
   contactEmail: "nicolapreb@gmail.com",
   contactEmail2: "nicpreb@libero.it",
   contactPhone: "349-0581538",
@@ -82,7 +82,7 @@ export const getBiographySections = (): BiographySection[] => [
     id: 6,
     title: "Rientro e Attività Attuale",
     period: "2003 – Presente",
-    content: "Rientrato in Italia, dopo pochi anni da dirigente scolastico va in pensione, ma rimane nel mondo della scuola come preside della scuola paritaria \"Carlo Cattaneo\" di Avellino e come presidente dell'IRASE provinciale di Avellino, ente di formazione della UIL Scuola. Consolida rapporti umani e culturali con personalità di valore: Giorgio Barberi Squarotti, Sandro Gros-Pietro, Paolo Saggese, Giuseppe Iuliano, Ugo Piscopo, Pasquale Maffeo, Emerico Giachery, Giovanni Chiellino, Davide Puccini, Aniello Montano, Carlo Di Lieto, Giuseppe d'Errico, Virgilio Iandiorio, Armando Saveriano, Paveu Krupka, Giuseppe Manitta, Antonio Filippetti, Domenico Defelice e altri. Giornalista pubblicista, editorialista e responsabile della Redazione culturale della testata giornalistica Web Tgnewstv.",
+    content: "Rientrato in Italia, dopo pochi anni da dirigente scolastico va in pensione, ma rimane nel mondo della scuola come preside della scuola paritaria \"Carlo Cattaneo\" di Avellino e come presidente dell'IRASE provinciale di Avellino, ente di formazione della UIL Scuola. Consolida rapporti umani e culturali con personalità di valore: Giorgio Barberi Squarotti, Sandro Gros-Pietro, Paolo Saggese, Giuseppe Iuliano, Ugo Piscopo, Pasquale Maffeo, Emerico Giachery, Giovanni Chiellino, Davide Puccini, Aniello Montano, Carlo Di Lieto, Giuseppe d'Errico, Virgilio Iandiorio, Armando Saveriano, Paveu Krupka, Giuseppe Manitta, Antonio Filippetti, Domenico Defelice e altri. Giornalista pubblicista, editorialista e responsabile della Redazione culturale della testata giornalistica Web Tgnewstv. Oggi cura ed è responsabile della pagina culturale di Radio Ariano New (RAN). È socio onorario di prestigiose Associazioni Culturali Nazionali e Internazionali.",
   },
 ];
 
@@ -941,7 +941,7 @@ E pace reclamano le ombre degli eroi.`,
   },
   {
     id: 24,
-    title: "Rouen",
+    title: "Rouen: Place Vieux Marché … Campo dei Fiori",
     theme: "Storia e Religiosità",
     text: `E' tripudio di festa e canti
 nella piazza grande del vieux marché,
@@ -1325,14 +1325,447 @@ e lento si discioglie.`,
 ];
 
 export const getReviews = (): Review[] => [
-  // Colpo d'ala
+  // POESIA
+  // 1. Colpo d'ala
   {
     id: 1,
     author: "Paolo Saggese",
     work: "Colpo d'ala",
     text: "Già nel lontano 1978, per Prebenna la poesia è qualcosa di irripetibile, che nasce dalla parte più genuina e fresca dell'io, e che coinvolge l'uomo nei suoi problemi più scottanti e urgenti.",
   },
-  // Barbe e Virgulti
+  // 2. Dacruma
+  {
+    id: 8,
+    author: "Giorgio Barberi Squarotti",
+    work: "Dacruma",
+    text: "Dacruma riflessivo e profondo, fra ricordo e religiosità.",
+  },
+  {
+    id: 9,
+    author: "Paolo Saggese",
+    work: "Dacruma",
+    text: "Il motivo del carpe diem, del sentimento del tempo, della fugacità dell'esistenza, della vita come fatica, come sfida, come tensione, speranza e sconfitta, dominano il volume. E con essi l'immagine e il modello di Orfeo e Laocoonte, che sono il poeta.",
+  },
+  {
+    id: 10,
+    author: "Sandro Gros-Pietro",
+    role: "dalla quarta di copertina",
+    work: "Dacruma",
+    text: "Nicola Prebenna ci propone una poesia della sublimazione della realtà, che è rappresentazione straordinaria di armonia e di dolcezza, ma che è anche impegno civile quasi eroico teso a smascherare ogni camuffamento del vero.",
+  },
+  // 3. In gurgite vasto
+  {
+    id: 11,
+    author: "Davide Puccini",
+    role: "dalla postfazione",
+    work: "In gurgite vasto",
+    text: "Quella di Prebenna è senza dubbio una poesia che fa sentire, ma anche una poesia che, in un'epoca di interrogativi tormentosi che troppi dimenticano o fingono di dimenticare dietro un eterno carnevale senza quaresima, si pone il compito meritorio di far pensare.",
+  },
+  {
+    id: 12,
+    author: "Emerico Giachery",
+    role: "dalla Prefazione",
+    work: "In gurgite vasto",
+    text: "I toni alti e incisivi si connettono spesso alle meditazioni sulla storia presente e passata, alla vena etica, civile, a una certa tensione profetica.",
+  },
+  {
+    id: 13,
+    author: "Giorgio Barberi Squarotti",
+    work: "In gurgite vasto",
+    text: "Ho subito letto la Sua nuova raccolta di versi, così ricca, mutevole, suasiva, fra memoria, riflessione, descrizioni di paesaggi ed esperienze serene di vita, consapevolezza del tempo che trascorre e dei rischi dell'esistere. Il ritmo è sempre tanto rigoroso e sicuro.",
+  },
+  {
+    id: 14,
+    author: "Giovanni Chiellino",
+    work: "In gurgite vasto",
+    text: "Nicola Prebenna guarda indietro ma ha ben presente \"La terra desolata\" di Eliot; i \"cocci aguzzi\", i \"roventi muri\" e i \"calvi picchi\" di Montale; la visione di una umanità dominata dalla solitudine, dall'aridità dei sentimenti e dalla fugacità del tempo.",
+  },
+  {
+    id: 201,
+    author: "Gianmario Lucini",
+    work: "In gurgite vasto",
+    text: "E Prebenna è reattivo, la sua denuncia parte da un sentire, da una esigenza di ristabilire un equilibrio interiore spezzato dall'esperienza delle contraddizioni che si incontra nella storia, attraverso la parola, la comunicazione. A tutto campo, \"in gurgite vasto\", senza timore di perdersi se si ha al centro di sé una, pur aperta, convinzione morale.",
+  },
+  // 4. E la fiaccola … vive!
+  {
+    id: 15,
+    author: "Aniello Montano",
+    role: "dalla Prefazione",
+    work: "E la fiaccola … vive!",
+    text: "In tutto il poema circolano, frammisti, entusiasmo e malinconia. Entrambi composti e contenuti, in un equilibrio misurato, aureo, quasi a creare un'atmosfera di tipo latamente parnassiana.",
+  },
+  {
+    id: 16,
+    author: "Giorgio Barberi Squarotti",
+    work: "E la fiaccola … vive!",
+    text: "Leggo con molto piacere e plauso il Suo poemetto greco, che mirabilmente congiunge le Olimpiadi antiche e quelle moderne per forza di poesia. È un'opera suasiva e originalissima per ritmo e figure e immagini.",
+  },
+  {
+    id: 17,
+    author: "Paolo Saggese",
+    work: "E la fiaccola … vive!",
+    text: "Un gusto nuovo si afferma, anche sotto lo stimolo di Quasimodo e Kavafis, un gusto neoclassico che anticipa l'ode \"E la fiaccola vive\", che si segnala per originalità e altezza d'arte.",
+  },
+  {
+    id: 401,
+    author: "Arturo Donati",
+    work: "E la fiaccola … vive!",
+    text: "Gentile Poeta\nho letto il testo tratto da Parnassos che ho apprezzato. Ho anche letto sia le sue poesie che il canto che ho trovato in alcuni passi molto coinvolgente. I versi più belli sono quelli in cui il poeta esprime il senso del transito e dell'attesa per qualcosa che quando sarà compiuta lo avrà suo malgrado trasformato in estraneo testimone di un evento che emula ed emblemizza la precarietà della vita. Lei interpreta ed esprime a suo modo il limite del fare umano di fronte alla finitudine universale fortemente percepita ma non in grado di smarrire il poeta grazie all'ausilio della bellezza che affascina come un canto antico.",
+  },
+  // 5. Come per acqua cupa
+  {
+    id: 19,
+    author: "Ugo Piscopo",
+    work: "Come per acqua cupa",
+    text: "Le parole che Prebenna adopera per la poesia, cioè per la sua missione morale e per le sue battaglie di verità, sono deliberatamente assunte da un ambito di solidità e di efficacia storicamente collaudate. Lo stile di Prebenna non ha compiacimenti e concessioni alle mode, all'effimero, si costruisce piuttosto come un ordito di procedimenti assoggettati alla sobrietà e alle misure di rigore e di prudenza, con cui devono fare i conti sia le occasioni e gli episodi soggettivi, sia le vicende che vanno oltre la cronaca.",
+  },
+  {
+    id: 20,
+    author: "Francesca Liuzzo",
+    work: "Come per acqua cupa",
+    text: "Pathos e logos non sono le uniche motrici della poesia prebenniana, infatti esse si vestono di ethos e quest'ultimo consente ai versi, costruiti sempre in uno stile sobrio ed equilibrato, di proporre verità e valori che hanno un'essenza universale.",
+  },
+  {
+    id: 21,
+    author: "Giorgio Barberi Squarotti",
+    work: "Come per acqua cupa",
+    text: "Ho subito letto la Sua nuova raccolta di versi, che alternano efficacemente la riflessione e l'attualità, il discorso morale e politico e la memoria. Amo di più i testi di pensiero e lezione d'anima.",
+  },
+  {
+    id: 22,
+    author: "Giuseppe Panella",
+    work: "Come per acqua cupa",
+    text: "La poesia di Prebenna è, proprio per questa sua oscillazione tematica, tutta intrecciata e simile a un tappeto prezioso orientale, di motivi legati alla dimensione del presente del \"mondo offeso\" e di risarcimenti personali e lirici connessi con la verità del ricordo.",
+  },
+  // 6. Era il maggio odoroso
+  {
+    id: 23,
+    author: "Sandro Gros-Pietro",
+    work: "Era il maggio odoroso",
+    text: "La forma e il contenuto della poesia di Nicola Prebenna sono un grande omaggio di ripresa e di rinnovamento della tradizione classica della letteratura occidentale, che pone al centro del discorso poetico la visione lirica che il poeta ricostruisce dentro di sé del mondo.",
+  },
+  {
+    id: 24,
+    author: "Giorgio Barberi Squarotti",
+    work: "Era il maggio odoroso",
+    text: "Il Suo discorso poetico si è fatto altissimo e sicuro, fra memoria, rievocazioni, contemplazioni, sentenze. Lo nutre una saggezza antica. La sezione Toccata è, su tutte, bellissima.",
+  },
+  {
+    id: 25,
+    author: "Antonio La Penna",
+    work: "Era il maggio odoroso",
+    text: "Leggendo la Sua poesia, mi dicevo: sapit vitam: una vita operosa, limpida, ricca di affetti profondi, da quelli familiari a quelli religiosi. In un tempo in cui i valori si sono indeboliti o sono morti, Lei resta radicato in grandi tradizioni sempre vive.",
+  },
+  {
+    id: 26,
+    author: "Giuseppe d'Errico",
+    work: "Era il maggio odoroso",
+    text: "Il pensiero e il sentimento si compenetrano ed integrano: il pensiero, suggerito dalla ragione e dalla riflessione, è intimamente penetrato ed arricchito dal sogno, il sentimento non si abbandona mai ad arcadici vagheggiamenti, ma si avvale della riflessione che non inaridisce le immagini ma le sostanzia di significato e di valori.",
+  },
+  // 7. Fragmina
+  {
+    id: 18,
+    author: "Virgilio Iandiorio",
+    work: "Fragmina",
+    text: "Non è solamente un omaggio all'arte dei vasai così prospera in passato nella sua città di Ariano Irpino, quanto una metafora della vita in tutte le sue manifestazioni, nobili e volgari, povere e ricche, accomunate tutte dallo stesso destino.",
+  },
+  {
+    id: 216,
+    author: "Maria Teresa Liuzzo",
+    work: "Fragmina",
+    text: "Notevoli sono i versi dedicati al potere, soverchiante ed oppressivo, cui sono e sono stati soggetti popoli e generazioni, nel corso dei secoli. Il poeta evidenzia come nulla sia mutato dall’antichità ai nostri giorni: il potere non è cessato, ha semplicemente mutato l’abito, in una sorta di subdolo e arrogante trasformismo.",
+  },
+  {
+    id: 217,
+    author: "Armando Saveriano",
+    work: "Fragmina",
+    text: "Arricchita dalla dotta e autorevole prefazione del critico/poeta Ugo Piscopo, che citando Husserl, ipostatizza l’intenzionalità di Brentano, la filosofia della mente, scienze cognitive e neuroscienze, la silloge attesta che la poesia non è ‘evaporitica’ quando a simboleggiarla tra tono lirico discorsivo e tono epico-narrativo è l’aedo rapsodo dei giorni nostri della levatura di Nicola Prebenna, con il tratto originale di arte e ‘artigianato’ della parola creatrice/attrice, l’ethos che non pecca di hybris su un versante che lascia filtrare l’essenza fenomenica, resiste al tempo e vale a riassumerne il valore …",
+  },
+  // 8. Vulnera Temporis
+  {
+    id: 28,
+    author: "Angelo Carlino",
+    work: "Vulnera Temporis",
+    text: "Il poeta cosmopolita, ma legatissimo alla sua amata terra, fa tesoro della sua experience e riesce a mettere a fuoco tanti problemi che affliggono la società. Da intellettuale impegnato avverte il dovere morale di denunciare le atrocità delle guerre, le azioni terroristiche che insanguinano tanti paesi.",
+  },
+  {
+    id: 29,
+    author: "Armando Saveriano",
+    work: "Vulnera Temporis",
+    text: "La poesia di Prebenna può contare su un verso originalissimo, conio di felice sperimentazione; è fiotto di testimonianza, pratica di funzione divinatrice; è chiarore in cerca di luce, per altri svelamenti.",
+  },
+  {
+    id: 202,
+    author: "Ugo Piscopo",
+    work: "Vulnera Temporis",
+    text: "Prebenna non concede né a sé né a chi legge di procedere per sottili distinguo o intrattenimenti ludico-cerebrali, e procede rigorosamente per tale via, non d’impulso dell’emotività e dell’impazienza, ma su insegnamento avuto dal biblismo e dall’eloquenza sacra (Savonarola, San Bernardino, Sant’Alfonso) e, insieme, dagli studi classici, che lo hanno messo a contatto col pessimismo della Weltanschauung del mondo greco e con la poesia gnomica e sentenziosa greco-latina, oltre che con i nostri grandi autori da Dante e Petrarca a Manzoni e Leopardi. Di qua, il suo scansire sillabe e idee, la sua pronunzia distillata, il suo uso di parole come munizioni in trincea o vibrazioni elettriche.",
+  },
+  {
+    id: 203,
+    author: "Paweł Krupka",
+    work: "Vulnera Temporis",
+    text: "… In questo contesto bisogna considerare i meriti di Nicola Prebenna che nel suo libro Vulnera temporis si riferisce a questo, appunto, mondo di oggi che non ispira ottimismo. Eppure, essendo onesto e realista nelle sue visioni letterarie, non si limita, come la maggior parte dei suoi contemporanei, a rispecchiare la realtà che nel complesso bella non è. Reagisce al mondo che descrive con l’interna armonia scaturita dalla sua formazione spirituale. Una formazione classica fondata sui valori tradizionali della fede religiosa e la coscienza civile ereditata dalla storia della civiltà mediterranea.",
+  },
+  {
+    id: 204,
+    author: "Francesco D’Episcopo",
+    work: "Vulnera Temporis",
+    text: "Attenzione: i vulnera, le ferite personali (come quella per la morte del proprio padre) e universali (legate a vicende sempre più violente e incontrollabili) restano, ma resta anche la fiducia in un ricongiungimento finale, in una resurrezione dell’umanità, che la poesia di Prebenna invoca con costanza ed energia, confermate anche dalle sue precedenti e numerose esperienze poetiche",
+  },
+  // 9. In una parte più e meno altrove
+  {
+    id: 47,
+    author: "Ugo Piscopo",
+    work: "In una parte più e meno altrove",
+    text: "In quest'ultima stagione si accentua notevolmente la tendenza a guardare sempre frontalmente la vita, ma attraverso un filtro memoriale più vigile e più agonico attentissimo alle metamorfosi degli eventi. La testimonianza trapassa in visione, la composizione in elegia, che rinvia ai nobili modelli dell'elegia della poesia italiana da Petrarca a Leopardi.",
+  },
+  {
+    id: 301,
+    author: "Premio I Murazzi per l’inedito 2016 (Dignità di stampa)",
+    role: "Motivazione di Giuria",
+    work: "In una parte più e meno altrove",
+    text: "In una concatenazione sia gioiosa sia drammatica di turbamenti, sensazioni, agnizioni, allusioni e altri fantasmi si sviluppa lungo i versi, intonati alla tradizione metrica e all’armonia interna del linguaggio, una vicenda di spaesamenti e di recuperi della coscienza del mondo e delle logiche di interpretazioni, fino a giungere alla incertezza di una verità assoluta e a proporre l’incertezza del dubbio come una condizione inalienabile della mente.",
+  },
+  {
+    id: 402,
+    author: "Ugo Piscopo",
+    work: "In una parte più e meno altrove",
+    text: "Nicola Prebenna è un irpino di forte temperamento. Nato e formatosi ad Ariano, di qua è partito per svolgere all’estero un’intensa attività di uomo di cultura e di scuola, ed è tornato infine nella sua Irpinia, dove da anni sta portando avanti un programma impegnato sul piano etico-civile di lievitazione e di crescita dei livelli intellettuali e morali.\nSimultaneamente a questa funzione, in Prebenna è coltivata e fatta crescere la passione per la letteratura, saggistica e, particolarmente, poesia. Come poeta, egli ha pubblicato molte sillogi, che gli hanno procurato stima e riconoscimenti in tutta l’Italia, come provano i numerosi premi raccolti dalla Sicilia al Piemonte. Nel 2016, a Torino gli è stato conferito il Premio “I Murazzi” per l’inedito, con una silloge che nella primavera del 2017 è stata pubblicata dalla medesima casa editrice, che bandisce e gestisce il premio, Genesi Editrice, sotto il titolo dantesco “In una parte più e meno altrove” (prefazione di Sandro Gros-Pietro, pp. 78, euro 11.00, nella collana “I frombolieri”, vol. 101)",
+  },
+  // 10. In rime sparse
+  {
+    id: 48,
+    author: "Antonio D'Antuono",
+    work: "In rime sparse",
+    text: "In una società globalizzata come la nostra, espressione della \"modernità liquida\", in cui l'effimero e il fugace la fanno da padrone, la poesia di Prebenna si fa maieutica, autentica lezione dialogante, musica dell'anima.",
+  },
+  {
+    id: 218,
+    author: "Giuseppe Manitta",
+    work: "In rime sparse",
+    text: "La poesia che costituisce l’apriporta del libro è certamente indicativa del valore simbolico e intertestuale, sin dal titolo Al canto del gallo. Ciò perché il riferimento non è tanto al gallo silvestre di memoria leopardiana, ma a quello evangelico del rinnegamento da parte di Pietro. A quella negazione, però, il poeta idealmente contrappone l’alba e il nuovo giorno",
+  },
+  {
+    id: 219,
+    author: "Antonio D’Antuono",
+    work: "In rime sparse",
+    text: "La poesia di Prebenna, attraverso una versificazione agile e corposa al tempo stesso, si fa voce che grida con tutta la forza che ha in gola, nell’invitarci a riflettere non soltanto su quanto avviene intorno a noi (vedi Lamento del circo), ma anche e soprattutto su quanto accade e v’è dentro di noi. Essa si presenta come scandaglio che sonda i fondali della nostra esistenza e del nostro rapporto col mondo",
+  },
+  // 11. Per correr migliori acque
+  {
+    id: 45,
+    author: "Corrado Calabrò",
+    work: "Per correr migliori acque",
+    text: "Una plaquette davvero pensosa e di tutta attualità, con l'importante prefazione di Carlo Di Lieto.",
+  },
+  {
+    id: 46,
+    author: "Pasquale Maffeo",
+    work: "Per correr migliori acque",
+    text: "Volevo ringraziarti per questo nuovo lavoro; l'ho letto e scorso molto bene. Mi voglio complimentare con te che hai fatto veramente un'opera molto bella, un'opera di poesia.",
+  },
+  {
+    id: 207,
+    author: "Antonio Pizzo",
+    work: "Per correr migliori acque",
+    text: "Caro Nicola, ho letto la tua \"ode civile\". È davvero coinvolgente. Bravo. Condivido in larga parte la presentazione di Carlo Di Lieto, soprattutto nella scelta dei tuoi versi. Ma non trovo adeguata la sua sintesi nel titolo \"dallo sgomento al disincanto\"; al contrario la mia lettura ha trovato nella tua ode tanta tensione/speranza di un impegno da parte di tutti ormai improrogabile nel \"correr migliori acque\", originata proprio da quel nuovo sgomento. Ma, si sa, ognuno a suo modo",
+  },
+  {
+    id: 208,
+    author: "Carlo Di Lieto",
+    work: "Per correr migliori acque",
+    text: "Nella religiosità “dialettica” di Prebenna c’è un Dio che, nella sua azione provvidenziale, attiva un’identità nobile nell’uomo, correlata al sentimento di responsabilità e di austerità interiore. La componente religiosa riveste un ruolo significativo nei versi alati di Nicola Prebenna, i quali non prescindono mai dalla sua solida formazione letteraria: Dante, Leopardi, Manzoni, Foscolo, i calchi e i rinvii sono evidenti e sono riassorbiti felicemente dall’empito fascinoso dell’ispirazione di quest’ode.\nLa speranza, in quest’ode, rinasce dalle ceneri della disperazione; c’è un’estenuante attesa, con pochi barlumi di speranza; la coazione a ripetere è in funzione del dispiacere e della pulsione di morte: la liberazione dal morbo, che uccide, è in un tempo sospeso e in uno spazio metastorico, in quell’aura misteriosa dell’atomo opaco del male",
+  },
+  // 12. Vive l'amore e canto
+  {
+    id: 30,
+    author: "Virgilio Iandiorio",
+    role: "dalla Postfazione",
+    work: "Vive l'amore e canto",
+    text: "Non bisogna aspettare la fine dei giorni per contemplare la bellezza. Nicola Prebenna ha avuto modo in questi anni di scoprire l'eterno che è in noi e che si concretizza nella nostra vita quotidiana. Bisogna solamente saperlo riconoscere, accettarlo e goderne la bellezza e la beatitudine. Come tutte le cose del mondo nascono e muoiono anche la nostra vita è destinata a finire. Eppure la metafora della vita che nasce e che finisce, non si può adattare al nostro essere. Perché in noi c’è qualcosa che non muore con l’ultimo nostro respiro. Nicola Prebenna indica nell’aspirazione alla santità qualcosa di divino che è in noi e che ci consente di vivere anche oltre la morte corporale. E questa scoperta diventa tanto più importante se viene fatta in comunione con qualcuno, con il coniuge, con cui si sono condivisi i giorni, i mesi e gli anni: “Se un sole per tutti muore, / un altro per me più vivo si appresta / alla vita e luce si fa a diradare / le tenebre dell’età che avanza / e al sole al tramonto assomiglia.”.",
+  },
+  {
+    id: 31,
+    author: "Carlo Di Lieto",
+    role: "dalla Prefazione",
+    work: "Vive l'amore e canto",
+    text: "Questo tenero 'canzoniere d'amore' di Nicola Prebenna è un dettato poetico di inimitabile purezza, scandito da un'elegante sobrietà di un \"inquieto sentire\". Il discorso amoroso si dipana lungo il versante di tre direttrici: \"Le gioie pure del focolare\", \"Il sentimento del tempo\", \"L'elegia della memoria\". L’io poetante domina dal primo all’ultimo verso, partendo da una trama assai tenue e delicata, a fronte di un afflato di nitida ispirazione. L’autoanalisi diventa un muto colloquio con se stesso, in un intreccio incalzante di vicende tra nostalgie e rimpianti. La costellazione policroma dell’io non cambia mai registro nell’ebbrezza della vita e della felicità di esistere. Le pulsioni, intraviste lungo il discrimine di una muta risonanza crepuscolare, si trasformano in impulso vitale, dal forte vigore mnestico.",
+  },
+  {
+    id: 32,
+    author: "Domenico Defelice",
+    work: "Vive l'amore e canto",
+    text: "La silloge Vive l'amore e canto viene pubblicata in occasione del cinquantesimo di matrimonio del poeta e si compone di cinquanta brani, uno per ciascun anno. Va considerata come un poemetto, legando brano a brano a partire dalla polvere di stelle dalla quale ciascun di noi è nato. Nella poesia di Nicola Prebenna si trovano moltissimi echi dei nostri classici, a volte interi lor versi (Dante, Petrarca, Leopardi, Foscolo, Pascoli), ma anche moderni (Saba) e attuali, non volutamente segnati, appositamente cercati, ma spontaneamente da mente e cuore richiamati e inseriti in contesti diversi e quotidiani, perché divenuti in lui, col tempo, parte della sua energia, sangue del suo sangue, retaggio di intenso studio e di amore per tutti loro. Questi poeti sono ormai la sua stessa vita e lui non lo nega, s’è vero che, spesso, ricorre a loro per intitolare le proprie opere: “Era il maggio odoroso” (Leopardi), “In una parte più e meno altrove” (Dante); e ciò avviene anche per la fede, col richiamo a testi sacri (“Non di solo pane” romanzo) e la più volte citata Stella cometa o Stella promessa, col riferimento a quella che ha guidato i Magi alla grotta di Betlemme.",
+  },
+  {
+    id: 33,
+    author: "Pasquale Maffeo",
+    work: "Vive l'amore e canto",
+    text: "Prebenna tocca altezze di genialità, lasciandosi guidare dalla sintassi semantica, dalla sintassi inventiva, dalla sintassi melica; l'ispirazione del nostro poeta è sempre sua, non raccoglie frammenti di lontane letture. Voglio ringraziarti per il dono prezioso che mi hai mandato Vive l’amore e canto e soprattutto per la dedica che hai scritto. Io ho già letto tutto il volume; rispecchia la vita intera, la natura, la casa, gli amori. Sei un poeta idoneo, vero, non devi niente a nessuno, hai la facoltà di suscitare problemi, parli dei tuoi cari, morti, vivi, della natura. Ti ringrazio molto e ti abbraccio. Seguirà breve nota critica per posta.",
+  },
+  // 13. Per cieli nuovi e terra nuova
+  {
+    id: 34,
+    author: "Giuseppe Iuliano",
+    work: "Per cieli nuovi e terra nuova",
+    text: "La poesia di Prebenna può contare su un verso originalissimo, conio di felice sperimentazione; è fiotto di testimonianza, pratica di funzione divinatrice; è chiarore in cerca di luce, per altri svelamenti. La voce onesta ed accorata è seme e concime, un lascito dello spirito. La sua poesia/cantico esalta il dono della vita e pone nuovi comandamenti per \"la natura che abbiamo avvelenato, / il mare che continuiamo ad inquinare, / i fratelli che eliminiamo, / che derubiamo / in mille modi, che asserviamo ai nostri capricci, ai nostri voleri\". Insomma ci consegna un pregnante manifesto di natura/umanità/umanesimo",
+  },
+  {
+    id: 35,
+    author: "Sandro Gros-Pietro",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Hai scritto un libro che è una straordinaria testimonianza di fede, anche di patimento e di gioioso dolore ovvero di dolorosa gioia, nella continua testimonianza dell'esempio mostrato dal Dio che si è fatto uomo.",
+  },
+  {
+    id: 36,
+    author: "Carlo Di Lieto",
+    role: "dalla Prefazione",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Come in un sogno ad occhi aperti, il furore creativo di Nicola Prebenna disvela un'emotività pulsionale incontenibile, in un perpetuo status nascendi. Le immagini adombrano un variegato percorso inconscio, che porta alla luce una segreta rivelazione di una fascinosa bellezza. La pulsione di vita prevale comunque su quella di morte nella poesia di Prebenna; l’aura archetipica dello stato di grazia dell’ispirazione si con-fonde con l’empito dell’astrazione. Il varco è proprio qui: il dettato lirico diventa un viaggio liberatorio per proiettarsi in una rapita visione dell’oltre, dando la dovuta trasfigurazione al “Tempo ritrovato” della memoria proustiana …",
+  },
+  {
+    id: 37,
+    author: "Domenico Defelice",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Prebenna è uomo che ama l'umanità e vive ben radicato, non astrattamente, su questa Terra e perciò i due infinitesimi sono sempre rapportati alle sue visioni e sensazioni, alle sue personali vicende.",
+  },
+  {
+    id: 209,
+    author: "Virgilio Iandiorio",
+    work: "Per cieli nuovi e terra nuova",
+    text: "La silloge di Nicola Prebenna si apre con la poesia “CIELI NUOVI E TERRA NUOVA”, che ripropone quasi per intero il titolo del libro. L’aggettivo “nuovo” è riferito sia al Cielo sia alla Terra. Il nostro poeta ha volto evidenziare il suo coinvolgimento totale, nella prospettiva della vita futura, quella che ci attende dopo la morte, ma anche nell’immediato, nei momenti che viviamo istante per istante. Nell’una e nell’altra dimensione, vuole dirci, la vita va rispettata e vissuta insieme a coloro che abbiamo intorno a noi o incontriamo fugacemente: pronti tutti ad intonare il canto di grazie / per la vita che ovunque respira.",
+  },
+  {
+    id: 210,
+    author: "Emanuele Occhipinti",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Caro Nicola, circa dieci giorni fa ho ricevuto il tuo CIELI NUOVI E TERRA NUOVA, ma non ti ho risposto subito perché volevo prima leggere tutte le composizioni. Certamente dall'insieme emerge un profondo e continuo afflato di fede, che corre e si articola attraverso il confronto tra il vivere terreno pieno di tentazioni devianti e la speranza o certezza della condizione salvifica e felice dell'esistenza che ci attende dopo la morte",
+  },
+  {
+    id: 211,
+    author: "Angelo Michele Imbriani",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Il linguaggio che mette insieme poesia e pensiero, il \"pensiero poetante\": \"ogni meditante pensare è poetare, ogni poetare è pensare\", scrive il filosofo (Heidegger). Naturalmente come non ogni pensiero è poesia, così non ogni poesia è gravida di pensiero. Ma lo è la poesia di Nicola Prebenna, perché sobriamente e discretamente intessuta di una trama di riferimenti letterari, biblici, filosofici",
+  },
+  {
+    id: 212,
+    author: "Ortensio Zecchino",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Caro Nicola,\nnel viaggio Roma-Ariano sono in compagnia delle tue poesie: tutte molto belle alcuni versi sublimi. Sono immersioni delicatissime in abissi spirituali senza fondo per una incessante ricerca che offre come premio una melanconica serenità. Complimenti e affettuosi auguri natalizi. Ortensio",
+  },
+  {
+    id: 215,
+    author: "Gianluca Amatucci",
+    work: "Per cieli nuovi e terra nuova",
+    text: "Con Per cieli nuovi e terra nuova, Nicola Prebenna offre un’opera di grande rilevanza nell’ambito della poesia contemporanea, capace di coniugare tensione speculativa e lirismo, visione escatologica e indagine interiore. Il poeta conferma la sua capacità di esplorare con profondità le dinamiche dell’essere, restituendo al lettore una poesia che si fa strumento di conoscenza e di trasformazione dell’esperienza umana",
+  },
+  // 14. Dittico arcobaleno
+  {
+    id: 42,
+    author: "Andrea Covotta",
+    role: "Direttore Rai Quirinale, dalla Prefazione",
+    work: "Dittico arcobaleno",
+    text: "I versi di Prebenna ci conducono in un percorso che incrocia la passione per la propria terra e lo sguardo allungato su un mondo devastato, senza mai perdere la fiducia in un domani migliore.",
+  },
+  {
+    id: 43,
+    author: "Domenico Defelice",
+    work: "Dittico arcobaleno",
+    text: "Nicola Prebenna è talmente inzuppato di poesia e classicità da ornare sempre con termini e versi di autori immortali, naturalmente e senza sfoggio, lo scrivere e il parlare. La poesia è per lui sangue che circola nelle vene e sorgente alla quale l'umanità intera dovrebbe abbeverarsi.",
+  },
+  {
+    id: 44,
+    author: "Carlo Di Lieto",
+    work: "Dittico arcobaleno",
+    text: "La levigatezza del dettato poetico di Nicola Prebenna offre al lettore un rinnovato piacere. Gli affondi esistenziali propongono momenti di acuta riflessione. Nel solco del sentimento del Nulla, il poeta affida il suo disincanto al turbinio molesto dei ricordi.",
+  },
+  // 15. Fiori di campo
+  {
+    id: 38,
+    author: "Antonio Pizzo",
+    work: "Fiori di campo",
+    text: "Altro che Fiori di campo! Leggendo, non ho trovato i colori più vari, né le distese di verde punteggiate da anemoni, né profumi ad solacium, ma solo un \"io\" alla ricerca di sé nel mare senza fine del male e del bene della vita. Eppure, nonostante tanta amarezza, il tuo mondo prevede sempre l'agire degli uomini di buona volontà.",
+  },
+  {
+    id: 39,
+    author: "Domenico Defelice",
+    role: "dalla rivista Il Convivio",
+    work: "Fiori di campo",
+    text: "Non esistono fiori più belli di quelli che crescono spontanei nei campi, vere e proprie creature innocenti rivestite da Dio. A loro si richiamano i versi che Nicola Prebenna inanella in questa raccolta, ridotta per formato e numero di componimenti, ma densa e ricca per temi e contenuto.",
+  },
+  // 16. L'altra faccia della luna
+  {
+    id: 40,
+    author: "Carlo Di Lieto",
+    role: "dalla Prefazione",
+    work: "L'altra faccia della luna",
+    text: "Senza ombra di dubbio, siamo giunti al punto più mirabile della poesia di Nicola Prebenna, dopo un encomiabile percorso umano e letterario. La tenerezza elegiaca del verso di Prebenna rende visibile lo sconfinamento dell'io, visto nella prospettiva psicoanalitica della sua attività onirica. Questa nuova e intensa silloge di poesie di Nicola Prebenna, L’altra faccia della luna, è un altro importante tassello, che si aggiunge alla sua straordinaria opera poetica. È un tracciato emozionale che radialmente attraversa le lunazioni, nel loro periodico avvicendarsi, quale puntuale riflesso delle vicende umane. Il Poeta, con un’immedesimazione proiettiva, rende visibili gli sconfinamenti dell’io, visti nella prospettiva psicoanalitica dell’attività onirica come “via regia della conoscenza dell’inconscio del Poeta […] Il “pensiero poetante” di Nicola Prebenna va inteso come capacità di sapersi distanziare dal “principio di realtà” e di sapere elaborare, in modo egregio, una forma espressiva che gli consenta di dare un senso all’Essere e alla sua ragione profonda.",
+  },
+  {
+    id: 41,
+    author: "Floriana Guerriero",
+    work: "L'altra faccia della luna",
+    text: "Ci troviamo di fronte a versi che consegnano un io lacerato e inquieto, che trova nella condivisione, nella relazione con gli altri l'unico balsamo alla propria sofferenza.",
+  },
+  {
+    id: 205,
+    author: "Sandro Gros-Pietro",
+    work: "L'altra faccia della luna",
+    text: "Per collocazione stilistica egli rientra negli autori che hanno seguito solo per curiosità le vicende della avanguardie, ma che si sono formati e radicati nello studio e nella valorizzazione della ricchissima tradizione di Poesia sviluppata dalla letteratura italiana, al punto che, nel caso di Prebenna, si può accostare la sua esperienza poetica all’alto esempio lasciato da Vincenzo Cardarelli, Guido Gozzano, Umberto Saba, Dino Campana, fino ad arrivare ad autori più recenti come Giovanni Giudici e Mario Luzi: …",
+  },
+  {
+    id: 302,
+    author: "Virgilio Iandiorio",
+    work: "L'altra faccia della luna",
+    text: "Con le sue poesie Nicola Prebenna ci invita a meditare sulla nostra esistenza che non è eterna e che è destinata a finire, in tempo però per dare a noi la possibilità di lasciare un segno della nostra presenza sulla terra. E quando la parola si fa poesia, lascia un segno indelebile che neppure i secoli potranno cancellare",
+  },
+  {
+    id: 303,
+    author: "Virgilio Iandiorio",
+    work: "L'altra faccia della luna",
+    text: "La silloge L’altra faccia della luna richiama subito un’analogia. Perché Prebenna nel suo libro ha raccolto cento poesie? Era forse davanti ai suoi occhi il poema di Dante che è composto di cento canti) Il riferimento al poeta della Divina Commedia è costante nelle opere di Prebenna. La riflessione sulla nostra esistenza, o fatta “nel mezzo del cammin di nostra vita” o alla conclusione di questo nostro cammino, ci mette nei panni del viaggiatore che cammina verso una meta che nessuno di noi ha avuto e avrà la possibilità di raffigurarsi in anticipo come sarà",
+  },
+
+  // CRITICA LETTERARIA
+  // 17. Il Settecento e l'Autobiografia
+  {
+    id: 27,
+    author: "Giuseppe Panella",
+    role: "Docente di Estetica, Scuola Normale Superiore di Pisa",
+    work: "Il Settecento e l'Autobiografia",
+    text: "Le autobiografie di cui Prebenna si occupa valicano di gran lunga il rigido regime dell'impatto storicistico con il presente per diventare rievocazione, spesso lirica e feconda, di un secolo e di una cultura ancora capace di influenzare e lavorare sul presente.",
+  },
+  // 18. Pietro Paolo Parzanese
+  {
+    id: 403,
+    author: "Paola Villani",
+    role: "Sandro Gros-Pietro",
+    work: "Pietro Paolo Parzanese: l'intellettuale che si volle poeta popolare",
+    text: "Un contributo a questo affresco è offerto dal recente volume collettaneo dedicato a Parzanese, Risorgimento e Mezzogiorno romantico. La scrittura cristiana e civile di Pietro Paolo Parzanese, che segna una tappa non certo conclusiva all’interno della storia degli studi parzanesiani, di concerto con un altro recentissimo testo, edito da Nicola Prebenna, teso a confutare l’immagine di Parzanese poeta popolare",
+  },
+  // 19. Incontro con Dante / Libertà va cercando
+  {
+    id: 404,
+    author: "L’Autore",
+    work: "Incontro con Dante / Libertà va cercando",
+    text: "Ciò che intendo sviluppare è la tesi che Dante non rappresenta solo la sintesi della teologia cristiana, l’esplicitazione poetica dell’approccio filosofico di S. Tommaso, ma l’esercizio critico nella rivendicazione del proprio spazio di libertà interpretativa, riuscendo a proporre due mondi paralleli, quello dettato e suggerito dalla dottrina ufficiale e quello affidato alla rivisitazione libera, creativa delle problematiche, e sono tante, che costellano l’universo del mondo della Commedia.\nDante scrive la Commedia spinto dall’ansia di felicità da conquistare per sé e per gli altri, e la felicità è il bene, che si identifica con Dio, inizio e fine dell’avventura della vita.\nLa conquista del bene non è agevole, è irta di pericoli, interni ed esterni. Ci sono comunque tre guide: la Divinità nelle sue articolazioni, Dio, Trinità, Vergine, santi e la loro epifania, la Chiesa, la Parola, il Potere inteso come servizio alla comunità, la voce dei Padri (cultura – tradizioni), la Mente dell’uomo che, libera, si porta talvolta oltre ciò che la lettera prescrive, che opera per unire e non per dividere, in un’ottica di salvezza che è aperta a tutti.\nDi qui l’impresa titanica di contemperare il rispetto delle diverse guide e far valere anche le ragioni della mente che indaga, che propone, che si fa a sua volta strumento di proposta nuova e diversa, nell’ottica di salvezza che privilegia la cultura, la politica, la dedizione agli altri",
+  },
+  {
+    id: 405,
+    author: "Carlo Di Lieto",
+    work: "Incontro con Dante / Libertà va cercando",
+    text: "Nicola Prebenna, raffinato poeta, scrittore di notevole spessore, in “Incontro con Dante” Libertà va cercando, Milano, Prometheus, 2021, avverte la necessità di uno scandaglio trasversale della poesia di Dante, percorrendo l'itinerario dantesco nelle sue complesse e variegate sfaccettature, saggiando moduli di investigazione, che vanno al di là della “contattazione monotematica”, con rinvii e percorsi che investono le interazioni dei saperi. Scrive sapientemente nell'Introduzione Ugo Piscopo: <<Ha fatto, quindi, bene Nicola Prebenna a scrivere il presente lavoro ... Le sue, sono contattazioni e indicazioni critiche estremamente distillate, immuni da saccenteria e da abbandoni a esultanze dionisiache>>.",
+  },
+  {
+    id: 406,
+    author: "Ugo Piscopo",
+    role: "Dalla prefazione",
+    work: "Incontro con Dante / Libertà va cercando",
+    text: "Con raffinata compostezza, egli si affaccia su tutti gli interstizi e su tutti gli anfratti della mente, prendendo nota accurata ed essenziale delle intriganti e raffinate suggestioni che di là, grazie a una scrittura michelangiolescamente scultorea e vibrante, pervengono limpidamente all’animo e alla fantasia del lettore. In particolare, egli apprezza e aiuta il lettore ad apprezzare la vigorosa ed elastica tenuta dell’intelaiatura scientifica e filosofica dell’autore, le formidabili interrogazioni della cultura e delle aspettative di riscatto dell’uomo del Medioevo, il fascino e la delicatezza innervati nei personaggi femminili che salvaguardano la storia da rischi di riduttivismo e scontatezza della società, l’effetto positivo delle accensioni di altre luci, di altre musiche, di eloquenti e fascinosi silenzi, che dicono quello che le parole non riescono a dire.",
+  },
+
+  // NARRATIVA
+  // 20. Barbe e Virgulti
   {
     id: 2,
     author: "Giorgio Barberi Squarotti",
@@ -1375,400 +1808,12 @@ export const getReviews = (): Review[] => [
     work: "Barbe e Virgulti",
     text: "Mi pare che il tuo terreno più consono e fertile (di umori, invenzioni ed esiti) sia quello narrativo. Barbe e Virgulti è un libro che scorre, lo leggi, ti ci trovi dentro, ne godi i passaggi, le sottigliezze, le ambiguità, gli espedienti di un'umanità che si misura con le istanze della vita.",
   },
-  // Dacruma
-  {
-    id: 8,
-    author: "Giorgio Barberi Squarotti",
-    work: "Dacruma",
-    text: "Dacruma riflessivo e profondo, fra ricordo e religiosità.",
-  },
-  {
-    id: 9,
-    author: "Paolo Saggese",
-    work: "Dacruma",
-    text: "Il motivo del carpe diem, del sentimento del tempo, della fugacità dell'esistenza, della vita come fatica, come sfida, come tensione, speranza e sconfitta, dominano il volume. E con essi l'immagine e il modello di Orfeo e Laocoonte, che sono il poeta.",
-  },
-  {
-    id: 10,
-    author: "Sandro Gros-Pietro",
-    role: "dalla quarta di copertina",
-    work: "Dacruma",
-    text: "Nicola Prebenna ci propone una poesia della sublimazione della realtà, che è rappresentazione straordinaria di armonia e di dolcezza, ma che è anche impegno civile quasi eroico teso a smascherare ogni camuffamento del vero.",
-  },
-  // In gurgite vasto
-  {
-    id: 11,
-    author: "Davide Puccini",
-    role: "dalla postfazione",
-    work: "In gurgite vasto",
-    text: "Quella di Prebenna è senza dubbio una poesia che fa sentire, ma anche una poesia che, in un'epoca di interrogativi tormentosi che troppi dimenticano o fingono di dimenticare dietro un eterno carnevale senza quaresima, si pone il compito meritorio di far pensare.",
-  },
-  {
-    id: 12,
-    author: "Emerico Giachery",
-    role: "dalla Prefazione",
-    work: "In gurgite vasto",
-    text: "I toni alti e incisivi si connettono spesso alle meditazioni sulla storia presente e passata, alla vena etica, civile, a una certa tensione profetica.",
-  },
-  {
-    id: 13,
-    author: "Giorgio Barberi Squarotti",
-    work: "In gurgite vasto",
-    text: "Ho subito letto la Sua nuova raccolta di versi, così ricca, mutevole, suasiva, fra memoria, riflessione, descrizioni di paesaggi ed esperienze serene di vita, consapevolezza del tempo che trascorre e dei rischi dell'esistere. Il ritmo è sempre tanto rigoroso e sicuro.",
-  },
-  {
-    id: 14,
-    author: "Giovanni Chiellino",
-    work: "In gurgite vasto",
-    text: "Nicola Prebenna guarda indietro ma ha ben presente \"La terra desolata\" di Eliot; i \"cocci aguzzi\", i \"roventi muri\" e i \"calvi picchi\" di Montale; la visione di una umanità dominata dalla solitudine, dall'aridità dei sentimenti e dalla fugacità del tempo.",
-  },
-  // E la fiaccola … vive!
-  {
-    id: 15,
-    author: "Aniello Montano",
-    role: "dalla Prefazione",
-    work: "E la fiaccola … vive!",
-    text: "In tutto il poema circolano, frammisti, entusiasmo e malinconia. Entrambi composti e contenuti, in un equilibrio misurato, aureo, quasi a creare un'atmosfera di tipo latamente parnassiana.",
-  },
-  {
-    id: 16,
-    author: "Giorgio Barberi Squarotti",
-    work: "E la fiaccola … vive!",
-    text: "Leggo con molto piacere e plauso il Suo poemetto greco, che mirabilmente congiunge le Olimpiadi antiche e quelle moderne per forza di poesia. È un'opera suasiva e originalissima per ritmo e figure e immagini.",
-  },
-  {
-    id: 17,
-    author: "Paolo Saggese",
-    work: "E la fiaccola … vive!",
-    text: "Un gusto nuovo si afferma, anche sotto lo stimolo di Quasimodo e Kavafis, un gusto neoclassico che anticipa l'ode \"E la fiaccola vive\", che si segnala per originalità e altezza d'arte.",
-  },
-  // Fragmina
-  {
-    id: 18,
-    author: "Virgilio Iandiorio",
-    work: "Fragmina",
-    text: "Non è solamente un omaggio all'arte dei vasai così prospera in passato nella sua città di Ariano Irpino, quanto una metafora della vita in tutte le sue manifestazioni, nobili e volgari, povere e ricche, accomunate tutte dallo stesso destino.",
-  },
-  // Come per acqua cupa
-  {
-    id: 19,
-    author: "Ugo Piscopo",
-    work: "Come per acqua cupa",
-    text: "Le parole che Prebenna adopera per la poesia, cioè per la sua missione morale e per le sue battaglie di verità, sono deliberatamente assunte da un ambito di solidità e di efficacia storicamente collaudate. Lo stile di Prebenna non ha compiacimenti e concessioni alle mode, all'effimero, si costruisce piuttosto come un ordito di procedimenti assoggettati alla sobrietà e alle misure di rigore e di prudenza, con cui devono fare i conti sia le occasioni e gli episodi soggettivi, sia le vicende che vanno oltre la cronaca.",
-  },
-  {
-    id: 20,
-    author: "Francesca Liuzzo",
-    work: "Come per acqua cupa",
-    text: "Pathos e logos non sono le uniche motrici della poesia prebenniana, infatti esse si vestono di ethos e quest'ultimo consente ai versi, costruiti sempre in uno stile sobrio ed equilibrato, di proporre verità e valori che hanno un'essenza universale.",
-  },
-  {
-    id: 21,
-    author: "Giorgio Barberi Squarotti",
-    work: "Come per acqua cupa",
-    text: "Ho subito letto la Sua nuova raccolta di versi, che alternano efficacemente la riflessione e l'attualità, il discorso morale e politico e la memoria. Amo di più i testi di pensiero e lezione d'anima.",
-  },
-  {
-    id: 22,
-    author: "Giuseppe Panella",
-    work: "Come per acqua cupa",
-    text: "La poesia di Prebenna è, proprio per questa sua oscillazione tematica, tutta intrecciata e simile a un tappeto prezioso orientale, di motivi legati alla dimensione del presente del \"mondo offeso\" e di risarcimenti personali e lirici connessi con la verità del ricordo.",
-  },
-  // Era il maggio odoroso
-  {
-    id: 23,
-    author: "Sandro Gros-Pietro",
-    work: "Era il maggio odoroso",
-    text: "La forma e il contenuto della poesia di Nicola Prebenna sono un grande omaggio di ripresa e di rinnovamento della tradizione classica della letteratura occidentale, che pone al centro del discorso poetico la visione lirica che il poeta ricostruisce dentro di sé del mondo.",
-  },
-  {
-    id: 24,
-    author: "Giorgio Barberi Squarotti",
-    work: "Era il maggio odoroso",
-    text: "Il Suo discorso poetico si è fatto altissimo e sicuro, fra memoria, rievocazioni, contemplazioni, sentenze. Lo nutre una saggezza antica. La sezione Toccata è, su tutte, bellissima.",
-  },
-  {
-    id: 25,
-    author: "Antonio La Penna",
-    work: "Era il maggio odoroso",
-    text: "Leggendo la Sua poesia, mi dicevo: sapit vitam: una vita operosa, limpida, ricca di affetti profondi, da quelli familiari a quelli religiosi. In un tempo in cui i valori si sono indeboliti o sono morti, Lei resta radicato in grandi tradizioni sempre vive.",
-  },
-  {
-    id: 26,
-    author: "Giuseppe d'Errico",
-    work: "Era il maggio odoroso",
-    text: "Il pensiero e il sentimento si compenetrano ed integrano: il pensiero, suggerito dalla ragione e dalla riflessione, è intimamente penetrato ed arricchito dal sogno, il sentimento non si abbandona mai ad arcadici vagheggiamenti, ma si avvale della riflessione che non inaridisce le immagini ma le sostanzia di significato e di valori.",
-  },
-  // Il Settecento e l'Autobiografia
-  {
-    id: 27,
-    author: "Giuseppe Panella",
-    role: "Docente di Estetica, Scuola Normale Superiore di Pisa",
-    work: "Il Settecento e l'Autobiografia",
-    text: "Le autobiografie di cui Prebenna si occupa valicano di gran lunga il rigido regime dell'impatto storicistico con il presente per diventare rievocazione, spesso lirica e feconda, di un secolo e di una cultura ancora capace di influenzare e lavorare sul presente.",
-  },
-  // Vulnera Temporis
-  {
-    id: 28,
-    author: "Angelo Carlino",
-    work: "Vulnera Temporis",
-    text: "Il poeta cosmopolita, ma legatissimo alla sua amata terra, fa tesoro della sua esperienza e riesce a mettere a fuoco tanti problemi che affliggono la società. Da intellettuale impegnato avverte il dovere morale di denunciare le atrocità delle guerre, le azioni terroristiche che insanguinano tanti paesi.",
-  },
-  {
-    id: 29,
-    author: "Armando Saveriano",
-    work: "Vulnera Temporis",
-    text: "La poesia di Prebenna può contare su un verso originalissimo, conio di felice sperimentazione; è fiotto di testimonianza, pratica di funzione divinatrice; è chiarore in cerca di luce, per altri svelamenti.",
-  },
-  // Vive l'amore e canto
-  {
-    id: 30,
-    author: "Virgilio Iandiorio",
-    role: "dalla Postfazione",
-    work: "Vive l'amore e canto",
-    text: "Non bisogna aspettare la fine dei giorni per contemplare la bellezza. Nicola Prebenna ha avuto modo in questi anni di scoprire l'eterno che è in noi e che si concretizza nella nostra vita quotidiana. Bisogna solamente saperlo riconoscere, accettarlo e goderne la bellezza e la beatitudine. Come tutte le cose del mondo nascono e muoiono anche la nostra vita è destinata a finire. Eppure la metafora della vita che nasce e che finisce, non si può adattare al nostro essere. Perché in noi c’è qualcosa che non muore con l’ultimo nostro respiro. Nicola Prebenna indica nell’aspirazione alla santità qualcosa di divino che è in noi e che ci consente di vivere anche oltre la morte corporale. E questa scoperta diventa tanto più importante se viene fatta in comunione con qualcuno, con il coniuge, con cui si sono condivisi i giorni, i mesi e gli anni: “Se un sole per tutti muore, / un altro per me più vivo si appresta / alla vita e luce si fa a diradare / le tenebre dell’età che avanza / e al sole al tramonto assomiglia.”.",
-  },
-  {
-    id: 31,
-    author: "Carlo Di Lieto",
-    role: "dalla Prefazione",
-    work: "Vive l'amore e canto",
-    text: "Questo tenero 'canzoniere d'amore' di Nicola Prebenna è un dettato poetico di inimitabile purezza, scandito da un'elegante sobrietà di un \"inquieto sentire\". Il discorso amoroso si dipana lungo il versante di tre direttrici: \"Le gioie pure del focolare\", \"Il sentimento del tempo\", \"L'elegia della memoria\". L’io poetante domina dal primo all’ultimo verso, partendo da una trama assai tenue e delicata, a fronte di un afflato di nitida ispirazione. L’autoanalisi diventa un muto colloquio con se stesso, in un intreccio incalzante di vicende tra nostalgie e rimpianti. La costellazione policroma dell’io non cambia mai registro nell’ebbrezza della vita e della felicità di esistere. Le pulsioni, intraviste lungo il discrimine di una muta risonanza crepuscolare, si trasformano in impulso vitale, dal forte vigore mnestico.",
-  },
-  {
-    id: 32,
-    author: "Domenico Defelice",
-    work: "Vive l'amore e canto",
-    text: "La silloge Vive l'amore e canto viene pubblicata in occasione del cinquantesimo di matrimonio del poeta e si compone di cinquanta brani, uno per ciascun anno. Va considerata come un poemetto, legando brano a brano a partire dalla polvere di stelle dalla quale ciascun di noi è nato. Nella poesia di Nicola Prebenna si trovano moltissimi echi dei nostri classici, a volte interi lor versi (Dante, Petrarca, Leopardi, Foscolo, Pascoli), ma anche moderni (Saba) e attuali, non volutamente segnati, appositamente cercati, ma spontaneamente da mente e cuore richiamati e inseriti in contesti diversi e quotidiani, perché divenuti in lui, col tempo, parte della sua energia, sangue del suo sangue, retaggio di intenso studio e di amore per tutti loro. Questi poeti sono ormai la sua stessa vita e lui non lo nega, s’è vero che, spesso, ricorre a loro per intitolare le proprie opere: “Era il maggio odoroso” (Leopardi), “In una parte più e meno altrove” (Dante); e ciò avviene anche per la fede, col richiamo a testi sacri (“Non di solo pane” romanzo) e la più volte citata Stella cometa o Stella promessa, col riferimento a quella che ha guidato i Magi alla grotta di Betlemme.",
-  },
-  {
-    id: 33,
-    author: "Pasquale Maffeo",
-    work: "Vive l'amore e canto",
-    text: "Prebenna tocca altezze di genialità, lasciandosi guidare dalla sintassi semantica, dalla sintassi inventiva, dalla sintassi melica; l'ispirazione del nostro poeta è sempre sua, non raccoglie frammenti di lontane letture. Voglio ringraziarti per il dono prezioso che mi hai mandato Vive l’amore e canto e soprattutto per la dedica che hai scritto. Io ho già letto tutto il volume; rispecchia la vita intera, la natura, la casa, gli amori. Sei un poeta idoneo, vero, non devi niente a nessuno, hai la facoltà di suscitare problemi, parli dei tuoi cari, morti, vivi, della natura. Ti ringrazio molto e ti abbraccio. Seguirà breve nota critica per posta.",
-  },
-  // Per cieli nuovi e terra nuova
-  {
-    id: 34,
-    author: "Giuseppe Iuliano",
-    work: "Per cieli nuovi e terra nuova",
-    text: "La poesia di Prebenna può contare su un verso originalissimo, conio di felice sperimentazione; è fiotto di testimonianza, pratica di funzione divinatrice; è chiarore in cerca di luce, per altri svelamenti. La voce onesta ed accorata è seme e concime, un lascito dello spirito. La sua poesia/cantico esalta il dono della vita e pone nuovi comandamenti per \"la natura che abbiamo avvelenato, / il mare che continuiamo ad inquinare, / i fratelli che eliminiamo, / che derubiamo / in mille modi, che asserviamo ai nostri capricci, ai nostri voleri\". Insomma ci consegna un pregnante manifesto di natura/umanità/umanesimo",
-  },
-  {
-    id: 35,
-    author: "Sandro Gros-Pietro",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Hai scritto un libro che è una straordinaria testimonianza di fede, anche di patimento e di gioioso dolore ovvero di dolorosa gioia, nella continua testimonianza dell'esempio mostrato dal Dio che si è fatto uomo.",
-  },
-  {
-    id: 36,
-    author: "Carlo Di Lieto",
-    role: "dalla Prefazione",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Come in un sogno ad occhi aperti, il furore creativo di Nicola Prebenna disvela un'emotività pulsionale incontenibile, in un perpetuo status nascendi. Le immagini adombrano un variegato percorso inconscio, che porta alla luce una segreta rivelazione di una fascinosa bellezza. La pulsione di vita prevale comunque su quella di morte nella poesia di Prebenna; l’aura archetipica dello stato di grazia dell’ispirazione si con-fonde con l’empito dell’astrazione. Il varco è proprio qui: il dettato lirico diventa un viaggio liberatorio per proiettarsi in una rapita visione dell’oltre, dando la dovuta trasfigurazione al “Tempo ritrovato” della memoria proustiana …",
-  },
-  {
-    id: 37,
-    author: "Domenico Defelice",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Prebenna è uomo che ama l'umanità e vive ben radicato, non astrattamente, su questa Terra e perciò i due infinitesimi sono sempre rapportati alle sue visioni e sensazioni, alle sue personali vicende.",
-  },
-  // Fiori di campo
-  {
-    id: 38,
-    author: "Antonio Pizzo",
-    work: "Fiori di campo",
-    text: "Altro che Fiori di campo! Leggendo, non ho trovato i colori più vari, né le distese di verde punteggiate da anemoni, né profumi ad solacium, ma solo un \"io\" alla ricerca di sé nel mare senza fine del male e del bene della vita. Eppure, nonostante tanta amarezza, il tuo mondo prevede sempre l'agire degli uomini di buona volontà.",
-  },
-  {
-    id: 39,
-    author: "Domenico Defelice",
-    role: "dalla rivista Il Convivio",
-    work: "Fiori di campo",
-    text: "Non esistono fiori più belli di quelli che crescono spontanei nei campi, vere e proprie creature innocenti rivestite da Dio. A loro si richiamano i versi che Nicola Prebenna inanella in questa raccolta, ridotta per formato e numero di componimenti, ma densa e ricca per temi e contenuto.",
-  },
-  // L'altra faccia della luna
-  {
-    id: 40,
-    author: "Carlo Di Lieto",
-    role: "dalla Prefazione",
-    work: "L'altra faccia della luna",
-    text: "Senza ombra di dubbio, siamo giunti al punto più mirabile della poesia di Nicola Prebenna, dopo un encomiabile percorso umano e letterario. La tenerezza elegiaca del verso di Prebenna rende visibile lo sconfinamento dell'io, visto nella prospettiva psicoanalitica della sua attività onirica. Questa nuova e intensa silloge di poesie di Nicola Prebenna, L’altra faccia della luna, è un altro importante tassello, che si aggiunge alla sua straordinaria opera poetica. È un tracciato emozionale che radialmente attraversa le lunazioni, nel loro periodico avvicendarsi, quale puntuale riflesso delle vicende umane. Il Poeta, con un’immedesimazione proiettiva, rende visibili gli sconfinamenti dell’io, visti nella prospettiva psicoanalitica dell’attività onirica come “via regia della conoscenza dell’inconscio del Poeta […] Il “pensiero poetante” di Nicola Prebenna va inteso come capacità di sapersi distanziare dal “principio di realtà” e di sapere elaborare, in modo egregio, una forma espressiva che gli consenta di dare un senso all’Essere e alla sua ragione profonda.",
-  },
-  {
-    id: 41,
-    author: "Floriana Guerriero",
-    work: "L'altra faccia della luna",
-    text: "Ci troviamo di fronte a versi che consegnano un io lacerato e inquieto, che trova nella condivisione, nella relazione con gli altri l'unico balsamo alla propria sofferenza.",
-  },
-  // Dittico arcobaleno
-  {
-    id: 42,
-    author: "Andrea Covotta",
-    role: "Direttore Rai Quirinale, dalla Prefazione",
-    work: "Dittico arcobaleno",
-    text: "I versi di Prebenna ci conducono in un percorso che incrocia la passione per la propria terra e lo sguardo allungato su un mondo devastato, senza mai perdere la fiducia in un domani migliore.",
-  },
-  {
-    id: 43,
-    author: "Domenico Defelice",
-    work: "Dittico arcobaleno",
-    text: "Nicola Prebenna è talmente inzuppato di poesia e classicità da ornare sempre con termini e versi di autori immortali, naturalmente e senza sfoggio, lo scrivere e il parlare. La poesia è per lui sangue che circola nelle vene e sorgente alla quale l'umanità intera dovrebbe abbeverarsi.",
-  },
-  {
-    id: 44,
-    author: "Carlo Di Lieto",
-    work: "Dittico arcobaleno",
-    text: "La levigatezza del dettato poetico di Nicola Prebenna offre al lettore un rinnovato piacere. Gli affondi esistenziali propongono momenti di acuta riflessione. Nel solco del sentimento del Nulla, il poeta affida il suo disincanto al turbinio molesto dei ricordi.",
-  },
-  // Per correr migliori acque
-  {
-    id: 45,
-    author: "Corrado Calabrò",
-    work: "Per correr migliori acque",
-    text: "Una plaquette davvero pensosa e di tutta attualità, con l'importante prefazione di Carlo Di Lieto.",
-  },
-  {
-    id: 46,
-    author: "Pasquale Maffeo",
-    work: "Per correr migliori acque",
-    text: "Volevo ringraziarti per questo nuovo lavoro; l'ho letto e scorso molto bene. Mi voglio complimentare con te che hai fatto veramente un'opera molto bella, un'opera di poesia.",
-  },
-  // In una parte più e meno altrove
-  {
-    id: 47,
-    author: "Ugo Piscopo",
-    work: "In una parte più e meno altrove",
-    text: "In quest'ultima stagione si accentua notevolmente la tendenza a guardare sempre frontalmente la vita, ma attraverso un filtro memoriale più vigile e più agonico attentissimo alle metamorfosi degli eventi. La testimonianza trapassa in visione, la composizione in elegia, che rinvia ai nobili modelli dell'elegia della poesia italiana da Petrarca a Leopardi.",
-  },
-  {
-    id: 301,
-    author: "Premio I Murazzi per l’inedito 2016 (Dignità di stampa)",
-    role: "Motivazione di Giuria",
-    work: "In una parte più e meno altrove",
-    text: "In una concatenazione sia gioiosa sia drammatica di turbamenti, sensazioni, agnizioni, allusioni e altri fantasmi si sviluppa lungo i versi, intonati alla tradizione metrica e all’armonia interna del linguaggio, una vicenda di spaesamenti e di recuperi della coscienza del mondo e delle logiche di interpretazioni, fino a giungere alla incertezza di una verità assoluta e a proporre l’incertezza del dubbio come una condizione inalienabile della mente.",
-  },
-  // In rime sparse
-  {
-    id: 48,
-    author: "Antonio D'Antuono",
-    work: "In rime sparse",
-    text: "In una società globalizzata come la nostra, espressione della \"modernità liquida\", in cui l'effimero e il fugace la fanno da padrone, la poesia di Prebenna si fa maieutica, autentica lezione dialogante, musica dell'anima.",
-  },
-  // Non di solo pane
+  // 21. Non di solo pane
   {
     id: 49,
     author: "Antonio Pizzo",
     work: "Non di solo pane",
     text: "Un romanzo che ci consegna un ritratto amorevole della tua famiglia d'origine e un servizio ancora amorevole per chi viene dopo e prosegue in continuità. Ho apprezzato molto il capitolo Del Lavoro, agile, puntuale, partecipato, coinvolgente.",
-  },
-  {
-    id: 201,
-    author: "Gianmario Lucini",
-    work: "In gurgite vasto",
-    text: "E Prebenna è reattivo, la sua denuncia parte da un sentire, da una esigenza di ristabilire un equilibrio interiore spezzato dall'esperienza delle contraddizioni che si incontra nella storia, attraverso la parola, la comunicazione. A tutto campo, \"in gurgite vasto\", senza timore di perdersi se si ha al centro di sé una, pur aperta, convinzione morale.",
-  },
-  {
-    id: 202,
-    author: "Ugo Piscopo",
-    work: "Vulnera Temporis",
-    text: "Prebenna non concede né a sé né a chi legge di procedere per sottili distinguo o intrattenimenti ludico-cerebrali, e procede rigorosamente per tale via, non d’impulso dell’emotività e dell’impazienza, ma su insegnamento avuto dal biblismo e dall’eloquenza sacra (Savonarola, San Bernardino, Sant’Alfonso) e, insieme, dagli studi classici, che lo hanno messo a contatto col pessimismo della Weltanschauung del mondo greco e con la poesia gnomica e sentenziosa greco-latina, oltre che con i nostri grandi autori da Dante e Petrarca a Manzoni e Leopardi. Di qua, il suo scansire sillabe e idee, la sua pronunzia distillata, il suo uso di parole come munizioni in trincea o vibrazioni elettriche.",
-  },
-  {
-    id: 203,
-    author: "Paweł Krupka",
-    work: "Vulnera Temporis",
-    text: "… In questo contesto bisogna considerare i meriti di Nicola Prebenna che nel suo libro Vulnera temporis si riferisce a questo, appunto, mondo di oggi che non ispira ottimismo. Eppure, essendo onesto e realista nelle sue visioni letterarie, non si limita, come la maggior parte dei suoi contemporanei, a rispecchiare la realtà che nel complesso bella non è. Reagisce al mondo che descrive con l’interna armonia scaturita dalla sua formazione spirituale. Una formazione classica fondata sui valori tradizionali della fede religiosa e la coscienza civile ereditata dalla storia della civiltà mediterranea.",
-  },
-  {
-    id: 204,
-    author: "Francesco D’Episcopo",
-    work: "Vulnera Temporis",
-    text: "Attenzione: i vulnera, le ferite personali (come quella per la morte del proprio padre) e universali (legate a vicende sempre più violente e incontrollabili) restano, ma resta anche la fiducia in un ricongiungimento finale, in una resurrezione dell’umanità, che la poesia di Prebenna invoca con costanza ed energia, confermate anche dalle sue precedenti e numerose esperienze poetiche",
-  },
-  {
-    id: 205,
-    author: "Sandro Gros-Pietro",
-    work: "L'altra faccia della luna",
-    text: "Per collocazione stilistica egli rientra negli autori che hanno seguito solo per curiosità le vicende della avanguardie, ma che si sono formati e radicati nello studio e nella valorizzazione della ricchissima tradizione di Poesia sviluppata dalla letteratura italiana, al punto che, nel caso di Prebenna, si può accostare la sua esperienza poetica all’alto esempio lasciato da Vincenzo Cardarelli, Guido Gozzano, Umberto Saba, Dino Campana, fino ad arrivare ad autori più recenti come Giovanni Giudici e Mario Luzi: …",
-  },
-  {
-    id: 302,
-    author: "Virgilio Iandiorio",
-    work: "L'altra faccia della luna",
-    text: "Con le sue poesie Nicola Prebenna ci invita a meditare sulla nostra esistenza che non è eterna e che è destinata a finire, in tempo però per dare a noi la possibilità di lasciare un segno della nostra presenza sulla terra. E quando la parola si fa poesia, lascia un segno indelebile che neppure i secoli potranno cancellare",
-  },
-  {
-    id: 303,
-    author: "Virgilio Iandiorio",
-    work: "L'altra faccia della luna",
-    text: "La silloge L’altra faccia della luna richiama subito un’analogia. Perché Prebenna nel suo libro ha raccolto cento poesie? Era forse davanti ai suoi occhi il poema di Dante che è composto di cento canti) Il riferimento al poeta della Divina Commedia è costante nelle opere di Prebenna. La riflessione sulla nostra esistenza, o fatta “nel mezzo del cammin di nostra vita” o alla conclusione di questo nostro cammino, ci mette nei panni del viaggiatore che cammina verso una meta che nessuno di noi ha avuto e avrà la possibilità di raffigurarsi in anticipo come sarà",
-  },
-  {
-    id: 207,
-    author: "Antonio Pizzo",
-    work: "Per correr migliori acque",
-    text: "Caro Nicola, ho letto la tua \"ode civile\". È davvero coinvolgente. Bravo. Condivido in larga parte la presentazione di Carlo Di Lieto, soprattutto nella scelta dei tuoi versi. Ma non trovo adeguata la sua sintesi nel titolo \"dallo sgomento al disincanto\"; al contrario la mia lettura ha trovato nella tua ode tanta tensione/speranza di un impegno da parte di tutti ormai improrogabile nel \"correr migliori acque\", originata proprio da quel nuovo sgomento. Ma, si sa, ognuno a suo modo",
-  },
-  {
-    id: 208,
-    author: "Carlo Di Lieto",
-    work: "Per correr migliori acque",
-    text: "Nella religiosità “dialettica” di Prebenna c’è un Dio che, nella sua azione provvidenziale, attiva un’identità nobile nell’uomo, correlata al sentimento di responsabilità e di austerità interiore. La componente religiosa riveste un ruolo significativo nei versi alati di Nicola Prebenna, i quali non prescindono mai dalla sua solida formazione letteraria: Dante, Leopardi, Manzoni, Foscolo, i calchi e i rinvii sono evidenti e sono riassorbiti felicemente dall’empito fascinoso dell’ispirazione di quest’ode.\nLa speranza, in quest’ode, rinasce dalle ceneri della disperazione; c’è un’estenuante attesa, con pochi barlumi di speranza; la coazione a ripetere è in funzione del dispiacere e della pulsione di morte: la liberazione dal morbo, che uccide, è in un tempo sospeso e in uno spazio metastorico, in quell’aura misteriosa dell’atomo opaco del male",
-  },
-  {
-    id: 209,
-    author: "Virgilio Iandiorio",
-    work: "Per cieli nuovi e terra nuova",
-    text: "La silloge di Nicola Prebenna si apre con la poesia “CIELI NUOVI E TERRA NUOVA”, che ripropone quasi per intero il titolo del libro. L’aggettivo “nuovo” è riferito sia al Cielo sia alla Terra. Il nostro poeta ha volto evidenziare il suo coinvolgimento totale, nella prospettiva della vita futura, quella che ci attende dopo la morte, ma anche nell’immediato, nei momenti che viviamo istante per istante. Nell’una e nell’altra dimensione, vuole dirci, la vita va rispettata e vissuta insieme a coloro che abbiamo intorno a noi o incontriamo fugacemente: pronti tutti ad intonare il canto di grazie / per la vita che ovunque respira.",
-  },
-  {
-    id: 210,
-    author: "Emanuele Occhipinti",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Caro Nicola, circa dieci giorni fa ho ricevuto il tuo CIELI NUOVI E TERRA NUOVA, ma non ti ho risposto subito perché volevo prima leggere tutte le composizioni. Certamente dall'insieme emerge un profondo e continuo afflato di fede, che corre e si articola attraverso il confronto tra il vivere terreno pieno di tentazioni devianti e la speranza o certezza della condizione salvifica e felice dell'esistenza che ci attende dopo la morte",
-  },
-  {
-    id: 211,
-    author: "Angelo Michele Imbriani",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Il linguaggio che mette insieme poesia e pensiero, il \"pensiero poetante\": \"ogni meditante pensare è poetare, ogni poetare è pensare\", scrive il filosofo (Heidegger). Naturalmente come non ogni pensiero è poesia, così non ogni poesia è gravida di pensiero. Ma lo è la poesia di Nicola Prebenna, perché sobriamente e discretamente intessuta di una trama di riferimenti letterari, biblici, filosofici",
-  },
-  {
-    id: 212,
-    author: "Ortensio Zecchino",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Caro Nicola,\nnel viaggio Roma-Ariano sono in compagnia delle tue poesie: tutte molto belle alcuni versi sublimi. Sono immersioni delicatissime in abissi spirituali senza fondo per una incessante ricerca che offre come premio una melanconica serenità. Complimenti e affettuosi auguri natalizi. Ortensio",
-  },
-  {
-    id: 215,
-    author: "Gianluca Amatucci",
-    work: "Per cieli nuovi e terra nuova",
-    text: "Con Per cieli nuovi e terra nuova, Nicola Prebenna offre un’opera di grande rilevanza nell’ambito della poesia contemporanea, capace di coniugare tensione speculativa e lirismo, visione escatologica e indagine interiore. Il poeta conferma la sua capacità di esplorare con profondità le dinamiche dell’essere, restituendo al lettore una poesia che si fa strumento di conoscenza e di trasformazione dell’esperienza umana",
-  },
-  {
-    id: 216,
-    author: "Maria Teresa Liuzzo",
-    work: "Fragmina",
-    text: "Notevoli sono i versi dedicati al potere, soverchiante ed oppressivo, cui sono e sono stati soggetti popoli e generazioni, nel corso dei secoli. Il poeta evidenzia come nulla sia mutato dall’antichità ai nostri giorni: il potere non è cessato, ha semplicemente mutato l’abito, in una sorta di subdolo e arrogante trasformismo.",
-  },
-  {
-    id: 217,
-    author: "Armando Saveriano",
-    work: "Fragmina",
-    text: "Arricchita dalla dotta e autorevole prefazione del critico/poeta Ugo Piscopo, che citando Husserl, ipostatizza l’intenzionalità di Brentano, la filosofia della mente, scienze cognitive e neuroscienze, la silloge attesta che la poesia non è ‘evaporitica’ quando a simboleggiarla tra tono lirico discorsivo e tono epico-narrativo è l’aedo rapsodo dei giorni nostri della levatura di Nicola Prebenna, con il tratto originale di arte e ‘artigianato’ della parola creatrice/attrice, l’ethos che non pecca di hybris su un versante che lascia filtrare l’essenza fenomenica, resiste al tempo e vale a riassumerne il valore …",
-  },
-  {
-    id: 218,
-    author: "Giuseppe Manitta",
-    work: "In rime sparse",
-    text: "La poesia che costituisce l’apriporta del libro è certamente indicativa del valore simbolico e intertestuale, sin dal titolo Al canto del gallo. Ciò perché il riferimento non è tanto al gallo silvestre di memoria leopardiana, ma a quello evangelico del rinnegamento da parte di Pietro. A quella negazione, però, il poeta idealmente contrappone l’alba e il nuovo giorno",
-  },
-  {
-    id: 219,
-    author: "Antonio D’Antuono",
-    work: "In rime sparse",
-    text: "La poesia di Prebenna, attraverso una versificazione agile e corposa al tempo stesso, si fa voce che grida con tutta la forza che ha in gola, nell’invitarci a riflettere non soltanto su quanto avviene intorno a noi (vedi Lamento del circo), ma anche e soprattutto su quanto accade e v’è dentro di noi. Essa si presenta come scandaglio che sonda i fondali della nostra esistenza e del nostro rapporto col mondo",
   },
   {
     id: 220,
@@ -1793,6 +1838,35 @@ export const getReviews = (): Review[] => [
     author: "Virgilio Iandiorio",
     work: "Non di solo pane",
     text: "Con questo suo romanzo Nicola Prebenna ha voluto come scrivere un testamento ai suoi familiari, non indicando i beni materiali in lascito, ma i beni che né la tignola né la ruggine possono corrompere, perché sono le cose belle che un uomo ha potuto realizzare nella sua vita",
+  },
+
+  // SAGGISTICA
+  // 22. Mi prendo per la gola e … dimagrisco
+  {
+    id: 407,
+    author: "Virgilio Iandiorio",
+    role: "Quotidiano del Sud, 23 maggio 2015",
+    work: "Mi prendo per la gola e … dimagrisco",
+    text: "Oggi a Pollica fraz. Pioppi –Piano Superiore, nel Cilento, viene presentato il libro di Vittorio Roberti e Nicola Prebenna Mi prendo per la gola… e dimagrisco, edito da Delta 3. Il dott. Roberti è biologo nutrizionista e specialista in scienza dell’alimentazione; il prof. Prebenna è anche scrittore, poeta e critico letterario.\nUn libro scritto a quattro mani, ma con un altro protagonista, il lettore. Perché è proprio chi ha bisogno di dieta l’artefice principale, senza il suo coinvolgimento le prescrizioni del nutrizionista servono a poco. Ecco perché più che di dieta sarebbe preferibile dire “proposta nutrizionale”. “Se tu lettore – affermano gli autori- … senti che la tua mente e la tua volontà sono sintonizzate con il proposito di affidarti alla tua libera disponibilità a costruire con le tue forze un rapporto nuovo con il cibo, ciò vuol dire che sei diventato il protagonista della conquista del tuo benessere, e attore principale di questo libro, di cui oltre che lettore divieni coautore”.",
+  },
+  {
+    id: 408,
+    author: "Andrea Fantucchio",
+    work: "Mi prendo per la gola e … dimagrisco",
+    text: "Dimagrire mangiando pasta o cioccolata, divertirsi e modellare il proprio fisico prendendosi per la gola, parafrasando il titolo del libro che contiene l’innovativa strategia nutrizionale messa appunto da Vittorio Roberti, biologo nutrizionista, docente di Nutrizione Preventiva LUETEC e Humaniter di Napoli, e Nicola Prebenna, studioso delle scienze socio-psico-pedagogiche.\nIl 2.0 della Dieta Mediterranea tradizionale nasce in Campania e, dopo la presentazione a Salerno durante \"Bio e Dintorni, le notti Bio\" il 25,26 e 27 settembre,sarà anche da noi in Irpinia. Non si tratta dell’ultimo ritrovato astruso che promette mirabolanti dimagrimenti, costringendo il paziente a rinunce terribili che lo rendono nervoso e irritabile, magari pregiudicandone il rapporto con gli altri. La dieta drenante mediterranea sequenziata, la strategia di Roberti è, infatti, un modello alimentare che si oppone alle privazioni caloriche drastiche: bandite le strategie 0 carboidrati, e ogni genere di tortura iper-restrittiva che, a detta dello scrittore, frustrano inutilmente i pazienti minando il loro rapporto col cibo",
+  },
+  {
+    id: 409,
+    author: "Rassegna Libri in Comune",
+    work: "Mi prendo per la gola e … dimagrisco",
+    text: "Continua il successo, presso la sala consiliare del comune di Mercogliano, della Rassegna “Libri in Comune”, promossa dall’assessore alla cultura Lucia Sbrescia insieme al sindaco della Città Massimiliano Carullo, nell’ambito del progetto “Mercogliano Lab”. E’ la volta, giovedì 7 aprile, alle ore 18:00, del libro di Nicola Prebenna e di Vittorio Roberti. […] A moderare gli interventi della serata ci sarà il giornalista de “Il Mattino”, nonché riconosciuto esperto di enogastronomia dr. Annibale Discepolo. Il testo di Prebenna e Roberti si propone di favorire un migliore rapporto con il cibo, senza proibizioni di sorta, ispirato alla tutela della salute ed alla ricerca del benessere; un benessere ricercato senza privazioni particolari, in un clima di serena coabitazione e cooperazione tra corpo e mente, tra soma e psiche. Uno degli aspetti di novità del testo è costituito dalla riproposizione degli alimenti della dieta mediterranea, sia pure rimodulata e adattata; ed è questo ciò che rende particolarmente intrigante il lavoro che si presenta",
+  },
+  {
+    id: 410,
+    author: "Vittorio Roberti",
+    role: "Intervista al coautore",
+    work: "Mi prendo per la gola e … dimagrisco",
+    text: "Stiamo smarrendo la dieta mediterranea? “Si sta perdendo perché il mondo è liquido e veloce - afferma il professore -, perché si dedica poca attenzione alla cucina. Ho scritto, in collaborazione con Nicola Prebenna, esperto di scienze sociopsicopedagogiche, un libro, ‘Mi prendo per la gola … e dimagrisco’ (Delta 3 Edizioni), che fa capire che anche in pochissimo tempo si possono preparare ottimi menu e che è possibile dimagrire, pure mangiando pasta e cioccolata. Oggi non sempre si conoscono gli alimenti, le associazioni e le sequenze degli alimenti: dobbiamo imparare a nutrirci. Perché le francesi sono le più magre d’Europa e hanno il minor rischio di incorrere in malattie cardiovascolari? Iniziano il pasto sempre con una verdura - fa sapere il nutrizionista - e se mangiano gnocchi e pasta dopo aver mangiato una verdura, riescono ad assicurare il giusto drenaggio: a trasformare carboidrati per l’utilizzo immediato per il corpo e non per costituire una riserva di grassi”.",
   },
 ];
 
