@@ -330,8 +330,50 @@ const Biografia = () => {
       </SectionBlock>
 
       {/* Awards gallery + list */}
-      <SectionBlock title="Premi e Riconoscimenti" subtitle="Un percorso costellato di successi">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <SectionBlock title="Premi e Riconoscimenti">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.4 }}
+          className="text-center -mt-8 mb-12 max-w-3xl mx-auto"
+        >
+          <p className="text-display text-2xl md:text-3xl font-semibold text-gold mb-6">
+            Un percorso costellato di successi
+          </p>
+          <p className="prose-editorial">
+            Molti sono i premi che gli sono stati attribuiti. Vengono di seguito riportati solo quelli relativi alle sillogi poetiche. Successivamente sono presentate foto di alcuni premi.
+          </p>
+        </motion.div>
+
+        {/* Awards grouped by work */}
+        <div className="max-w-3xl mx-auto space-y-10 mb-16">
+          {premiPerOpera.map((gruppo, gi) => (
+            <motion.div
+              key={gi}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35 }}
+            >
+              <h3 className="text-display text-lg md:text-xl font-semibold text-foreground uppercase tracking-wide mb-1">
+                {gruppo.opera} <span className="text-gold">— Premi conseguiti</span>
+              </h3>
+              <div className="divider-gold !mx-0 mb-4" />
+              <ul className="space-y-2">
+                {gruppo.premi.map((p, pi) => (
+                  <li key={pi} className="flex items-start gap-3 py-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
+                    <span className="text-sm text-foreground/80 leading-relaxed">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Existing awards photo grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {bioImages.slice(5).map((img, i) => (
             <motion.div
               key={i}
@@ -351,32 +393,30 @@ const Biografia = () => {
           ))}
         </div>
 
-        <div className="space-y-3 max-w-3xl mx-auto">
-          {[
-            "XXXI Premio Città di Pinerolo 2020: 1° PREMIO per Vulnera Temporis.",
-            "Premio Vitruvio 2024: Premio Speciale della Giuria per Vive l'amore e canto.",
-            "Premio \"Città di Pinerolo\" 2024: I Premio per la poesia edita con Vive l'amore e canto.",
-            "Premio \"Vino, Amore e Poesia\" 2024 (Castelfranci): Premio Speciale alla carriera per l'Opera Poetica.",
-            "XXIII Premio Internazionale di Cultura \"Re Manfredi\": Opera segnalata per la silloge Fragmina.",
-            "20° Concorso Nazionale di Poesia \"Città di Manfredonia\" 2011: Opera segnalata per Era il maggio odoroso.",
-            "Premio Internazionale ACSI \"Firenze Capitale d'Europa\" XXIII edizione (2020): III Premio Poesia Edita per Per correr migliori acque.",
-            "Premio Poeti residenti all'estero – Quarrata (2003).",
-            "Premio Internazionale Emily Dickinson – 1° Classificato.",
-            "Premio Letterario del Casentino, Poppi.",
-            "Premio Fortuna d'Autore, Bari.",
-          ].map((award, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              transition={{ duration: 0.3, delay: i * 0.04 }}
-              className="flex items-start gap-3 py-2 border-b border-border/50 last:border-0"
-            >
-              <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-1.5" />
-              <span className="text-sm text-foreground/80 leading-relaxed">{award}</span>
-            </motion.div>
-          ))}
+        {/* Horizontal scrolling photo carousel */}
+        <div className="-mx-4 md:-mx-8">
+          <div
+            className="flex gap-4 md:gap-6 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scroll-smooth"
+            style={{ scrollbarWidth: "thin" }}
+          >
+            {premiCarousel.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3 }}
+                className="shrink-0 snap-start w-[260px] md:w-[340px]"
+              >
+                <img
+                  src={src}
+                  alt={`Foto premio ${i + 1}`}
+                  className="w-full h-[200px] md:h-[240px] rounded-sm shadow-lg object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </SectionBlock>
     </Layout>
