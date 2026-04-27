@@ -21,8 +21,14 @@ import premio7 from "@/assets/premi/premio_7.png";
 import premio8 from "@/assets/premi/premio_8.png";
 import premio9 from "@/assets/premi/premio_9.png";
 import premio10 from "@/assets/premi/premio_10.png";
+import premio11 from "@/assets/premi/premio_11.png";
+import premio12 from "@/assets/premi/premio_12.png";
+import premio13 from "@/assets/premi/premio_13.png";
+import premio14 from "@/assets/premi/premio_14.png";
+import premio15 from "@/assets/premi/premio_15.png";
 
-const premiCarousel = [premio2, premio3, premio4, premio5, premio6, premio7, premio8, premio9, premio10];
+const premiCarousel = [premio2, premio3, premio4, premio5, premio6, premio7, premio8, premio9, premio10, premio11, premio12, premio13, premio14, premio15];
+const premiCarouselLoop = [...premiCarousel, ...premiCarousel];
 
 const premiPerOpera: { opera: string; premi: string[] }[] = [
   {
@@ -329,6 +335,29 @@ const Biografia = () => {
         </motion.div>
       </SectionBlock>
 
+      {/* Awards photo grid moved above awards list */}
+      <SectionBlock>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {bioImages.slice(5).map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+      </SectionBlock>
+
       {/* Awards gallery + list */}
       <SectionBlock title="Premi e Riconoscimenti">
         <motion.div
@@ -372,53 +401,30 @@ const Biografia = () => {
           ))}
         </div>
 
-        {/* Existing awards photo grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {bioImages.slice(5).map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              transition={{ duration: 0.35, delay: i * 0.08 }}
-            >
+      </SectionBlock>
+
+      {/* Full-bleed horizontal autoplay carousel */}
+      <section
+        className="overflow-hidden pb-16 md:pb-24"
+        style={{ width: "100vw", marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)" }}
+      >
+        <motion.div
+          className="flex w-max gap-0 py-3"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 95, repeat: Infinity }}
+        >
+          {premiCarouselLoop.map((src, i) => (
+            <div key={`${src}-${i}`} className="shrink-0">
               <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                src={src}
+                alt={`Foto premio ${i + 1}`}
+                className="block w-auto max-w-none h-[62vw] min-h-[320px] max-h-[78vh] object-contain"
                 loading="lazy"
               />
-              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
-            </motion.div>
+            </div>
           ))}
-        </div>
-
-        {/* Horizontal scrolling photo carousel */}
-        <div className="-mx-4 md:-mx-8">
-          <div
-            className="flex gap-4 md:gap-6 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scroll-smooth"
-            style={{ scrollbarWidth: "thin" }}
-          >
-            {premiCarousel.map((src, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 }}
-                className="shrink-0 snap-start w-[260px] md:w-[340px]"
-              >
-                <img
-                  src={src}
-                  alt={`Foto premio ${i + 1}`}
-                  className="w-full h-[200px] md:h-[240px] rounded-sm shadow-lg object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </SectionBlock>
+        </motion.div>
+      </section>
     </Layout>
   );
 };
