@@ -9,7 +9,12 @@ const Recensioni = () => {
 
   return (
     <Layout>
-      <SectionBlock title="Recensioni" subtitle="Stralci di quanto i critici e i lettori hanno scritto sulle opere">
+      <SectionBlock title="Recensioni">
+        <div className="text-center -mt-4 mb-12">
+          <p className="text-display text-xl md:text-2xl font-semibold text-gold italic">
+            Stralci di quanto critici, lettori, hanno scritto sulle opere.
+          </p>
+        </div>
         {works.map((work) => (
           <div key={work} className="mb-16 last:mb-0">
             <h3 className="text-display text-xl font-semibold text-foreground mb-6 border-b border-border pb-3">

@@ -88,7 +88,7 @@ export const getBiographySections = (): BiographySection[] => [
 
 export const getWorks = (): Work[] => [
   // POESIA
-  { id: 1, title: "Colpo d'ala", year: "1978", genre: "Poesia", publisher: "C.F.D. Avellino", description: "Prima silloge poetica, in cui la poesia è qualcosa di irripetibile, che nasce dalla parte più genuina e fresca dell'io, in cui la poesia è avvertita come un volo che si lascia dietro la quotidianità per attingere atmosfere superiori di bellezza e consapevolezza di un'umanità migliore.", price: "€ 10,00", image: coverColpoDala },
+  { id: 1, title: "Colpo d'ala", year: "1978", genre: "Poesia", publisher: "C.F.D. Avellino", description: "Prima silloge poetica, in cui la poesia è avvertita come un volo che si lascia dietro la quotidianità per attingere atmosfere superiori di bellezza e consapevolezza di un'umanità migliore.", price: "€ 10,00", image: coverColpoDala },
   { id: 2, title: "Rari Nantes", year: "1988", genre: "Poesia", publisher: "Bastogi Edizioni, FG", description: "Silloge poetica che si concentra sul bisogno di superare la dispersione e ritrovare il piacere della condivisione di impegno civico e comunitario.", price: "€ 8,00", image: coverRariNantes },
   { id: 3, title: "Dacruma", year: "2001", genre: "Poesia", publisher: "Genesi Editrice, Torino", description: "Silloge riflessiva e profonda, fra ricordo e religiosità. Presentata ad Atene, alla sala stampa estera, per iniziativa dell'Istituto Italiano di Cultura.", price: "€ 7,75", image: coverDacruma },
   { id: 4, title: "In gurgite vasto", year: "2004", genre: "Poesia", publisher: "Genesi Editrice, Torino", description: "Il titolo virgiliano si collega strettamente a Rari nantes e lo completa, riaffermando l'unità e la continuità di un arduo tragitto umano e poetico. (Emerico Giachery). Una poesia che fa sentire e che si pone il compito meritorio di far pensare. (Davide Puccini)", price: "€ 12,00", image: coverInGurgiteVasto },
@@ -163,6 +163,9 @@ export const getMediaItems = (): MediaItem[] => [
     url: "https://www.youtube.com/watch?v=ToZmIXx-_oc", 
     type: "youtube" 
   },
+  { id: 14, title: "Intervista con Amatucci su Per cieli nuovi e terra nuova", description: "Intervista dedicata alla silloge Per cieli nuovi e terra nuova.", url: "https://www.youtube.com/watch?v=-xUu9-jxhD4", type: "youtube" },
+  { id: 15, title: "Lezione che dura", description: "Lezione registrata, disponibile su YouTube.", url: "https://www.youtube.com/watch?v=8B066KzPjhc", type: "youtube" },
+  { id: 16, title: "Spazio dedicato al poeta — Catalogo Genesi", description: "Spazio dedicato al poeta nel catalogo scrittori di Genesi Editrice.", url: "http://www.genesi.org/catalogo_scrittori~id_autore~115.htm", type: "article" },
 ];
 
 export const getPoems = (): Poem[] => [
@@ -1633,7 +1636,7 @@ export const getReviews = (): Review[] => [
     id: 209,
     author: "Virgilio Iandiorio",
     work: "Per cieli nuovi e terra nuova",
-    text: "La silloge di Nicola Prebenna si apre con la poesia “CIELI NUOVI E TERRA NUOVA”, che ripropone quasi per intero il titolo del libro. L’aggettivo “nuovo” è riferito sia al Cielo sia alla Terra. Il nostro poeta ha volto evidenziare il suo coinvolgimento totale, nella prospettiva della vita futura, quella che ci attende dopo la morte, ma anche nell’immediato, nei momenti che viviamo istante per istante. Nell’una e nell’altra dimensione, vuole dirci, la vita va rispettata e vissuta insieme a coloro che abbiamo intorno a noi o incontriamo fugacemente: pronti tutti ad intonare il canto di grazie / per la vita che ovunque respira.",
+    text: "La silloge di Nicola Prebenna si apre con la poesia “CIELI NUOVI E TERRA NUOVA”, che ripropone quasi per intero il titolo del libro. L’aggettivo “nuovo” è riferito sia al Cielo sia alla Terra. Il nostro poeta ha voluto evidenziare il suo coinvolgimento totale, nella prospettiva della vita futura, quella che ci attende dopo la morte, ma anche nell’immediato, nei momenti che viviamo istante per istante. Nell’una e nell’altra dimensione, vuole dirci, la vita va rispettata e vissuta insieme a coloro che abbiamo intorno a noi o incontriamo fugacemente: pronti tutti ad intonare il canto di grazie / per la vita che ovunque respira.",
   },
   {
     id: 210,

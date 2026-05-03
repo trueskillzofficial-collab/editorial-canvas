@@ -48,7 +48,17 @@ const Contatti = () => {
 
   return (
     <Layout>
-      <SectionBlock title="Contatti" subtitle="Per informazioni, collaborazioni o per scambiare idee">
+      <SectionBlock title="Contatti">
+        <div className="text-center -mt-4 mb-10 max-w-3xl mx-auto space-y-6">
+          <p className="text-display text-xl md:text-2xl font-semibold text-gold italic">
+            Per informazioni, collaborazioni ecc….
+          </p>
+          <div className="p-5 md:p-6 bg-gold/10 border border-gold/40 rounded-sm text-left">
+            <p className="text-sm md:text-base text-foreground leading-relaxed">
+              <span className="font-semibold text-gold">Condizioni per l'acquisto di libri:</span> per i volumi con prezzo inferiore a € 10,00, la spedizione come piego di libri è gratis; per i volumi con prezzo da 10,00 euro in su, si applica lo sconto del 10% e la spedizione come piego di libri è gratis. Per il versamento, sarà data indicazione precisa a seguito di prenotazione.
+            </p>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Info */}
           <div>

@@ -8,7 +8,11 @@ import imgNaxos from "@/assets/bio/naxos.jpg";
 import imgPoetessa from "@/assets/bio/poetessa_greca.jpg";
 import imgVarsavia from "@/assets/bio/varsavia.jpg";
 import imgDickinson from "@/assets/bio/premio_dickinson.jpg";
-import imgStudio from "@/assets/bio/nello_studio.jpg";
+import imgStudio from "@/assets/bio/nellostudio.png";
+import imgInVilla from "@/assets/bio/invilla.png";
+import imgAlunni1 from "@/assets/bio/alunni.png";
+import imgAlunni2 from "@/assets/bio/alunni2.png";
+import imgAlunni3 from "@/assets/bio/alunni3.png";
 import imgPresentazione from "@/assets/bio/presentazione.jpg";
 import imgCasentino from "@/assets/bio/premio_casentino.jpg";
 import imgFortuna from "@/assets/bio/premio_fortuna.jpg";
@@ -177,13 +181,20 @@ const premiPerOpera: { opera: string; premi: string[] }[] = [
 
 const bioImages = [
   { src: imgStudio, alt: "Nicola Prebenna nel suo studio", caption: "Nel suo studio, tra i libri" },
-  { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
+  { src: imgInVilla, alt: "Nicola Prebenna con A. Giorgione", caption: "Con A. Giorgione" },
   { src: imgPresentazione, alt: "Nicola Prebenna durante una presentazione", caption: "Presentazione letteraria" },
   { src: imgPoetessa, alt: "Con la poetessa greca M. Dalmati e Vocou", caption: "da destra in senso antiorario: Nicola Prebenna, Margherita Dalmati, la Sig.a Prebenna, Elena Vocou della Scuola Italiana di Atene." },
   { src: imgVarsavia, alt: "All'Istituto Italiano di Cultura di Varsavia", caption: "All'Istituto Italiano di Cultura di Varsavia, dietro da sx il prof. Paveu Krupka, traduttore, e il Direttore dell’IIC di Varsavia, Prof. Giulio Molisani, avanti da sx: Ugo Piscopo, poeta e critico letterario, Nicola Prebenna, il poeta Sangiuliano e il Prof. Piotr Salwa dell’Università di Varsavia." },
   { src: imgDickinson, alt: "Premio Emily Dickinson", caption: "Premio Internazionale Emily Dickinson – 1° Classificato" },
   { src: imgCasentino, alt: "Premio Casentino a Poppi", caption: "Premio Letterario del Casentino, Poppi" },
   { src: imgFortuna, alt: "Premio Fortuna d'Autore a Bari", caption: "Premio Fortuna d'Autore, Bari" },
+];
+
+const alunniImages = [
+  { src: imgAlunni1, alt: "Con gli alunni in gita", caption: "Con gli alunni" },
+  { src: imgAlunni2, alt: "Con una classe di alunni", caption: "Con una classe di alunni" },
+  { src: imgAlunni3, alt: "Con gli studenti sui gradini", caption: "Con gli studenti" },
+  { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
 ];
 
 const Biografia = () => {
@@ -314,6 +325,27 @@ const Biografia = () => {
             <p className="text-xs text-muted-foreground italic mt-3">{bioImages[3].caption}</p>
           </motion.div>
         </div>
+
+        {/* Foto con alunni */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-12">
+          {alunniImages.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
+        </div>
       </SectionBlock>
 
       {/* Varsavia full-width */}
@@ -335,28 +367,6 @@ const Biografia = () => {
         </motion.div>
       </SectionBlock>
 
-      {/* Awards photo grid moved above awards list */}
-      <SectionBlock>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {bioImages.slice(5).map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              transition={{ duration: 0.35, delay: i * 0.08 }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
-                loading="lazy"
-              />
-              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
-            </motion.div>
-          ))}
-        </div>
-      </SectionBlock>
 
       {/* Awards gallery + list */}
       <SectionBlock title="Premi e Riconoscimenti">
@@ -370,7 +380,7 @@ const Biografia = () => {
           <p className="text-display text-2xl md:text-3xl font-semibold text-gold mb-6">
             Un percorso costellato di successi
           </p>
-          <p className="prose-editorial">
+          <p className="text-base md:text-lg text-foreground leading-relaxed">
             Molti sono i premi che gli sono stati attribuiti. Vengono di seguito riportati solo quelli relativi alle sillogi poetiche. Successivamente sono presentate foto di alcuni premi.
           </p>
         </motion.div>
@@ -393,10 +403,31 @@ const Biografia = () => {
                 {gruppo.premi.map((p, pi) => (
                   <li key={pi} className="flex items-start gap-3 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
-                    <span className="text-sm text-foreground/80 leading-relaxed">{p}</span>
+                    <span className="text-sm text-foreground leading-relaxed">{p}</span>
                   </li>
                 ))}
               </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Foto premi (precedentemente sopra) ora dopo l'elenco */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+          {bioImages.slice(5).map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
             </motion.div>
           ))}
         </div>
