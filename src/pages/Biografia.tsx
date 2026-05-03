@@ -325,6 +325,27 @@ const Biografia = () => {
             <p className="text-xs text-muted-foreground italic mt-3">{bioImages[3].caption}</p>
           </motion.div>
         </div>
+
+        {/* Foto con alunni */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-12">
+          {alunniImages.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
+        </div>
       </SectionBlock>
 
       {/* Varsavia full-width */}
