@@ -367,28 +367,6 @@ const Biografia = () => {
         </motion.div>
       </SectionBlock>
 
-      {/* Awards photo grid moved above awards list */}
-      <SectionBlock>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {bioImages.slice(5).map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              transition={{ duration: 0.35, delay: i * 0.08 }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
-                loading="lazy"
-              />
-              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
-            </motion.div>
-          ))}
-        </div>
-      </SectionBlock>
 
       {/* Awards gallery + list */}
       <SectionBlock title="Premi e Riconoscimenti">
@@ -402,7 +380,7 @@ const Biografia = () => {
           <p className="text-display text-2xl md:text-3xl font-semibold text-gold mb-6">
             Un percorso costellato di successi
           </p>
-          <p className="prose-editorial">
+          <p className="text-base md:text-lg text-foreground leading-relaxed">
             Molti sono i premi che gli sono stati attribuiti. Vengono di seguito riportati solo quelli relativi alle sillogi poetiche. Successivamente sono presentate foto di alcuni premi.
           </p>
         </motion.div>
@@ -425,7 +403,7 @@ const Biografia = () => {
                 {gruppo.premi.map((p, pi) => (
                   <li key={pi} className="flex items-start gap-3 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
-                    <span className="text-sm text-foreground/80 leading-relaxed">{p}</span>
+                    <span className="text-sm text-foreground leading-relaxed">{p}</span>
                   </li>
                 ))}
               </ul>
