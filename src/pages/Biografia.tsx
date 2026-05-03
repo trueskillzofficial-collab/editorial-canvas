@@ -411,6 +411,27 @@ const Biografia = () => {
           ))}
         </div>
 
+        {/* Foto premi (precedentemente sopra) ora dopo l'elenco */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+          {bioImages.slice(5).map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+              transition={{ duration: 0.35, delay: i * 0.08 }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full rounded-sm shadow-lg object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+
       </SectionBlock>
 
       {/* Full-bleed horizontal autoplay carousel */}
