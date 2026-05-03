@@ -181,13 +181,20 @@ const premiPerOpera: { opera: string; premi: string[] }[] = [
 
 const bioImages = [
   { src: imgStudio, alt: "Nicola Prebenna nel suo studio", caption: "Nel suo studio, tra i libri" },
-  { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
+  { src: imgInVilla, alt: "Nicola Prebenna con A. Giorgione", caption: "Con A. Giorgione" },
   { src: imgPresentazione, alt: "Nicola Prebenna durante una presentazione", caption: "Presentazione letteraria" },
   { src: imgPoetessa, alt: "Con la poetessa greca M. Dalmati e Vocou", caption: "da destra in senso antiorario: Nicola Prebenna, Margherita Dalmati, la Sig.a Prebenna, Elena Vocou della Scuola Italiana di Atene." },
   { src: imgVarsavia, alt: "All'Istituto Italiano di Cultura di Varsavia", caption: "All'Istituto Italiano di Cultura di Varsavia, dietro da sx il prof. Paveu Krupka, traduttore, e il Direttore dell’IIC di Varsavia, Prof. Giulio Molisani, avanti da sx: Ugo Piscopo, poeta e critico letterario, Nicola Prebenna, il poeta Sangiuliano e il Prof. Piotr Salwa dell’Università di Varsavia." },
   { src: imgDickinson, alt: "Premio Emily Dickinson", caption: "Premio Internazionale Emily Dickinson – 1° Classificato" },
   { src: imgCasentino, alt: "Premio Casentino a Poppi", caption: "Premio Letterario del Casentino, Poppi" },
   { src: imgFortuna, alt: "Premio Fortuna d'Autore a Bari", caption: "Premio Fortuna d'Autore, Bari" },
+];
+
+const alunniImages = [
+  { src: imgAlunni1, alt: "Con gli alunni in gita", caption: "Con gli alunni" },
+  { src: imgAlunni2, alt: "Con una classe di alunni", caption: "Con una classe di alunni" },
+  { src: imgAlunni3, alt: "Con gli studenti sui gradini", caption: "Con gli studenti" },
+  { src: imgNaxos, alt: "Nicola Prebenna a Naxos", caption: "A Naxos, Grecia" },
 ];
 
 const Biografia = () => {
