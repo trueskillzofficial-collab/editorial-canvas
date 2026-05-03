@@ -16,7 +16,6 @@ import imgAlunni3 from "@/assets/bio/alunni3.png";
 import imgPresentazione from "@/assets/bio/presentazione.jpg";
 import imgCasentino from "@/assets/bio/premio_casentino.jpg";
 import imgFortuna from "@/assets/bio/premio_fortuna.jpg";
-import imgDickinson from "@/assets/bio/premio_dickinson.jpg";
 import premio2 from "@/assets/premi/premio_2.png";
 import premio3 from "@/assets/premi/premio_3.png";
 import premio4 from "@/assets/premi/premio_4.png";
