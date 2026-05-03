@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { MediaItem } from "@/lib/types";
-import { Play, Film } from "lucide-react";
+import { Play, Film, ExternalLink } from "lucide-react";
 
 const getYouTubeId = (url: string): string | null => {
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([^&#]+)/);
@@ -23,7 +23,13 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
       transition={{ duration: 0.35, delay: index * 0.08 }}
       className="card-editorial group cursor-pointer"
-      onClick={() => onPlay?.(item)}
+      onClick={() => {
+        if (item.type === "article") {
+          window.open(item.url, "_blank", "noopener,noreferrer");
+        } else {
+          onPlay?.(item);
+        }
+      }}
     >
       {ytId ? (
         <div className="relative aspect-video mb-4 rounded-sm overflow-hidden bg-secondary">
@@ -56,6 +62,10 @@ const MediaCard = ({ item, index = 0, onPlay }: MediaCardProps) => {
               <Play size={20} className="text-foreground ml-1" />
             </div>
           </div>
+        </div>
+      ) : item.type === "article" ? (
+        <div className="relative aspect-video mb-4 rounded-sm overflow-hidden bg-secondary flex items-center justify-center">
+          <ExternalLink size={48} className="text-foreground/30" />
         </div>
       ) : null}
       <h3 className="text-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
