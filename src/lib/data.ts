@@ -166,7 +166,7 @@ export const getMediaItems = (): MediaItem[] => [
   { id: 14, title: "Intervista con Amatucci su Per cieli nuovi e terra nuova", description: "Intervista dedicata alla silloge Per cieli nuovi e terra nuova.", url: "https://www.youtube.com/watch?v=-xUu9-jxhD4", type: "youtube" },
   { id: 15, title: "Lezione che dura", description: "Lezione registrata, disponibile su YouTube.", url: "https://www.youtube.com/watch?v=8B066KzPjhc", type: "youtube" },
   { id: 16, title: "Spazio dedicato al poeta — Catalogo Genesi", description: "Spazio dedicato al poeta nel catalogo scrittori di Genesi Editrice.", url: "http://www.genesi.org/catalogo_scrittori~id_autore~115.htm", type: "article" },
-  { id: 17, title: "Nicola Prebenna — Video", description: "Contenuto video dedicato a Nicola Prebenna.", url: "https://youtu.be/lEydVfZl_Pk", type: "youtube" },
+  { id: 17, title: "Dante Nicola Prebenna Lignite", description: "Un omaggio poetico a Dante: voce, immagini e suggestioni nella lettura di Nicola Prebenna.", url: "https://youtu.be/lEydVfZl_Pk", type: "youtube" },
 ];
 
 export const getPoems = (): Poem[] => [
