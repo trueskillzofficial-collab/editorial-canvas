@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import Biografia from "./pages/Biografia";
 import Opere from "./pages/Opere";
 import Poesie from "./pages/Poesie";
-import Eventi from "./pages/Eventi";
+
 import Media from "./pages/Media";
 import Contatti from "./pages/Contatti";
 import Recensioni from "./pages/Recensioni";
@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/biografia" element={<Biografia />} />
           <Route path="/opere" element={<Opere />} />
           <Route path="/poesie" element={<Poesie />} />
-          <Route path="/eventi" element={<Eventi />} />
+          
           <Route path="/media" element={<Media />} />
           <Route path="/contatti" element={<Contatti />} />
           <Route path="/recensioni" element={<Recensioni />} />

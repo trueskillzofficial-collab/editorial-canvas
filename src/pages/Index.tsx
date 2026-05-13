@@ -7,8 +7,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import SectionBlock from "@/components/sections/SectionBlock";
 import BooksCarousel from "@/components/sections/BooksCarousel";
 import VideoModal from "@/components/sections/VideoModal";
-import EventCard from "@/components/cards/EventCard";
-import { getSiteSettings, getWorks, getReviews, getPoems, getEvents, getMediaItems } from "@/lib/data";
+import { getSiteSettings, getWorks, getReviews, getPoems, getMediaItems } from "@/lib/data";
 import type { MediaItem } from "@/lib/types";
 
 const Index = () => {
@@ -17,7 +16,7 @@ const Index = () => {
   const recentWorks = works.filter(w => parseInt(w.year) >= 2020).slice(0, 12);
   const reviews = getReviews().slice(0, 3);
   const featuredPoem = getPoems()[0];
-  const events = getEvents().slice(0, 3);
+  
   const mediaItems = getMediaItems().slice(0, 3);
   const [activeVideo, setActiveVideo] = useState<MediaItem | null>(null);
 
@@ -71,22 +70,8 @@ const Index = () => {
         </div>
       </SectionBlock>
 
-      {/* Events Preview */}
-      <SectionBlock variant="alternate" title="Eventi e Presentazioni" subtitle="Incontri, premi e momenti culturali">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {events.map((event, i) => (
-            <EventCard key={event.id} event={event} index={i} />
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link to="/eventi" className="btn-editorial inline-flex items-center gap-2">
-            Scopri tutti gli eventi <ArrowRight size={16} />
-          </Link>
-        </div>
-      </SectionBlock>
-
       {/* Media Preview */}
-      <SectionBlock title="Media" subtitle="Interviste, presentazioni e contenuti video">
+      <SectionBlock variant="alternate" title="Eventi & Media" subtitle="Interviste, presentazioni, eventi e contenuti video">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {mediaItems.map((item, i) => {
             const videoId = item.url.includes("youtu")
@@ -122,7 +107,7 @@ const Index = () => {
         </div>
         <div className="text-center mt-10">
           <Link to="/media" className="btn-editorial inline-flex items-center gap-2">
-            Scopri tutti i media <ArrowRight size={16} />
+            Scopri tutti i contenuti <ArrowRight size={16} />
           </Link>
         </div>
       </SectionBlock>
