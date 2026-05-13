@@ -16,7 +16,7 @@ const Index = () => {
   const recentWorks = works.filter(w => parseInt(w.year) >= 2020).slice(0, 12);
   const reviews = getReviews().slice(0, 3);
   const featuredPoem = getPoems()[0];
-  const events = getEvents().slice(0, 3);
+  
   const mediaItems = getMediaItems().slice(0, 3);
   const [activeVideo, setActiveVideo] = useState<MediaItem | null>(null);
 
