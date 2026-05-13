@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import Biografia from "./pages/Biografia";
 import Opere from "./pages/Opere";
 import Poesie from "./pages/Poesie";
-import Eventi from "./pages/Eventi";
+
 import Media from "./pages/Media";
 import Contatti from "./pages/Contatti";
 import Recensioni from "./pages/Recensioni";
