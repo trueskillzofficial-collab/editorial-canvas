@@ -7,8 +7,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import SectionBlock from "@/components/sections/SectionBlock";
 import BooksCarousel from "@/components/sections/BooksCarousel";
 import VideoModal from "@/components/sections/VideoModal";
-import EventCard from "@/components/cards/EventCard";
-import { getSiteSettings, getWorks, getReviews, getPoems, getEvents, getMediaItems } from "@/lib/data";
+import { getSiteSettings, getWorks, getReviews, getPoems, getMediaItems } from "@/lib/data";
 import type { MediaItem } from "@/lib/types";
 
 const Index = () => {
