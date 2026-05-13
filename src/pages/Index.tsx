@@ -107,7 +107,7 @@ const Index = () => {
         </div>
         <div className="text-center mt-10">
           <Link to="/media" className="btn-editorial inline-flex items-center gap-2">
-            Scopri tutti i media <ArrowRight size={16} />
+            Scopri tutti i contenuti <ArrowRight size={16} />
           </Link>
         </div>
       </SectionBlock>
