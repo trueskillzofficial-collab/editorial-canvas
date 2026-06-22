@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchPostBySlug, fetchPosts } from "@/lib/wordpress";
+import Comments from "@/components/blog/Comments";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -122,6 +123,8 @@ const BlogPost = () => {
                 </Link>
               ) : <div />}
             </nav>
+
+            <Comments postId={post.id} />
           </article>
         )}
       </div>

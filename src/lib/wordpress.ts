@@ -59,3 +59,78 @@ export async function fetchPostBySlug(slug: string): Promise<BlogPost | null> {
   if (data.length === 0) return null;
   return mapPost(data[0]);
 }
+
+export interface WPCommentFromAPI {
+  id: number;
+  author_name: string;
+  date: string;
+  content: { rendered: string };
+  author_avatar_urls?: Record<string, string>;
+}
+
+export interface BlogComment {
+  id: number;
+  authorName: string;
+  date: string;
+  content: string;
+  avatar: string | null;
+}
+
+function mapComment(c: WPCommentFromAPI): BlogComment {
+  return {
+    id: c.id,
+    authorName: c.author_name,
+    date: c.date,
+    content: c.content.rendered,
+    avatar: c.author_avatar_urls?.["48"] || null,
+  };
+}
+
+export async function fetchComments(postId: number): Promise<BlogComment[]> {
+  const res = await fetch(
+    `${WP_API_BASE}/comments?post=${postId}&per_page=100&order=asc&orderby=date`,
+  );
+  if (!res.ok) throw new Error(`WP API error: ${res.status}`);
+  const data: WPCommentFromAPI[] = await res.json();
+  return data.map(mapComment);
+}
+
+export interface NewComment {
+  postId: number;
+  authorName: string;
+  authorEmail: string;
+  content: string;
+}
+
+/**
+ * Invia un nuovo commento a WordPress. Con la moderazione attiva il commento
+ * resta in attesa di approvazione (status "hold") e non comparirà subito.
+ * Richiede che su WordPress sia abilitato `rest_allow_anonymous_comments`.
+ */
+export async function postComment(comment: NewComment): Promise<void> {
+  const res = await fetch(`${WP_API_BASE}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      post: comment.postId,
+      author_name: comment.authorName,
+      author_email: comment.authorEmail,
+      content: comment.content,
+    }),
+  });
+
+  if (!res.ok) {
+    let message = `WP API error: ${res.status}`;
+    try {
+      const err = await res.json();
+      if (err?.code === "rest_comment_login_required") {
+        message = "I commenti anonimi non sono abilitati su WordPress.";
+      } else if (err?.message) {
+        message = stripHtml(err.message);
+      }
+    } catch {
+      /* ignore parse errors */
+    }
+    throw new Error(message);
+  }
+}
