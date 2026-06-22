@@ -169,7 +169,6 @@ export const getMediaItems = (): MediaItem[] => [
   { id: 18, title: "Iniziaz Poesia", description: "Il video è stato concepito come un invito a coltivare la poesia, patrimonio che consente di conoscere meglio se stessi e di affrontare la vita con maggiore serenità e consapevolezza.", url: "https://youtu.be/nugm28nr0yM", type: "youtube" },
   { id: 19, title: "Incontro Rotary Avellino Est sulla letteratura di Prebenna", description: "Il Rotary Avellino Est Centenario dedica un incontro alla letteratura di Nicola Prebenna, intesa come ponte tra interiorità e mondo, capace di generare relazioni e umanità.", url: "https://www.youtube.com/watch?v=z13PmMzBTjg", type: "youtube" },
   { id: 20, title: "Dal Canto III del Purgatorio", description: "Lettura e riflessione poetica a partire dal Canto III del Purgatorio di Dante.", url: "https://youtu.be/RB0rIFdl1Ig", type: "youtube" },
-  { id: 21, title: "Il Rotary Avellino Est dedica un incontro alla letteratura di Prebenna – Canale 58", description: "L'articolo di Canale 58 sull'incontro del Rotary Avellino Est Centenario dedicato alla letteratura di Nicola Prebenna.", url: "https://www.canale58.com/articolo/cultura/5/il-rotary-avellino-est-centenario-dedica-un-incontro-alla-letteratura-di-prebenna/61971", type: "article" },
 ];
 
 export const getPoems = (): Poem[] => [

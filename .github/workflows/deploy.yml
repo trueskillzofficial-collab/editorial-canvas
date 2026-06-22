@@ -24,7 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to FTP
+      # Il server FTP scarta a intermittenza le connessioni dai runner GitHub
+      # ("Timeout control socket"): ritentiamo in automatico fino a 3 volte
+      # con attesa crescente, così il deploy si auto-risolve senza re-run manuali.
+      - name: Deploy to FTP (tentativo 1)
+        id: ftp1
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -32,3 +37,36 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /public_html/
+          timeout: "60000"
+
+      - name: Attesa prima del 2° tentativo
+        if: steps.ftp1.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to FTP (tentativo 2)
+        id: ftp2
+        if: steps.ftp1.outcome == 'failure'
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
+
+      - name: Attesa prima del tentativo finale
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to FTP (tentativo finale)
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
