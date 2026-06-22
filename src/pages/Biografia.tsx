@@ -30,6 +30,41 @@ import premio12 from "@/assets/premi/premio_12.png";
 import premio13 from "@/assets/premi/premio_13.png";
 import premio14 from "@/assets/premi/premio_14.png";
 import premio15 from "@/assets/premi/premio_15.png";
+import PhotoGallery, { type GalleryPhoto } from "@/components/sections/PhotoGallery";
+import premioMurazzi from "@/assets/bio/premio_murazzi.jpg";
+import premioEmanuele from "@/assets/bio/premio_emanuele.jpg";
+import premioAulla from "@/assets/bio/premio_aulla.jpg";
+import premioFortunaBari from "@/assets/bio/premio_fortuna_bari.jpg";
+import premioSilarus from "@/assets/bio/premio_silarus.jpg";
+import bonitoLectioDante from "@/assets/bio/bonito_lectio_dante.jpg";
+import firenzePalazzoVecchio from "@/assets/bio/firenze_palazzo_vecchio.jpg";
+import yadVashem from "@/assets/bio/yad_vashem.jpg";
+import istitutoPolacco from "@/assets/bio/istituto_polacco.jpg";
+import capriGita from "@/assets/bio/capri_gita_1996.jpg";
+import circoloLettori from "@/assets/bio/circolo_lettori.jpg";
+import conSantinato from "@/assets/bio/con_santinato.jpg";
+import conCovotta from "@/assets/bio/con_covotta.jpg";
+import conVitoMelito from "@/assets/bio/con_vito_melito.jpg";
+
+const premiImages: GalleryPhoto[] = [
+  { src: premioFortunaBari, alt: "Premio Fortuna d'Autore a Bari", caption: "Premio Fortuna d'Autore, Bari, con G. Angeli" },
+  { src: premioSilarus, alt: "Premio Silarus 2018", caption: "Premio Silarus, 2018" },
+  { src: premioMurazzi, alt: "Premio I Murazzi con S. Gros-Pietro", caption: "Premio I Murazzi, con il Presidente S. Gros-Pietro" },
+  { src: premioAulla, alt: "Notizia del premio ad Aulla", caption: "La notizia del premio ad Aulla" },
+  { src: premioEmanuele, alt: "Emanuele ritira il premio per Nicola Prebenna", caption: "Emanuele ritira il premio a nome del nonno" },
+];
+
+const incontriImages: GalleryPhoto[] = [
+  { src: bonitoLectioDante, alt: "Lectio su Dante a Bonito", caption: "Lectio su Dante, a Bonito" },
+  { src: circoloLettori, alt: "Al Circolo dei Lettori con M. Luigia, Pierino e N. Alborelli", caption: "Al Circolo dei Lettori, con M. Luigia, Pierino e N. Alborelli" },
+  { src: conSantinato, alt: "Con il poeta A. Santinato", caption: "Con il poeta A. Santinato" },
+  { src: conCovotta, alt: "Con Andrea Covotta", caption: "Con Andrea Covotta" },
+  { src: conVitoMelito, alt: "Con Vito Melito e Salvatore", caption: "Con Vito Melito e Salvatore" },
+  { src: istitutoPolacco, alt: "All'Istituto Polacco con Krupka e Di Lieto", caption: "All'Istituto Polacco, con Krupka e Di Lieto" },
+  { src: yadVashem, alt: "Allo Yad Vashem, Gerusalemme", caption: "Allo Yad Vashem, Gerusalemme" },
+  { src: firenzePalazzoVecchio, alt: "A Firenze, Palazzo Vecchio", caption: "A Firenze, Palazzo Vecchio" },
+  { src: capriGita, alt: "Gita scolastica a Capri, 1996", caption: "Gita scolastica a Capri, 1996" },
+];
 
 const premiCarousel = [premio2, premio3, premio4, premio5, premio6, premio7, premio8, premio9, premio10, premio11, premio12, premio13, premio14, premio15];
 const premiCarouselLoop = [...premiCarousel, ...premiCarousel];
@@ -367,6 +402,11 @@ const Biografia = () => {
         </motion.div>
       </SectionBlock>
 
+      {/* Incontri e Luoghi */}
+      <SectionBlock title="Incontri e Luoghi" subtitle="Persone, viaggi e occasioni di cultura">
+        <PhotoGallery photos={incontriImages} />
+      </SectionBlock>
+
 
       {/* Awards gallery + list */}
       <SectionBlock title="Premi e Riconoscimenti">
@@ -430,6 +470,11 @@ const Biografia = () => {
               <p className="text-xs text-muted-foreground italic mt-3">{img.caption}</p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Altre foto di premi e riconoscimenti */}
+        <div className="mt-8">
+          <PhotoGallery photos={premiImages} />
         </div>
 
       </SectionBlock>
