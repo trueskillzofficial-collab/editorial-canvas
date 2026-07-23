@@ -26,6 +26,35 @@ add_action( 'template_redirect', function () {
 		return;
 	}
 
+	// I bot dei social (Facebook, LinkedIn, WhatsApp, Telegram, X, Slack, ecc.)
+	// NON vengono reindirizzati: devono poter leggere gli Open Graph tag
+	// generati da WordPress (con featured image dedicata all'articolo).
+	$ua = isset( $_SERVER['HTTP_USER_AGENT'] ) ? (string) $_SERVER['HTTP_USER_AGENT'] : '';
+	$social_bots = array(
+		'facebookexternalhit',
+		'facebookcatalog',
+		'Facebot',
+		'LinkedInBot',
+		'Twitterbot',
+		'Slackbot',
+		'TelegramBot',
+		'WhatsApp',
+		'Discordbot',
+		'Pinterest',
+		'redditbot',
+		'Applebot',
+		'SkypeUriPreview',
+		'vkShare',
+		'W3C_Validator',
+		'Embedly',
+		'Iframely',
+	);
+	foreach ( $social_bots as $bot ) {
+		if ( stripos( $ua, $bot ) !== false ) {
+			return;
+		}
+	}
+
 	// Gli utenti che possono modificare i post (admin/editor) NON vengono
 	// reindirizzati: così possono ancora vedere/anteprima l'articolo in WordPress.
 	if ( current_user_can( 'edit_posts' ) ) {
