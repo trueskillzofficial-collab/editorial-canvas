@@ -1,5 +1,18 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Youtube, Facebook } from "lucide-react";
+
+const SOCIALS = [
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@nicolaprebenna7632",
+    Icon: Youtube,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1DFSjjrQcZ/",
+    Icon: Facebook,
+  },
+];
 
 const Footer = () => (
   <footer className="bg-[#0F172A] text-white">
