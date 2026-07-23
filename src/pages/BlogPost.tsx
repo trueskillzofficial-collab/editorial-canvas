@@ -144,6 +144,11 @@ const BlogPost = () => {
               ) : <div />}
             </nav>
 
+            <ShareButtons
+              url={`${SITE_URL}/blog/${post.slug}`}
+              title={post.title}
+            />
+
             <Comments postId={post.id} />
           </article>
         )}
