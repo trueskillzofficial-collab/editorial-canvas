@@ -5,6 +5,13 @@ on:
     branches:
       - main
 
+# Un solo deploy alla volta: se parte un nuovo push, l'eventuale run FTP ancora
+# in corso viene annullata automaticamente. Evita che due run si contendano il
+# server FTP (che accetta poche connessioni per volta) rallentandosi a vicenda.
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: true
+
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
@@ -24,62 +31,96 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Installa lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      # Il server (185.116.60.16) accetta le connessioni dei runner GitHub in modo
-      # INTERMITTENTE (a volte va in "Timeout control socket"). Per questo usiamo
-      # lftp — robusto sulle connessioni ballerine — e ripetiamo l'intera operazione
-      # con nick-fields/retry fino a 5 volte: basta un momento "buono" del server.
-      # Connessione via FTPS esplicito (ssl-force) senza verifica del certificato
-      # (ci si collega per IP, il cert non combacia) — equivale a "security: loose".
-      - name: Deploy sito via FTPS (con retry)
-        uses: nick-fields/retry@v3
-        env:
-          FTP_HOST: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+      # Il server FTP scarta a intermittenza le connessioni dai runner GitHub
+      # ("Timeout control socket"): ritentiamo in automatico fino a 3 volte
+      # con attesa crescente, così il deploy si auto-risolve senza re-run manuali.
+      # Connessione via FTPS esplicito senza verifica del certificato (ci si
+      # collega per IP, il cert non combacia) — come fa FileZilla.
+      - name: Deploy to FTP (tentativo 1)
+        id: ftp1
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          timeout_minutes: 6
-          max_attempts: 5
-          retry_wait_seconds: 30
-          command: |
-            lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" <<'LFTP_EOF'
-            set ftp:ssl-force true
-            set ftp:ssl-protect-data true
-            set ssl:verify-certificate no
-            set ftp:passive-mode true
-            set net:timeout 30
-            set net:max-retries 3
-            set net:reconnect-interval-base 5
-            mirror -R --ignore-time --no-perms --verbose ./dist/ /public_html/
-            bye
-            LFTP_EOF
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
+
+      - name: Attesa prima del 2° tentativo
+        if: steps.ftp1.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to FTP (tentativo 2)
+        id: ftp2
+        if: steps.ftp1.outcome == 'failure'
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
+
+      - name: Attesa prima del 3° tentativo
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to FTP (tentativo 3)
+        id: ftp3
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
+
+      - name: Attesa prima del tentativo finale
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure' && steps.ftp3.outcome == 'failure'
+        run: sleep 90
+
+      - name: Deploy to FTP (tentativo finale)
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure' && steps.ftp3.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./dist/
+          server-dir: /public_html/
+          timeout: "60000"
 
       # Carica anche il plugin WordPress headless (commenti REST + redirect + Open
-      # Graph) nella cartella dei plugin del CMS. --delete ripulisce la cartella
-      # (dedicata solo a questo plugin) da eventuali file rotti di installazioni
-      # manuali precedenti. Gira sempre, anche se il deploy del sito ha avuto intoppi.
-      - name: Deploy plugin WordPress via FTPS (con retry)
+      # Graph) direttamente nella cartella dei plugin del CMS. `state-name` usa un
+      # file di stato separato per non confondersi con la sync del sito, e
+      # `dangerous-clean-slate` ripulisce la cartella del plugin prima di caricare,
+      # così sovrascrive eventuali file rotti da precedenti installazioni manuali.
+      - name: Deploy plugin WordPress via FTP
         if: always()
-        uses: nick-fields/retry@v3
-        env:
-          FTP_HOST: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          timeout_minutes: 4
-          max_attempts: 5
-          retry_wait_seconds: 30
-          command: |
-            lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" <<'LFTP_EOF'
-            set ftp:ssl-force true
-            set ftp:ssl-protect-data true
-            set ssl:verify-certificate no
-            set ftp:passive-mode true
-            set net:timeout 30
-            set net:max-retries 3
-            set net:reconnect-interval-base 5
-            mirror -R --delete --ignore-time --no-perms --verbose ./wordpress-plugin/abilita-commenti-rest/ /public_html/cms/wp-content/plugins/abilita-commenti-rest/
-            bye
-            LFTP_EOF
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./wordpress-plugin/abilita-commenti-rest/
+          server-dir: /public_html/cms/wp-content/plugins/abilita-commenti-rest/
+          state-name: .ftp-deploy-plugin-state.json
+          dangerous-clean-slate: true
+          timeout: "60000"
