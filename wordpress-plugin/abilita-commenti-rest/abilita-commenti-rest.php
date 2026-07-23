@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Headless – Commenti REST + Redirect al frontend + Open Graph
  * Description: Abilita i commenti via REST dal sito React e reindirizza le pagine articolo di WordPress al frontend del sito (nicolaprebenna.it/blog/...). Esclude i bot social dal redirect ed emette gli Open Graph tag con la featured image dedicata, così condividendo un articolo Facebook/LinkedIn/WhatsApp mostrano la foto specifica di quell'articolo.
- * Version: 1.3.0
+ * Version: 1.3.1
  * Author: nicolaprebenna.it
  */
 
@@ -109,8 +109,13 @@ add_action( 'wp_head', function () {
 		$description = mb_substr( $description, 0, 197 ) . '…';
 	}
 
-	// URL canonico della card: la bella pagina frontend dell'articolo.
-	$canonical = PREBENNA_FRONTEND_URL . '/blog/' . $slug;
+	// og:url = la STESSA pagina WordPress che il bot sta leggendo (il permalink WP).
+	// IMPORTANTE: NON puntare al frontend. Se og:url differisce dall'URL letto,
+	// Facebook lo considera l'URL "canonico" e va a rileggere gli OG di quella
+	// pagina (la SPA React, che ha solo la og-image GENERALE) -> mostrerebbe la
+	// foto sbagliata. Puntando alla stessa pagina WP, usa la featured image qui sotto.
+	// L'utente reale che clicca viene comunque reindirizzato al frontend.
+	$canonical = get_permalink( $post_id );
 
 	// Featured image dedicata all'articolo (dimensione grande per un'anteprima ricca).
 	$image     = '';
