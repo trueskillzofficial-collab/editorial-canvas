@@ -1,10 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchPostBySlug, fetchPosts } from "@/lib/wordpress";
 import Comments from "@/components/blog/Comments";
+import ShareButtons from "@/components/blog/ShareButtons";
+
+const SITE_URL = "https://nicolaprebenna.it";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
