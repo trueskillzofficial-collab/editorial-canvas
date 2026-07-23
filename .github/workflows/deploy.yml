@@ -35,6 +35,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
           local-dir: ./dist/
           server-dir: /public_html/
           timeout: "60000"
@@ -52,6 +54,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
           local-dir: ./dist/
           server-dir: /public_html/
           timeout: "60000"
@@ -67,6 +71,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
           local-dir: ./dist/
           server-dir: /public_html/
           timeout: "60000"
@@ -83,6 +89,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
           local-dir: ./wordpress-plugin/abilita-commenti-rest/
           server-dir: /public_html/cms/wp-content/plugins/abilita-commenti-rest/
           state-name: .ftp-deploy-plugin-state.json
