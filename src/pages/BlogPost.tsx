@@ -1,10 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchPostBySlug, fetchPosts } from "@/lib/wordpress";
 import Comments from "@/components/blog/Comments";
+import ShareButtons from "@/components/blog/ShareButtons";
+
+const SITE_URL = "https://nicolaprebenna.it";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -26,6 +30,22 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      {post && (
+        <Helmet>
+          <title>{`${post.title} — Nicola Prebenna`}</title>
+          <meta name="description" content={post.excerpt.slice(0, 160)} />
+          <link rel="canonical" href={`${SITE_URL}/blog/${post.slug}`} />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={post.excerpt.slice(0, 160)} />
+          <meta property="og:url" content={`${SITE_URL}/blog/${post.slug}`} />
+          {post.image && <meta property="og:image" content={post.image} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={post.excerpt.slice(0, 160)} />
+          {post.image && <meta name="twitter:image" content={post.image} />}
+        </Helmet>
+      )}
       <div className="container-editorial section-padding">
         <Link
           to="/blog"
@@ -123,6 +143,11 @@ const BlogPost = () => {
                 </Link>
               ) : <div />}
             </nav>
+
+            <ShareButtons
+              url={`${SITE_URL}/blog/${post.slug}`}
+              title={post.title}
+            />
 
             <Comments postId={post.id} />
           </article>
