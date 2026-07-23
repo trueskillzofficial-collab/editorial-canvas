@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Headless – Commenti REST + Redirect al frontend
- * Description: Abilita i commenti via REST dal sito React e reindirizza le pagine articolo di WordPress al frontend del sito (nicolaprebenna.it/blog/...).
- * Version: 1.1.0
+ * Description: Abilita i commenti via REST dal sito React e reindirizza le pagine articolo di WordPress al frontend del sito (nicolaprebenna.it/blog/...). Esclude i bot social dal redirect così Facebook/LinkedIn/WhatsApp leggono gli Open Graph con la featured image.
+ * Version: 1.2.0
  * Author: nicolaprebenna.it
  */
 
@@ -24,6 +24,35 @@ add_action( 'template_redirect', function () {
 	// Solo per la pagina di un singolo articolo (non pagine, categorie, home, ecc.).
 	if ( ! is_singular( 'post' ) ) {
 		return;
+	}
+
+	// I bot dei social (Facebook, LinkedIn, WhatsApp, Telegram, X, Slack, ecc.)
+	// NON vengono reindirizzati: devono poter leggere gli Open Graph tag
+	// generati da WordPress (con featured image dedicata all'articolo).
+	$ua = isset( $_SERVER['HTTP_USER_AGENT'] ) ? (string) $_SERVER['HTTP_USER_AGENT'] : '';
+	$social_bots = array(
+		'facebookexternalhit',
+		'facebookcatalog',
+		'Facebot',
+		'LinkedInBot',
+		'Twitterbot',
+		'Slackbot',
+		'TelegramBot',
+		'WhatsApp',
+		'Discordbot',
+		'Pinterest',
+		'redditbot',
+		'Applebot',
+		'SkypeUriPreview',
+		'vkShare',
+		'W3C_Validator',
+		'Embedly',
+		'Iframely',
+	);
+	foreach ( $social_bots as $bot ) {
+		if ( stripos( $ua, $bot ) !== false ) {
+			return;
+		}
 	}
 
 	// Gli utenti che possono modificare i post (admin/editor) NON vengono
