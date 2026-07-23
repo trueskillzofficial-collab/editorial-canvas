@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Headless – Commenti REST + Redirect al frontend
- * Description: Abilita i commenti via REST dal sito React e reindirizza le pagine articolo di WordPress al frontend del sito (nicolaprebenna.it/blog/...).
- * Version: 1.1.0
+ * Description: Abilita i commenti via REST dal sito React e reindirizza le pagine articolo di WordPress al frontend del sito (nicolaprebenna.it/blog/...). Esclude i bot social dal redirect così Facebook/LinkedIn/WhatsApp leggono gli Open Graph con la featured image.
+ * Version: 1.2.0
  * Author: nicolaprebenna.it
  */
 
