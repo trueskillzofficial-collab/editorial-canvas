@@ -90,7 +90,21 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="w-16 h-px bg-gold mx-auto mt-12 mb-6" />
+      <div className="mt-12 flex justify-center gap-4">
+        {SOCIALS.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="group inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-white/70 hover:text-[#0F172A] hover:bg-gold hover:border-gold transition-all duration-300"
+          >
+            <Icon size={18} className="transition-transform group-hover:scale-110" />
+          </a>
+        ))}
+      </div>
+      <div className="w-16 h-px bg-gold mx-auto mt-10 mb-6" />
       <div className="text-center text-xs text-white/30 space-y-2">
         <p>© {new Date().getFullYear()} Nicola Prebenna. Tutti i diritti riservati.</p>
         <Link to="/privacy-policy" className="text-white/30 hover:text-gold transition-colors">
