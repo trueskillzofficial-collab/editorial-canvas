@@ -52,7 +52,7 @@ jobs:
             set net:timeout 30
             set net:max-retries 3
             set net:reconnect-interval-base 5
-            mirror -R --verbose ./dist/ /public_html/
+            mirror -R --ignore-time --no-perms --verbose ./dist/ /public_html/
             bye
             LFTP_EOF
 
@@ -80,6 +80,6 @@ jobs:
             set net:timeout 30
             set net:max-retries 3
             set net:reconnect-interval-base 5
-            mirror -R --delete --verbose ./wordpress-plugin/abilita-commenti-rest/ /public_html/cms/wp-content/plugins/abilita-commenti-rest/
+            mirror -R --delete --ignore-time --no-perms --verbose ./wordpress-plugin/abilita-commenti-rest/ /public_html/cms/wp-content/plugins/abilita-commenti-rest/
             bye
             LFTP_EOF
