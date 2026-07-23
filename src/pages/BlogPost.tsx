@@ -30,6 +30,22 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      {post && (
+        <Helmet>
+          <title>{`${post.title} — Nicola Prebenna`}</title>
+          <meta name="description" content={post.excerpt.slice(0, 160)} />
+          <link rel="canonical" href={`${SITE_URL}/blog/${post.slug}`} />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={post.excerpt.slice(0, 160)} />
+          <meta property="og:url" content={`${SITE_URL}/blog/${post.slug}`} />
+          {post.image && <meta property="og:image" content={post.image} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={post.excerpt.slice(0, 160)} />
+          {post.image && <meta name="twitter:image" content={post.image} />}
+        </Helmet>
+      )}
       <div className="container-editorial section-padding">
         <Link
           to="/blog"
