@@ -144,8 +144,12 @@ const BlogPost = () => {
               ) : <div />}
             </nav>
 
+            {/* Condividiamo il permalink WordPress (post.link): è l'unico URL
+                che espone lato server gli Open Graph con la featured image
+                dedicata all'articolo. Il plugin WP reindirizza poi l'utente
+                reale alla pagina frontend /blog/slug. */}
             <ShareButtons
-              url={`${SITE_URL}/blog/${post.slug}`}
+              url={post.link}
               title={post.title}
             />
 

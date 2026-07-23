@@ -3,6 +3,7 @@ const WP_API_BASE = "https://nicolaprebenna.it/cms/wp-json/wp/v2";
 export interface WPPostFromAPI {
   id: number;
   slug: string;
+  link: string;
   title: { rendered: string };
   excerpt: { rendered: string };
   content: { rendered: string };
@@ -18,6 +19,13 @@ export interface WPPostFromAPI {
 export interface BlogPost {
   id: number;
   slug: string;
+  /**
+   * Permalink WordPress dell'articolo (es. https://nicolaprebenna.it/cms/slug/).
+   * È l'URL da usare per la CONDIVISIONE: i bot social lo leggono e ottengono gli
+   * Open Graph con la featured image dedicata; gli utenti vengono poi reindirizzati
+   * dal plugin WP alla pagina frontend /blog/slug.
+   */
+  link: string;
   title: string;
   excerpt: string;
   content: string;
@@ -36,6 +44,7 @@ function mapPost(post: WPPostFromAPI): BlogPost {
   return {
     id: post.id,
     slug: post.slug,
+    link: post.link,
     title: post.title.rendered,
     excerpt: stripHtml(post.excerpt.rendered),
     content: post.content.rendered,

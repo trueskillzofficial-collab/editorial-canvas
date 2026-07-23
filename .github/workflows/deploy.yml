@@ -70,3 +70,21 @@ jobs:
           local-dir: ./dist/
           server-dir: /public_html/
           timeout: "60000"
+
+      # Carica anche il plugin WordPress headless (commenti REST + redirect + Open
+      # Graph) direttamente nella cartella dei plugin del CMS. `state-name` usa un
+      # file di stato separato per non confondersi con la sync del sito, e
+      # `dangerous-clean-slate` ripulisce la cartella del plugin prima di caricare,
+      # così sovrascrive eventuali file rotti da precedenti installazioni manuali.
+      - name: Deploy plugin WordPress via FTP
+        if: always()
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./wordpress-plugin/abilita-commenti-rest/
+          server-dir: /public_html/cms/wp-content/plugins/abilita-commenti-rest/
+          state-name: .ftp-deploy-plugin-state.json
+          dangerous-clean-slate: true
+          timeout: "60000"
