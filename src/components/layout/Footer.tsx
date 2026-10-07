@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Youtube, Facebook } from "lucide-react";
+import { openCookiePreferences } from "@/lib/cookieConsent";
 
 const SOCIALS = [
   {
@@ -105,11 +106,32 @@ const Footer = () => (
         ))}
       </div>
       <div className="w-16 h-px bg-gold mx-auto mt-10 mb-6" />
-      <div className="text-center text-xs text-white/30 space-y-2">
+      <div className="text-center text-xs text-white/30 space-y-3">
         <p>© {new Date().getFullYear()} Nicola Prebenna. Tutti i diritti riservati.</p>
-        <Link to="/privacy-policy" className="text-white/30 hover:text-gold transition-colors">
-          Privacy Policy
-        </Link>
+        <nav aria-label="Note legali" className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <Link to="/privacy-policy" className="hover:text-gold transition-colors">
+            Privacy Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/cookie-policy" className="hover:text-gold transition-colors">
+            Cookie Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <button type="button" onClick={openCookiePreferences} className="hover:text-gold transition-colors">
+            Preferenze cookie
+          </button>
+        </nav>
+        <p>
+          Powered by{" "}
+          <a
+            href="https://e-direct.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/50 hover:text-gold transition-colors"
+          >
+            e-direct.it
+          </a>
+        </p>
       </div>
     </div>
   </footer>
